@@ -18,7 +18,7 @@ Based on [android_kernel_qcom_sm8350](https://github.com/xiaomi-lisa-devs/androi
 - Linux (tested on CachyOS / Arch)
 - Android Clang toolchain: `r522817`
 - GCC cross-compiler: `aarch64-linux-gnu`
-- AnyKernel3 (for packaging)
+- [AnyKernel3](https://github.com/osm0sis/AnyKernel3) (for packaging)
 
 ## Quick Start
 
@@ -49,17 +49,22 @@ bash build_vili_defconfig.sh
 make ARCH=arm64 CC=clang CROSS_COMPILE=aarch64-linux-gnu- LLVM=1 -j$(nproc) Image modules
 ```
 
+Output:
+- `arch/arm64/boot/Image` — kernel image
+- `techpack/audio/**/*.ko` — audio modules
+- `drivers/staging/qcacld-3.0/wlan.ko` — WiFi module
+
 ### 4. Package flashable zip
 
-Copy `Image` and modules to an [AnyKernel3](https://github.com/osm0sis/AnyKernel3) directory:
+Set up an [AnyKernel3](https://github.com/osm0sis/AnyKernel3) directory:
 
 ```
 AnyKernel3/
-├── Image                          # arch/arm64/boot/Image
+├── Image                              # from arch/arm64/boot/Image
 ├── anykernel.sh
 ├── tools/
 ├── bin/
-└── vendor_ramdisk/lib/modules/    # your compiled .ko files
+└── vendor_ramdisk/lib/modules/        # compiled .ko files
     ├── adsp_loader_dlkm.ko
     ├── apr_dlkm.ko
     ├── q6_notifier_dlkm.ko
@@ -76,20 +81,25 @@ AnyKernel3/
 zip -r9 vili-hitcore-vXX.zip AnyKernel3/
 ```
 
-Flash via **adb sideload** in recovery or via TWRP.
+### 5. Flash
+
+```bash
+adb sideload vili-hitcore-vXX.zip
+```
+
+Requires stock recovery or TWRP. Device must be in A/B slot.
 
 ## What changed from stock
 
-Hitomatito's modifications on top of the original kernel source:
+Modifications on top of the original kernel source:
 
-- **KernelSU-Next** — integrated as source code (not submodule)
-- **Kconfig** — sources `KernelSU-Next/kernel/Kconfig`
-- **Makefile** — adds `obj-$(CONFIG_KSU) += KernelSU-Next/kernel/`
-- **kernel/module.c** — vermagic matching for stock module compatibility
-- **ucsi_glink.c** — CVE-2024-46693 fix
-- **lahaina-qgki_defconfig** — enabled KSU, LTO_CLANG, CFI_CLANG, audio modules
-
-See `git log` for full history.
+| File | Change |
+|------|--------|
+| `Kconfig` | Sources `KernelSU-Next/kernel/Kconfig` |
+| `Makefile` | Adds `obj-$(CONFIG_KSU) += KernelSU-Next/kernel/` |
+| `kernel/module.c` | Vermagic matching for stock module compatibility |
+| `drivers/usb/typec/ucsi/ucsi_glink.c` | CVE-2024-46693 fix |
+| `arch/arm64/configs/vendor/lahaina-qgki_defconfig` | Enabled KSU, LTO_CLANG, CFI_CLANG, audio modules |
 
 ## Syncing with upstream
 
