@@ -1,182 +1,120 @@
-# How do I submit patches to Android Common Kernels
+# vili-hitcore
 
-1. BEST: Make all of your changes to upstream Linux. If appropriate, backport to the stable releases.
-   These patches will be merged automatically in the corresponding common kernels. If the patch is already
-   in upstream Linux, post a backport of the patch that conforms to the patch requirements below.
+Custom QGKI kernel for **Xiaomi 11T Pro (vili / SM8350)**.
 
-2. LESS GOOD: Develop your patches out-of-tree (from an upstream Linux point-of-view). Unless these are
-   fixing an Android-specific bug, these are very unlikely to be accepted unless they have been
-   coordinated with kernel-team@android.com. If you want to proceed, post a patch that conforms to the
-   patch requirements below.
+Based on [android_kernel_qcom_sm8350](https://github.com/xiaomi-lisa-devs/android_kernel_qcom_sm8350) (Linux 5.4.302).
 
-# Common Kernel patch requirements
+## Features
 
-- All patches must conform to the Linux kernel coding standards and pass `script/checkpatch.pl`
-- Patches shall not break gki_defconfig or allmodconfig builds for arm, arm64, x86, x86_64 architectures
-(see  https://source.android.com/setup/build/building-kernels)
-- If the patch is not merged from an upstream branch, the subject must be tagged with the type of patch:
-`UPSTREAM:`, `BACKPORT:`, `FROMGIT:`, `FROMLIST:`, or `ANDROID:`.
-- All patches must have a `Change-Id:` tag (see https://gerrit-review.googlesource.com/Documentation/user-changeid.html)
-- If an Android bug has been assigned, there must be a `Bug:` tag.
-- All patches must have a `Signed-off-by:` tag by the author and the submitter
+- **KernelSU-Next v3.2.0-legacy** (kprobe mode) — root access
+- **CVE-2024-46693** fix (UCSI glink)
+- **LTO_CLANG** + **CFI_CLANG** (permissive)
+- Audio techpack modules (adsp, apr, q6, snd_event)
+- WiFi (wlan.ko / qcacld-3.0)
+- Built with **Android Clang 18.0.1 (r522817)**
 
-Additional requirements are listed below based on patch type
+## Requirements
 
-## Requirements for backports from mainline Linux: `UPSTREAM:`, `BACKPORT:`
+- Linux (tested on CachyOS / Arch)
+- Android Clang toolchain: `r522817`
+- GCC cross-compiler: `aarch64-linux-gnu`
+- AnyKernel3 (for packaging)
 
-- If the patch is a cherry-pick from Linux mainline with no changes at all
-    - tag the patch subject with `UPSTREAM:`.
-    - add upstream commit information with a `(cherry-picked from ...)` line
-    - Example:
-        - if the upstream commit message is
-```
-        important patch from upstream
+## Quick Start
 
-        This is the detailed description of the important patch
+### 1. Clone
 
-        Signed-off-by: Fred Jones <fred.jones@foo.org>
-```
-        - then Joe Smith would upload the patch for the common kernel as
-```
-        UPSTREAM: important patch from upstream
-
-        This is the detailed description of the important patch
-
-        Signed-off-by: Fred Jones <fred.jones@foo.org>
-
-        Bug: 135791357
-        Change-Id: I4caaaa566ea080fa148c5e768bb1a0b6f7201c01
-        (cherry-picked from c31e73121f4c1ec41143423ac6ce3ce6dafdcec1)
-        Signed-off-by: Joe Smith <joe.smith@foo.org>
+```bash
+git clone git@github.com:Hitomatito/vili-hitcore.git
+cd vili-hitcore
 ```
 
-- If the patch requires any changes from the upstream version, tag the patch with `BACKPORT:`
-instead of `UPSTREAM:`.
-    - use the same tags as `UPSTREAM:`
-    - add comments about the changes under the `(cherry-picked from ...)` line
-    - Example:
-```
-        BACKPORT: important patch from upstream
+No submodules needed — everything is included.
 
-        This is the detailed description of the important patch
+### 2. Set up toolchain
 
-        Signed-off-by: Fred Jones <fred.jones@foo.org>
+Download [Android Clang r522817](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/main/clang-r522817) and extract to `/opt/kernel-tools/clang-r522817/`.
 
-        Bug: 135791357
-        Change-Id: I4caaaa566ea080fa148c5e768bb1a0b6f7201c01
-        (cherry-picked from c31e73121f4c1ec41143423ac6ce3ce6dafdcec1)
-        [ Resolved minor conflict in drivers/foo/bar.c ]
-        Signed-off-by: Joe Smith <joe.smith@foo.org>
+```bash
+export PATH=/opt/kernel-tools/clang-r522817/bin:$PATH
 ```
 
-## Requirements for other backports: `FROMGIT:`, `FROMLIST:`,
+### 3. Build
 
-- If the patch has been merged into an upstream maintainer tree, but has not yet
-been merged into Linux mainline
-    - tag the patch subject with `FROMGIT:`
-    - add info on where the patch came from as `(cherry picked from commit <sha1> <repo> <branch>)`. This
-must be a stable maintainer branch (not rebased, so don't use `linux-next` for example).
-    - if changes were required, use `BACKPORT: FROMGIT:`
-    - Example:
-        - if the commit message in the maintainer tree is
-```
-        important patch from upstream
+```bash
+# Generate defconfig
+bash build_vili_defconfig.sh
 
-        This is the detailed description of the important patch
-
-        Signed-off-by: Fred Jones <fred.jones@foo.org>
-```
-        - then Joe Smith would upload the patch for the common kernel as
-```
-        FROMGIT: important patch from upstream
-
-        This is the detailed description of the important patch
-
-        Signed-off-by: Fred Jones <fred.jones@foo.org>
-
-        Bug: 135791357
-        (cherry picked from commit 878a2fd9de10b03d11d2f622250285c7e63deace
-         https://git.kernel.org/pub/scm/linux/kernel/git/foo/bar.git test-branch)
-        Change-Id: I4caaaa566ea080fa148c5e768bb1a0b6f7201c01
-        Signed-off-by: Joe Smith <joe.smith@foo.org>
+# Build kernel + modules
+make ARCH=arm64 CC=clang CROSS_COMPILE=aarch64-linux-gnu- LLVM=1 -j$(nproc) Image modules
 ```
 
+### 4. Package flashable zip
 
-- If the patch has been submitted to LKML, but not accepted into any maintainer tree
-    - tag the patch subject with `FROMLIST:`
-    - add a `Link:` tag with a link to the submittal on lore.kernel.org
-    - if changes were required, use `BACKPORT: FROMLIST:`
-    - Example:
+Copy `Image` and modules to an [AnyKernel3](https://github.com/osm0sis/AnyKernel3) directory:
+
 ```
-        FROMLIST: important patch from upstream
-
-        This is the detailed description of the important patch
-
-        Signed-off-by: Fred Jones <fred.jones@foo.org>
-
-        Bug: 135791357
-        Link: https://lore.kernel.org/lkml/20190619171517.GA17557@someone.com/
-        Change-Id: I4caaaa566ea080fa148c5e768bb1a0b6f7201c01
-        Signed-off-by: Joe Smith <joe.smith@foo.org>
-```
-
-## Requirements for Android-specific patches: `ANDROID:`
-
-- If the patch is fixing a bug to Android-specific code
-    - tag the patch subject with `ANDROID:`
-    - add a `Fixes:` tag that cites the patch with the bug
-    - Example:
-```
-        ANDROID: fix android-specific bug in foobar.c
-
-        This is the detailed description of the important fix
-
-        Fixes: 1234abcd2468 ("foobar: add cool feature")
-        Change-Id: I4caaaa566ea080fa148c5e768bb1a0b6f7201c01
-        Signed-off-by: Joe Smith <joe.smith@foo.org>
+AnyKernel3/
+├── Image                          # arch/arm64/boot/Image
+├── anykernel.sh
+├── tools/
+├── bin/
+└── vendor_ramdisk/lib/modules/    # your compiled .ko files
+    ├── adsp_loader_dlkm.ko
+    ├── apr_dlkm.ko
+    ├── q6_notifier_dlkm.ko
+    ├── q6_pdr_dlkm.ko
+    ├── snd_event_dlkm.ko
+    ├── mmhardware_sysfs_dlkm.ko
+    ├── wlan.ko
+    ├── modules.load
+    ├── modules.dep
+    └── modules.softdep
 ```
 
-- If the patch is a new feature
-    - tag the patch subject with `ANDROID:`
-    - add a `Bug:` tag with the Android bug (required for android-specific features)
+```bash
+zip -r9 vili-hitcore-vXX.zip AnyKernel3/
+```
 
-# Vibrator driver for HHG device
-## How to merge the driver into kernel source tree
+Flash via **adb sideload** in recovery or via TWRP.
 
- 1. Copy \${this_project}/drivers/hid/hid-aksys.c into \${your_kernel_root}/drivers/hid/
+## What changed from stock
 
- 2. Compare and merge \${this_project}/drivers/hid/hid-ids.h into \${your_kernel_root}/drivers/hid/hid-ids.h :
- Add the following code before the last line of this file
+Hitomatito's modifications on top of the original kernel source:
 
-    ```c
-		#define USB_VENDER_ID_QUALCOMM  0x0a12
-		#define USB_VENDER_ID_TEMP_HHG_AKSY 0x1234
-		#define USB_PRODUCT_ID_AKSYS_HHG  0x1000
-    ```
+- **KernelSU-Next** — integrated as source code (not submodule)
+- **Kconfig** — sources `KernelSU-Next/kernel/Kconfig`
+- **Makefile** — adds `obj-$(CONFIG_KSU) += KernelSU-Next/kernel/`
+- **kernel/module.c** — vermagic matching for stock module compatibility
+- **ucsi_glink.c** — CVE-2024-46693 fix
+- **lahaina-qgki_defconfig** — enabled KSU, LTO_CLANG, CFI_CLANG, audio modules
 
- 3. Merge \${this_project}/drivers/hid/Kconfig into \${your_kernel_root}/drivers/hid/Kconfig :
-Add the following code before the last line of this file
+See `git log` for full history.
 
-		config HID_AKSYS_QRD
-    		tristate "AKSys gamepad USB adapter support"
-    		depends on HID
-    		---help---
-    		Support for AKSys gamepad USB adapter
+## Syncing with upstream
 
-    	config AKSYS_QRD_FF
-    		bool "AKSys gamepad USB adapter force feedback support"
-    		depends on HID_AKSYS_QRD
-    		select INPUT_FF_MEMLESS
-    		---help---
-    		Say Y here if you have a AKSys gamepad USB adapter and want to
-    		enable force feedback support for it.
-    		
- 4. Merge \${this_project}/drivers/hid/Makefile into \${your_kernel_root}/drivers/hid/Makefile :
- Add the following code at the end of this file
+```bash
+git remote add upstream https://github.com/xiaomi-lisa-devs/android_kernel_qcom_sm8350.git
+git fetch upstream
+git merge upstream/lineage-23.2
+```
 
-		obj-$(CONFIG_HID_AKSYS_QRD)	+= hid-aksys.o
-		
- 5. Modify your kernel's default build configuration file. Add the following two lines:
+## Device info
 
-        CONFIG_HID_AKSYS_QRD=m
-        CONFIG_AKSYS_QRD_FF=y
+| | |
+|---|---|
+| Device | Xiaomi 11T Pro |
+| Codename | vili |
+| SoC | Snapdragon 888 (SM8350) |
+| Kernel | Linux 5.4.302 |
+| Slot | A/B |
+
+## Credits
+
+- [xiaomi-lisa-devs](https://github.com/xiaomi-lisa-devs) — base kernel source
+- [rifsxd/KernelSU-Next](https://github.com/rifsxd/KernelSU-Next) — KernelSU integration
+- [osm0sis/AnyKernel3](https://github.com/osm0sis/AnyKernel3) — flashable zip packaging
+
+## License
+
+GPL-2.0 (Linux kernel)
