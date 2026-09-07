@@ -1,0 +1,4 @@
+__crc_ipa3_ntn_uc_reg_rdyCB = 0x31fd7f74;
+__crc_ipa3_ntn_uc_dereg_rdyCB = 0x9637cedf;
+__crc_ipa3_setup_uc_ntn_pipes = 0x7354464e;
+__crc_ipa3_tear_down_uc_offload_pipes = 0x65750bd2;

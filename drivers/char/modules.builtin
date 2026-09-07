@@ -1,0 +1,4 @@
+drivers/char/frpc-adsprpc.ko
+drivers/char/hw_random/rng-core.ko
+drivers/char/hw_random/hisi-rng.ko
+drivers/char/hw_random/msm_rng.ko

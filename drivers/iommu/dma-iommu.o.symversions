@@ -1,0 +1,7 @@
+__crc_iommu_get_dma_cookie = 0x0e967f96;
+__crc_iommu_get_msi_cookie = 0xc7529d1a;
+__crc_iommu_put_dma_cookie = 0xc27caf39;
+__crc_iommu_dma_get_resv_regions = 0xcd597d88;
+__crc_iommu_dma_reserve_iova = 0x1423c6eb;
+__crc_iommu_dma_enable_best_fit_algo = 0x16aec776;
+__crc_iommu_dma_configure_alignment = 0xbbadc20f;

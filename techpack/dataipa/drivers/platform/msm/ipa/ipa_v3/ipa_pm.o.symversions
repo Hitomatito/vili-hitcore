@@ -1,0 +1,8 @@
+__crc_ipa_pm_register = 0x7cbf535e;
+__crc_ipa_pm_deregister = 0x8dee820e;
+__crc_ipa_pm_associate_ipa_cons_to_client = 0x0959e4ea;
+__crc_ipa_pm_activate = 0x485e6c8f;
+__crc_ipa_pm_activate_sync = 0x4f7f501d;
+__crc_ipa_pm_deferred_deactivate = 0xe448ce4c;
+__crc_ipa_pm_deactivate_sync = 0x22d7510a;
+__crc_ipa_pm_set_throughput = 0xa8a907ef;

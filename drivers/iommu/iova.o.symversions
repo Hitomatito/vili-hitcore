@@ -1,0 +1,16 @@
+__crc_init_iova_domain = 0xdafa2ce9;
+__crc_init_iova_flush_queue = 0xab813a50;
+__crc_alloc_iova_mem = 0x58604e4d;
+__crc_free_iova_mem = 0x858b3fe3;
+__crc_iova_cache_get = 0x438d8df2;
+__crc_iova_cache_put = 0xc7061ef3;
+__crc_alloc_iova = 0x0ad8d1e1;
+__crc_find_iova = 0x63bf5a99;
+__crc___free_iova = 0x340fef1a;
+__crc_free_iova = 0x7b9ce671;
+__crc_alloc_iova_fast = 0x1b0118ab;
+__crc_free_iova_fast = 0x13733c94;
+__crc_queue_iova = 0x346ee2a2;
+__crc_put_iova_domain = 0xf90214e3;
+__crc_reserve_iova = 0xac946fde;
+__crc_copy_reserved_iova = 0xabfcb877;

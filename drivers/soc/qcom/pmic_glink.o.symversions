@@ -1,0 +1,3 @@
+__crc_pmic_glink_write = 0x5a5edc5c;
+__crc_pmic_glink_register_client = 0xcaa46136;
+__crc_pmic_glink_unregister_client = 0x56e3edd9;

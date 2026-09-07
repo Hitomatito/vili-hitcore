@@ -1,0 +1,9 @@
+__crc_sde_rsc_client_create = 0xa0ee145f;
+__crc_sde_rsc_client_destroy = 0xad050a81;
+__crc_sde_rsc_register_event = 0xd63a0803;
+__crc_sde_rsc_unregister_event = 0xc9d0bb9e;
+__crc_is_sde_rsc_available = 0x31f73d88;
+__crc_get_sde_rsc_current_state = 0x429a3901;
+__crc_sde_rsc_client_state_update = 0xd91d8375;
+__crc_sde_rsc_client_vote = 0x61031183;
+__crc_sde_rsc_client_trigger_vote = 0x4c612c6c;

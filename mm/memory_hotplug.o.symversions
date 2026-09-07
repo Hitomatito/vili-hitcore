@@ -1,0 +1,9 @@
+__crc_memhp_auto_online = 0x17994d70;
+__crc_set_online_page_callback = 0x53903049;
+__crc_restore_online_page_callback = 0xe4e30697;
+__crc___online_page_set_limits = 0x59bb294e;
+__crc___online_page_increment_counters = 0x19711332;
+__crc___online_page_free = 0x5e373925;
+__crc_add_memory = 0x37ea659f;
+__crc_try_offline_node = 0x99daa9bf;
+__crc_remove_memory = 0x476167c8;

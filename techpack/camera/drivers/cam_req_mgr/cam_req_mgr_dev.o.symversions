@@ -1,0 +1,7 @@
+__crc_cam_req_mgr_notify_message = 0xc2a2b7dc;
+__crc_cam_subdev_notify_message = 0x67a3869a;
+__crc_cam_req_mgr_is_open = 0xf45df614;
+__crc_cam_req_mgr_is_shutdown = 0x50216286;
+__crc_cam_register_subdev = 0xf617507b;
+__crc_cam_unregister_subdev = 0xf3835c93;
+__crc_cam_req_mgr_init = 0xf5433013;

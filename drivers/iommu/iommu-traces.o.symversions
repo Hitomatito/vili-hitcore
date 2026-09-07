@@ -1,0 +1,7 @@
+__crc___tracepoint_add_device_to_group = 0xe4874aef;
+__crc___tracepoint_remove_device_from_group = 0xe8b40f33;
+__crc___tracepoint_attach_device_to_domain = 0x32c6c604;
+__crc___tracepoint_detach_device_from_domain = 0x1e51dabb;
+__crc___tracepoint_map = 0x72c1aeeb;
+__crc___tracepoint_unmap = 0x6792e25a;
+__crc___tracepoint_io_page_fault = 0x601ba3eb;

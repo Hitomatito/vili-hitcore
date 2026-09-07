@@ -1,0 +1,4 @@
+__crc_hyp_assign_table = 0x6218b1cc;
+__crc_hyp_assign_phys = 0x398b9914;
+__crc_msm_secure_vmid_to_string = 0x6dbbbd03;
+__crc_msm_secure_get_vmid_perms = 0xe171fa0e;

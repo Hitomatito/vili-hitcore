@@ -1,0 +1,2 @@
+__crc_audio_ssr_register = 0xf6f6cd82;
+__crc_audio_ssr_deregister = 0x630fbd5c;

@@ -1,0 +1,7 @@
+__crc_rt_mutex_lock = 0x69b2005e;
+__crc_rt_mutex_lock_interruptible = 0x957e794b;
+__crc_rt_mutex_timed_lock = 0x23ab4e27;
+__crc_rt_mutex_trylock = 0xf8890bc9;
+__crc_rt_mutex_unlock = 0xa425c7c1;
+__crc_rt_mutex_destroy = 0xead55fa9;
+__crc___rt_mutex_init = 0xe0d8561f;

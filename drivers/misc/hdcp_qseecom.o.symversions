@@ -1,0 +1,13 @@
+__crc_hdcp2_feature_supported = 0x51a33bb9;
+__crc_hdcp2_force_encryption = 0x1d384434;
+__crc_hdcp2_app_comm = 0xfed9a8ba;
+__crc_hdcp2_open_stream = 0x399d03b1;
+__crc_hdcp2_close_stream = 0x177e5577;
+__crc_hdcp2_init = 0x28ff8398;
+__crc_hdcp2_deinit = 0xa3b22369;
+__crc_hdcp1_init = 0xf6f01d13;
+__crc_hdcp1_deinit = 0x0c1b6ea3;
+__crc_hdcp1_feature_supported = 0x428b02ca;
+__crc_hdcp1_set_enc = 0x4d0f81ea;
+__crc_hdcp1_start = 0xbf9f9ca2;
+__crc_hdcp1_stop = 0x4c837e8a;

@@ -1,0 +1,17 @@
+__crc_rpmsg_create_ept = 0x8408049f;
+__crc_rpmsg_destroy_ept = 0xeb7fe324;
+__crc_rpmsg_send = 0x89680d17;
+__crc_rpmsg_sendto = 0x34d7ff09;
+__crc_rpmsg_send_offchannel = 0x54ffebda;
+__crc_rpmsg_trysend = 0xd63fd8a8;
+__crc_rpmsg_trysendto = 0x693277b5;
+__crc_rpmsg_poll = 0x3ebe5bf3;
+__crc_rpmsg_trysend_offchannel = 0x3262f538;
+__crc_rpmsg_get_signals = 0xd2687085;
+__crc_rpmsg_set_signals = 0xf760bcbc;
+__crc_rpmsg_find_device = 0xf9d97522;
+__crc_rpmsg_register_device_override = 0xb42e7fb0;
+__crc_rpmsg_register_device = 0xaff65550;
+__crc_rpmsg_unregister_device = 0xaa796221;
+__crc___register_rpmsg_driver = 0xb1f96c14;
+__crc_unregister_rpmsg_driver = 0xe1f5d460;

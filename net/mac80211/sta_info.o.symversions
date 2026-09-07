@@ -1,0 +1,7 @@
+__crc_ieee80211_find_sta_by_ifaddr = 0xc7be3369;
+__crc_ieee80211_find_sta = 0xdff525d2;
+__crc_ieee80211_sta_block_awake = 0xd520c1e7;
+__crc_ieee80211_sta_eosp = 0xd7d3686a;
+__crc_ieee80211_send_eosp_nullfunc = 0xf7493abc;
+__crc_ieee80211_sta_set_buffered = 0xad66cc53;
+__crc_ieee80211_sta_register_airtime = 0x751702c9;

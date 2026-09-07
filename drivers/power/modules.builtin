@@ -1,0 +1,5 @@
+drivers/power/reset/hisi-reboot.ko
+drivers/power/reset/msm-poweroff.ko
+drivers/power/reset/qcom-dload-mode.ko
+drivers/power/reset/qcom-reboot-reason.ko
+drivers/power/supply/qti_battery_charger_main.ko

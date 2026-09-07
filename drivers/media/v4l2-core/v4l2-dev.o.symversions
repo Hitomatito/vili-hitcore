@@ -1,0 +1,12 @@
+__crc_video_device_alloc = 0xe41ee50f;
+__crc_video_device_release = 0x562301a4;
+__crc_video_device_release_empty = 0xfb161ff8;
+__crc_video_devdata = 0x9561fe85;
+__crc_v4l2_prio_init = 0xb77b0159;
+__crc_v4l2_prio_change = 0x3bdd0f94;
+__crc_v4l2_prio_open = 0x2342f1ae;
+__crc_v4l2_prio_close = 0xcda04a5b;
+__crc_v4l2_prio_max = 0x8106095a;
+__crc_v4l2_prio_check = 0x16244fe5;
+__crc___video_register_device = 0x47014eba;
+__crc_video_unregister_device = 0xe64103ad;

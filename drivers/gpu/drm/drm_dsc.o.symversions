@@ -1,0 +1,3 @@
+__crc_drm_dsc_dp_pps_header_init = 0x648d953b;
+__crc_drm_dsc_pps_payload_pack = 0x55ee8454;
+__crc_drm_dsc_compute_rc_parameters = 0xb9d11196;

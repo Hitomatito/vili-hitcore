@@ -1,0 +1,13 @@
+__crc_usb_phy_set_charger_current = 0xfd80c99d;
+__crc_usb_phy_get_charger_current = 0xa1e7d4dd;
+__crc_usb_phy_set_charger_state = 0x8d81f132;
+__crc_devm_usb_get_phy = 0x70f72b74;
+__crc_usb_get_phy = 0xe0b98801;
+__crc_devm_usb_get_phy_by_node = 0xe2c4c262;
+__crc_devm_usb_get_phy_by_phandle = 0x9283915e;
+__crc_devm_usb_put_phy = 0xf03daf31;
+__crc_usb_put_phy = 0xe323177d;
+__crc_usb_add_phy = 0xae8ec74b;
+__crc_usb_add_phy_dev = 0xd8411759;
+__crc_usb_remove_phy = 0x539afaeb;
+__crc_usb_phy_set_event = 0x0b215e08;

@@ -1,0 +1,6 @@
+__crc_dev_pm_set_wake_irq = 0x013a1919;
+__crc_dev_pm_clear_wake_irq = 0x9611ce96;
+__crc_dev_pm_set_dedicated_wake_irq = 0xc525d997;
+__crc_dev_pm_set_dedicated_wake_irq_reverse = 0xbae68f61;
+__crc_dev_pm_enable_wake_irq = 0x905defc0;
+__crc_dev_pm_disable_wake_irq = 0xecf33048;

@@ -1,0 +1,4 @@
+drivers/platform/msm/msm-geni-se.ko
+drivers/platform/msm/usb_bam.ko
+drivers/platform/msm/ipa_fmwk/ipa_fmwk.ko
+drivers/platform/msm/sps/sps_drv.ko

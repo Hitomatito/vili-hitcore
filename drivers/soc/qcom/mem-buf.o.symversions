@@ -1,0 +1,4 @@
+__crc_mem_buf_alloc = 0xd50919ed;
+__crc_mem_buf_get_fd = 0x3e41b077;
+__crc_mem_buf_put = 0x5c918ee5;
+__crc_mem_buf_get = 0x535a0225;

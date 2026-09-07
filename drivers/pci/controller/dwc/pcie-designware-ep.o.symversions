@@ -1,0 +1,6 @@
+__crc_dw_pcie_ep_linkup = 0xc8500cc7;
+__crc_dw_pcie_ep_reset_bar = 0x9447e5aa;
+__crc_dw_pcie_ep_raise_legacy_irq = 0x0a04ca82;
+__crc_dw_pcie_ep_raise_msi_irq = 0x512ed97c;
+__crc_dw_pcie_ep_raise_msix_irq = 0xf975c393;
+__crc_dw_pcie_ep_init = 0x9b950467;

@@ -1,0 +1,7 @@
+__crc_dev_pm_get_subsys_data = 0xf2af9f00;
+__crc_dev_pm_put_subsys_data = 0x0884e62e;
+__crc_dev_pm_domain_attach = 0x0c0f9515;
+__crc_dev_pm_domain_attach_by_id = 0x4a25078c;
+__crc_dev_pm_domain_attach_by_name = 0x28f67673;
+__crc_dev_pm_domain_detach = 0x632badf0;
+__crc_dev_pm_domain_set = 0xc0c06ccb;

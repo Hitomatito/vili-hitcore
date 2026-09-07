@@ -1,0 +1,5 @@
+__crc_kgsl_gpu_frame_count = 0xdbdf76b2;
+__crc_kgsl_gpu_num_freqs = 0x031452c3;
+__crc_kgsl_gpu_stat = 0xb4ac9c74;
+__crc_kgsl_devfreq_add_notifier = 0x04ecfe4e;
+__crc_kgsl_devfreq_del_notifier = 0x39889c1c;

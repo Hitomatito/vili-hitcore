@@ -1,0 +1,2 @@
+__crc_dwc3_host_init = 0x1bb7e02b;
+__crc_dwc3_host_exit = 0x17766afb;

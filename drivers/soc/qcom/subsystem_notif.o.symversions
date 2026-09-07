@@ -1,0 +1,8 @@
+__crc_subsys_notif_register_notifier = 0xab8be69c;
+__crc_subsys_notif_unregister_notifier = 0xb37cb2b2;
+__crc_subsys_send_early_notifications = 0x14d28249;
+__crc_subsys_register_early_notifier = 0x36774030;
+__crc_subsys_unregister_early_notifier = 0x646482c2;
+__crc_subsys_get_early_notif_info = 0x22ff47aa;
+__crc_subsys_notif_add_subsys = 0x01a994f1;
+__crc_subsys_notif_queue_notification = 0x35fb96c1;

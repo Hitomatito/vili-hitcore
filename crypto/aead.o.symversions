@@ -1,0 +1,15 @@
+__crc_crypto_aead_setkey = 0x0b7cb116;
+__crc_crypto_aead_setauthsize = 0x5aa269f6;
+__crc_crypto_aead_encrypt = 0x57930889;
+__crc_crypto_aead_decrypt = 0x7b34a6fa;
+__crc_aead_geniv_alloc = 0x8bf82e33;
+__crc_aead_geniv_free = 0x22b8901a;
+__crc_aead_init_geniv = 0x505b1c4c;
+__crc_aead_exit_geniv = 0x58ab5c4c;
+__crc_crypto_grab_aead = 0x8b06d395;
+__crc_crypto_alloc_aead = 0xa96b8cff;
+__crc_crypto_register_aead = 0x7b9d6dfc;
+__crc_crypto_unregister_aead = 0xf1a0bf50;
+__crc_crypto_register_aeads = 0xc5d8c350;
+__crc_crypto_unregister_aeads = 0xc170ed06;
+__crc_aead_register_instance = 0xc61a80d8;

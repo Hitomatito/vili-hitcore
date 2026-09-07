@@ -1,0 +1,13 @@
+__crc_cec_get_edid_phys_addr = 0xbe4de675;
+__crc_cec_fill_conn_info_from_drm = 0x2909eb76;
+__crc_cec_queue_pin_cec_event = 0x30b19f83;
+__crc_cec_queue_pin_hpd_event = 0x051f9842;
+__crc_cec_queue_pin_5v_event = 0x6936583f;
+__crc_cec_transmit_done_ts = 0x7dc6bc11;
+__crc_cec_transmit_attempt_done_ts = 0x3c2de674;
+__crc_cec_transmit_msg = 0x50b167ac;
+__crc_cec_received_msg_ts = 0xcd5a0d31;
+__crc_cec_s_phys_addr = 0x4b653232;
+__crc_cec_s_phys_addr_from_edid = 0xe9afdd8d;
+__crc_cec_s_conn_info = 0xdc466467;
+__crc_cec_s_log_addrs = 0x5fbfce2d;

@@ -1,0 +1,5 @@
+__crc_cpu_hwcaps = 0x5c1c3eb4;
+__crc_cpu_hwcap_keys = 0x5e2d7875;
+__crc_arm64_const_caps_ready = 0x14b89635;
+__crc_cpu_set_feature = 0x73242dcd;
+__crc_cpu_have_feature = 0x41237f71;

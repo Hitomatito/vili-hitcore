@@ -1,0 +1,14 @@
+__crc_pm_clk_add = 0xeb75c1a5;
+__crc_pm_clk_add_clk = 0x5ad11264;
+__crc_of_pm_clk_add_clk = 0x09630ba9;
+__crc_of_pm_clk_add_clks = 0x55cb08e0;
+__crc_pm_clk_remove = 0xef1bbf06;
+__crc_pm_clk_remove_clk = 0x540b42f9;
+__crc_pm_clk_init = 0x96e0c31e;
+__crc_pm_clk_create = 0xa8ed066a;
+__crc_pm_clk_destroy = 0xacd1f806;
+__crc_pm_clk_suspend = 0x2e22d69b;
+__crc_pm_clk_resume = 0xa369d1a4;
+__crc_pm_clk_runtime_suspend = 0x539124e0;
+__crc_pm_clk_runtime_resume = 0x17051b2b;
+__crc_pm_clk_add_notifier = 0xa6eacfca;

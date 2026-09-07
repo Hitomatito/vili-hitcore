@@ -1,0 +1,8 @@
+__crc_raw_v4_hashinfo = 0xb510c250;
+__crc_raw_hash_sk = 0x00c54c7d;
+__crc_raw_unhash_sk = 0xd5caf8f0;
+__crc___raw_v4_lookup = 0xad4d322a;
+__crc_raw_abort = 0xa22b2c34;
+__crc_raw_seq_start = 0x8c3d72a5;
+__crc_raw_seq_next = 0x115c2a84;
+__crc_raw_seq_stop = 0xf9f5be15;

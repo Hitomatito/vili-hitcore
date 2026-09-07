@@ -1,0 +1,3 @@
+__crc_mmc_regulator_set_ocr = 0x72c55559;
+__crc_mmc_regulator_set_vqmmc = 0x897c0f87;
+__crc_mmc_regulator_get_supply = 0xa4e379a5;

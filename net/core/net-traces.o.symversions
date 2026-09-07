@@ -1,0 +1,13 @@
+__crc___tracepoint_br_fdb_add = 0x31785f08;
+__crc___tracepoint_br_fdb_external_learn_add = 0xa6824f3f;
+__crc___tracepoint_fdb_delete = 0x9f36457e;
+__crc___tracepoint_br_fdb_update = 0xcacd88a0;
+__crc___tracepoint_neigh_update = 0x9bc77923;
+__crc___tracepoint_neigh_update_done = 0xc40f4e07;
+__crc___tracepoint_neigh_timer_handler = 0xdbf29726;
+__crc___tracepoint_neigh_event_send_done = 0x49db5c64;
+__crc___tracepoint_neigh_event_send_dead = 0x3421ca7c;
+__crc___tracepoint_neigh_cleanup_and_release = 0x05a5856b;
+__crc___tracepoint_kfree_skb = 0x156cdac8;
+__crc___tracepoint_napi_poll = 0x75d25e7e;
+__crc___tracepoint_tcp_send_reset = 0x096b2418;

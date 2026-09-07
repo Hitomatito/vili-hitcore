@@ -1,0 +1,4 @@
+__crc_br_multicast_handle_hook = 0xe4e54ca5;
+__crc_br_get_dst_hook = 0x0689819a;
+__crc_br_pass_frame_up = 0xa75c0f9a;
+__crc_br_handle_frame_finish = 0xdf2bdb62;

@@ -1,0 +1,6 @@
+__crc_ipa3_uc_state_check = 0x6a391267;
+__crc_ipa3_uc_loaded_check = 0x849793f5;
+__crc_ipa3_uc_holb_enabled_check = 0x5d422272;
+__crc_ipa3_uc_register_ready_cb = 0xac3833c8;
+__crc_ipa3_uc_unregister_ready_cb = 0xa0ca4aa6;
+__crc_ipa3_set_wlan_tx_info = 0x23574aed;

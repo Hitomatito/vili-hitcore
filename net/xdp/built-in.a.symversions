@@ -1,0 +1,15 @@
+__crc_xsk_umem_has_addrs = 0xef59f464;
+__crc_xsk_umem_peek_addr = 0x75bffae9;
+__crc_xsk_umem_discard_addr = 0x3ade2d5b;
+__crc_xsk_set_rx_need_wakeup = 0xe801c877;
+__crc_xsk_set_tx_need_wakeup = 0x8c51eab7;
+__crc_xsk_clear_rx_need_wakeup = 0x8d7bb2c8;
+__crc_xsk_clear_tx_need_wakeup = 0xe92b9008;
+__crc_xsk_umem_uses_need_wakeup = 0xf8b8c3ae;
+__crc_xsk_umem_complete_tx = 0xa9aa8618;
+__crc_xsk_umem_consume_tx_done = 0xb0fcee14;
+__crc_xsk_umem_consume_tx = 0x579fe02b;
+__crc_xdp_get_umem_from_qid = 0x5b186293;
+__crc_xsk_reuseq_prepare = 0x77ca08a5;
+__crc_xsk_reuseq_swap = 0xb7e6e1e8;
+__crc_xsk_reuseq_free = 0x104151fc;

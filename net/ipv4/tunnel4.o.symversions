@@ -1,0 +1,2 @@
+__crc_xfrm4_tunnel_register = 0x8fc60dfa;
+__crc_xfrm4_tunnel_deregister = 0xfaf85514;

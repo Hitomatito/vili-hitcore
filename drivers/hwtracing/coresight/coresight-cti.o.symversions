@@ -1,0 +1,16 @@
+__crc_coresight_cti_ctx_save = 0xa019990f;
+__crc_coresight_cti_ctx_restore = 0x7d72baae;
+__crc_coresight_cti_map_trigin = 0x0cb77d8e;
+__crc_coresight_cti_map_trigout = 0x99c92a0c;
+__crc_coresight_cti_unmap_trigin = 0x8f91b5ba;
+__crc_coresight_cti_unmap_trigout = 0xb8fef871;
+__crc_coresight_cti_reset = 0xf03d84c8;
+__crc_coresight_cti_set_trig = 0x2986ed40;
+__crc_coresight_cti_clear_trig = 0x2e75841f;
+__crc_coresight_cti_pulse_trig = 0xe543e0b7;
+__crc_coresight_cti_ack_trig = 0xdf29f6a7;
+__crc_coresight_cti_enable_gate = 0xc0f0c45b;
+__crc_coresight_cti_disable_gate = 0xa14c8f35;
+__crc_coresight_cti_get = 0x68f6b83b;
+__crc_coresight_cti_put = 0xa521f6c0;
+__crc_of_get_coresight_cti_data = 0xcc64de8e;

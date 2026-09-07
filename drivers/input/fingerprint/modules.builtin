@@ -1,0 +1,2 @@
+drivers/input/fingerprint/fpc_tee/fpc1020_tee.ko
+drivers/input/fingerprint/goodix_ta/goodix_ta.ko

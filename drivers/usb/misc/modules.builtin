@@ -1,0 +1,3 @@
+drivers/usb/misc/ehset.ko
+drivers/usb/misc/lvstest.ko
+drivers/usb/misc/ssusb-redriver-nb7vpq904m.ko

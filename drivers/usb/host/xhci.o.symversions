@@ -1,0 +1,10 @@
+__crc_xhci_run = 0x6229509e;
+__crc_xhci_shutdown = 0x17f8cfa2;
+__crc_xhci_suspend = 0x8913663f;
+__crc_xhci_resume = 0xda04d248;
+__crc_xhci_update_hub_device = 0x29d26cfc;
+__crc_xhci_gen_setup = 0xc8d7e495;
+__crc_xhci_get_sec_event_ring_phys_addr = 0x284fccb3;
+__crc_xhci_get_xfer_ring_phys_addr = 0xc2f78344;
+__crc_xhci_stop_endpoint = 0x7f438811;
+__crc_xhci_init_driver = 0x000b79ec;

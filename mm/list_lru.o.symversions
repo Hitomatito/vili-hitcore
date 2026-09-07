@@ -1,0 +1,10 @@
+__crc_list_lru_add = 0xdb02fa60;
+__crc_list_lru_del = 0x5af1e3b9;
+__crc_list_lru_isolate = 0xabc640f3;
+__crc_list_lru_isolate_move = 0x903b627c;
+__crc_list_lru_count_one = 0x9af13f6a;
+__crc_list_lru_count_node = 0xa2c74331;
+__crc_list_lru_walk_one = 0x795d3823;
+__crc_list_lru_walk_node = 0x688d0e03;
+__crc___list_lru_init = 0x3675d4bb;
+__crc_list_lru_destroy = 0xca40fd51;

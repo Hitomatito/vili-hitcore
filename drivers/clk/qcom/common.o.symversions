@@ -1,0 +1,17 @@
+__crc_qcom_find_freq = 0xb555864a;
+__crc_qcom_find_freq_floor = 0x13b48ffc;
+__crc_qcom_find_src_index = 0xbf358338;
+__crc_qcom_find_cfg_index = 0x8cd46dae;
+__crc_qcom_cc_map = 0x38442a55;
+__crc_qcom_pll_set_fsm_mode = 0x6af41b8b;
+__crc_qcom_cc_register_board_clk = 0xf203c0b7;
+__crc_qcom_cc_register_sleep_clk = 0x9ee7a668;
+__crc_qcom_cc_really_probe = 0xc381c4f5;
+__crc_qcom_cc_probe = 0x4e757802;
+__crc_qcom_cc_probe_by_index = 0x2a92c314;
+__crc_qcom_cc_sync_state = 0x6a8982f8;
+__crc_qcom_clk_get_voltage = 0x2e5a6763;
+__crc_qcom_clk_set_flags = 0x808a7fdf;
+__crc_qcom_cc_runtime_init = 0xe57e0fec;
+__crc_qcom_cc_runtime_resume = 0xeabdd45f;
+__crc_qcom_cc_runtime_suspend = 0x95da8b91;

@@ -1,0 +1,17 @@
+__crc_cqhci_crypto_cap_find = 0xa28efc6e;
+__crc_cqhci_crypto_enable_spec = 0x2e949701;
+__crc_cqhci_crypto_disable_spec = 0x969c8ce5;
+__crc_cqhci_host_init_crypto_spec = 0x337ee2db;
+__crc_cqhci_crypto_setup_rq_keyslot_manager_spec = 0x01173913;
+__crc_cqhci_crypto_destroy_rq_keyslot_manager_spec = 0xbb1b0baa;
+__crc_cqhci_prepare_crypto_desc_spec = 0x218f2f81;
+__crc_cqhci_crypto_enable = 0x9c83a0e0;
+__crc_cqhci_crypto_disable = 0x54a9c04c;
+__crc_cqhci_host_init_crypto = 0x0e5418c9;
+__crc_cqhci_crypto_get_ctx = 0x518dbcdd;
+__crc_cqhci_complete_crypto_desc = 0x019661de;
+__crc_cqhci_crypto_debug = 0x9198b7cc;
+__crc_cqhci_crypto_set_vops = 0x9d6395f6;
+__crc_cqhci_crypto_suspend = 0xede3c95f;
+__crc_cqhci_crypto_reset = 0x08ece093;
+__crc_cqhci_crypto_recovery_finish = 0xe2f309a5;

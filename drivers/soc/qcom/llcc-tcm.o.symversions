@@ -1,0 +1,6 @@
+__crc_qcom_llcc_tcm_probe = 0xe136f7ee;
+__crc_llcc_tcm_activate = 0x4c1f13d2;
+__crc_llcc_tcm_deactivate = 0x0bf37e8d;
+__crc_llcc_tcm_get_phys_addr = 0xc1168e66;
+__crc_llcc_tcm_get_virt_addr = 0xadced3ef;
+__crc_llcc_tcm_get_slice_size = 0xb9a9b330;

@@ -1,0 +1,4 @@
+__crc_tsens_controller_is_present = 0xb3985d77;
+__crc_tsens_mtc_reset_history_counter = 0x7882d8c1;
+__crc_tsens_set_mtc_zone_sw_mask = 0xcc7ebcf6;
+__crc_tsens_get_mtc_zone_log = 0xe868d35f;

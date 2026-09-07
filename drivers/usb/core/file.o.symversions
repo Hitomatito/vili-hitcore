@@ -1,0 +1,2 @@
+__crc_usb_register_dev = 0x6898624b;
+__crc_usb_deregister_dev = 0xc20b566c;

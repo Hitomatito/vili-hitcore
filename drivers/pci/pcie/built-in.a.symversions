@@ -1,0 +1,10 @@
+__crc_pcie_port_find_device = 0xafe0510d;
+__crc_pcie_port_service_register = 0x49463b8e;
+__crc_pcie_port_service_unregister = 0x0d715f7d;
+__crc_pci_disable_link_state_locked = 0x125a153e;
+__crc_pci_disable_link_state = 0x62c98d30;
+__crc_pcie_aspm_enabled = 0x48db4792;
+__crc_pcie_aspm_support_enabled = 0x63187451;
+__crc_pci_enable_pcie_error_reporting = 0xb734b62d;
+__crc_pci_disable_pcie_error_reporting = 0x380b68f5;
+__crc_pci_cleanup_aer_uncorrect_error_status = 0xe757e8f5;

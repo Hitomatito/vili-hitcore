@@ -1,0 +1,15 @@
+__crc_iio_channel_get_all_cb = 0xdc2ae84b;
+__crc_iio_channel_cb_set_buffer_watermark = 0x9acf62ab;
+__crc_iio_channel_start_all_cb = 0x7a711aef;
+__crc_iio_channel_stop_all_cb = 0x2a1fab3c;
+__crc_iio_channel_release_all_cb = 0x267c0508;
+__crc_iio_channel_cb_get_channels = 0x697809dc;
+__crc_iio_channel_cb_get_iio_dev = 0x28c9f384;
+__crc_iio_triggered_buffer_setup = 0xfb4d0409;
+__crc_iio_triggered_buffer_cleanup = 0xa351c3f3;
+__crc_devm_iio_triggered_buffer_setup = 0x3a31a8b1;
+__crc_devm_iio_triggered_buffer_cleanup = 0xe3b14b87;
+__crc_iio_kfifo_allocate = 0x58089563;
+__crc_iio_kfifo_free = 0xa7075925;
+__crc_devm_iio_kfifo_allocate = 0x644de0fc;
+__crc_devm_iio_kfifo_free = 0xd602ae92;

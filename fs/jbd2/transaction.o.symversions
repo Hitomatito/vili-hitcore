@@ -1,0 +1,6 @@
+__crc_jbd2__journal_start = 0x2509b283;
+__crc_jbd2_journal_start = 0x1f7aa6c5;
+__crc_jbd2_journal_free_reserved = 0x1bb891a7;
+__crc_jbd2_journal_start_reserved = 0x173d40cb;
+__crc_jbd2__journal_restart = 0x43db4b62;
+__crc_jbd2_journal_restart = 0x57fc9f24;

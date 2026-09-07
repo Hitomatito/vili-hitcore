@@ -1,0 +1,2 @@
+drivers/bus/mhi/core/mhi_bus.ko
+drivers/bus/mhi/devices/mhi_uci.ko

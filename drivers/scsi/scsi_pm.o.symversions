@@ -1,0 +1,2 @@
+__crc_scsi_autopm_get_device = 0x371a06c8;
+__crc_scsi_autopm_put_device = 0x8bbabfc9;

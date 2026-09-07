@@ -1,0 +1,8 @@
+__crc_cam_mem_get_io_buf = 0x0ef0dd27;
+__crc_cam_mem_get_cpu_buf = 0x00ddefea;
+__crc_cam_mem_mgr_cache_ops = 0x4b2f724b;
+__crc_cam_mem_put_cpu_buf = 0xb4c28efe;
+__crc_cam_mem_mgr_request_mem = 0x0ea05771;
+__crc_cam_mem_mgr_release_mem = 0xa675e7bc;
+__crc_cam_mem_mgr_reserve_memory_region = 0x4df33986;
+__crc_cam_mem_mgr_free_memory_region = 0xc1cab993;

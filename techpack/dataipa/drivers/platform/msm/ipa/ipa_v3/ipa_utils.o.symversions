@@ -1,0 +1,15 @@
+__crc_ipa_clients_strings = 0x4228203b;
+__crc_ipa_get_version_string = 0xfb784e6e;
+__crc_ipa3_get_client = 0x829f670e;
+__crc_ipa3_get_client_mapping = 0xbd2cdde7;
+__crc_ipa3_cfg_ep = 0x87a9e0c3;
+__crc_ipa3_cfg_ep_holb = 0x5844bbaf;
+__crc_ipa3_is_client_handle_valid = 0xc9206433;
+__crc_ipa3_proxy_clk_vote = 0x9f950e92;
+__crc_ipa3_get_transport_type = 0x7d5693fe;
+__crc_ipa3_get_ipc_logbuf = 0x0953f0af;
+__crc_ipa3_get_ipc_logbuf_low = 0x1f3d094e;
+__crc_ipa3_set_tag_process_before_gating = 0x529f18ea;
+__crc_ipa3_stop_gsi_channel = 0x68706d71;
+__crc_ipa3_get_r_rev_version = 0x5e48dfa3;
+__crc_ipa3_get_qmap_id = 0xec43fc49;

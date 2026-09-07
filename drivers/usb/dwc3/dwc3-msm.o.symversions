@@ -1,0 +1,10 @@
+__crc_msm_data_fifo_config = 0xd0b7d989;
+__crc_msm_dwc3_reset_dbm_ep = 0x75de4aec;
+__crc_usb_gsi_ep_op = 0x14760d8f;
+__crc_usb_get_remote_wakeup_status = 0x1f88209d;
+__crc_usb_ep_autoconfig_by_name = 0x3841b15d;
+__crc_msm_ep_config = 0x72b23b64;
+__crc_msm_ep_unconfig = 0x20328640;
+__crc_msm_ep_set_endless = 0xdbd945e8;
+__crc_msm_dwc3_reset_ep_after_lpm = 0x5d645daf;
+__crc_dwc3_msm_release_ss_lane = 0xec68d9dd;

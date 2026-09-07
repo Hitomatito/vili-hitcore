@@ -1,0 +1,4 @@
+__crc_ddr_stats_get_freq_count = 0x19126dc7;
+__crc_ddr_stats_get_residency = 0x282a05d6;
+__crc_ddr_stats_get_ss_count = 0x585a4f8d;
+__crc_ddr_stats_get_ss_vote_info = 0x63b68f3f;

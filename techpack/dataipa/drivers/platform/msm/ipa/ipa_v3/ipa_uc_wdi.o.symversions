@@ -1,0 +1,10 @@
+__crc_ipa3_connect_wdi_pipe = 0x2a815765;
+__crc_ipa3_disconnect_wdi_pipe = 0x721a5798;
+__crc_ipa3_enable_wdi_pipe = 0xb34ab24f;
+__crc_ipa3_disable_wdi_pipe = 0xf007b95e;
+__crc_ipa3_resume_wdi_pipe = 0xa009fcaf;
+__crc_ipa3_suspend_wdi_pipe = 0x0e04fe07;
+__crc_ipa3_uc_reg_rdyCB = 0x181dc92f;
+__crc_ipa3_uc_dereg_rdyCB = 0x7473712c;
+__crc_ipa3_create_wdi_mapping = 0xe523d4f1;
+__crc_ipa3_release_wdi_mapping = 0x53b67637;

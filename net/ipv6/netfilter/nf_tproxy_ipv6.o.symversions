@@ -1,0 +1,3 @@
+__crc_nf_tproxy_laddr6 = 0x13d60ca6;
+__crc_nf_tproxy_handle_time_wait6 = 0x5db153d0;
+__crc_nf_tproxy_get_sock_v6 = 0x4e266b65;

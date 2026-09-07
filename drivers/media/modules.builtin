@@ -1,0 +1,16 @@
+drivers/media/cec/cec.ko
+drivers/media/common/videobuf2/videobuf2-common.ko
+drivers/media/common/videobuf2/videobuf2-v4l2.ko
+drivers/media/common/videobuf2/videobuf2-memops.ko
+drivers/media/common/videobuf2/videobuf2-vmalloc.ko
+drivers/media/common/videobuf2/videobuf2-dma-contig.ko
+drivers/media/common/videobuf2/videobuf2-dma-sg.ko
+drivers/media/mc/mc.ko
+drivers/media/platform/msm/cvp/msm-cvp.ko
+drivers/media/platform/msm/synx/synx-driver.ko
+drivers/media/tuners/tda827x.ko
+drivers/media/tuners/tda18271.ko
+drivers/media/usb/gspca/gspca_main.ko
+drivers/media/usb/uvc/uvcvideo.ko
+drivers/media/v4l2-core/videodev.ko
+drivers/media/v4l2-core/v4l2-dv-timings.ko

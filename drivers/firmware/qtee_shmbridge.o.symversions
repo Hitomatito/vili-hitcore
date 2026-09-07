@@ -1,0 +1,8 @@
+__crc_qtee_shmbridge_is_enabled = 0x99367cb2;
+__crc_qtee_shmbridge_query = 0xdd0a170f;
+__crc_qtee_shmbridge_register = 0x97c3c32d;
+__crc_qtee_shmbridge_deregister = 0x5658fa1f;
+__crc_qtee_shmbridge_allocate_shm = 0x79123a12;
+__crc_qtee_shmbridge_free_shm = 0x0b87d78b;
+__crc_qtee_shmbridge_flush_shm_buf = 0x75369b91;
+__crc_qtee_shmbridge_inv_shm_buf = 0x67847272;

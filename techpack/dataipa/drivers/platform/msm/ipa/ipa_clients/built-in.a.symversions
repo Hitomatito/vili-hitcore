@@ -1,0 +1,6 @@
+__crc_rndis_ipa_init = 0x67056412;
+__crc_rndis_ipa_pipe_connect_notify = 0x44b589e9;
+__crc_rndis_ipa_pipe_disconnect_notify = 0x9eae76fa;
+__crc_rndis_ipa_cleanup = 0x0ec443b0;
+__crc_ipa_wigig_register = 0x55a285c2;
+__crc_ipa_mhi_register = 0x337b665c;

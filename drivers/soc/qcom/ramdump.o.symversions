@@ -1,0 +1,9 @@
+__crc_create_ramdump_device = 0x74a8dfb2;
+__crc_destroy_ramdump_device = 0x69172e7f;
+__crc_do_ramdump = 0xc7a64717;
+__crc_do_minidump = 0x4645cc59;
+__crc_do_minidump_elf32 = 0xfbde3189;
+__crc_do_elf_ramdump = 0xa1f837ed;
+__crc_do_dump = 0x25bdc307;
+__crc_do_elf_dump = 0xfefed385;
+__crc_do_fw_elf_dump = 0x9180355f;

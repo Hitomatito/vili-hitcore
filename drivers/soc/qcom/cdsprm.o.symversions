@@ -1,0 +1,9 @@
+__crc_cdsprm_register_cdspl3gov = 0x55a147ac;
+__crc_cdsprm_cxlimit_npu_limit_register = 0xf07b0d08;
+__crc_cdsprm_cxlimit_npu_limit_deregister = 0x82ab9aa8;
+__crc_cdsprm_compute_core_set_priority = 0x35884923;
+__crc_cdsprm_compute_vtcm_set_partition_map = 0xc6f379ed;
+__crc_cdsprm_cxlimit_npu_activity_notify = 0xd6e831ea;
+__crc_cdsprm_cxlimit_npu_corner_notify = 0xc124c19d;
+__crc_cdsprm_cxlimit_camera_activity_notify = 0xd06a6d62;
+__crc_cdsprm_unregister_cdspl3gov = 0xfdae57c4;

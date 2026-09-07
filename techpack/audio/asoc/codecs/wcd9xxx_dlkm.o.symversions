@@ -1,0 +1,5 @@
+__crc_wcd_clsh_set_hph_mode = 0xaeaaa795;
+__crc_wcd_cls_h_fsm = 0xfe601f43;
+__crc_wcd_cls_h_init = 0x9df709eb;
+__crc_wcdcal_get_fw_cal = 0xd6ade3b5;
+__crc_wcd_cal_create_hwdep = 0x3e813118;

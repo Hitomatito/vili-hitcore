@@ -1,0 +1,3 @@
+__crc_bio_crypt_alloc_ctx = 0xe40a1367;
+__crc_bio_crypt_clone = 0xde612e23;
+__crc_bio_crypt_should_process = 0xe1df2ca6;

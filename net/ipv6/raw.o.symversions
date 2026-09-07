@@ -1,0 +1,4 @@
+__crc_raw_v6_hashinfo = 0xed7c7b91;
+__crc___raw_v6_lookup = 0xd80b24cc;
+__crc_rawv6_mh_filter_register = 0xe17735a7;
+__crc_rawv6_mh_filter_unregister = 0x2833f426;

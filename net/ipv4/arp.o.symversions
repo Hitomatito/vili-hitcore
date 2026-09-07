@@ -1,0 +1,4 @@
+__crc_arp_tbl = 0x0464a0bc;
+__crc_arp_send = 0x978d7005;
+__crc_arp_create = 0x706b398f;
+__crc_arp_xmit = 0x105bb530;

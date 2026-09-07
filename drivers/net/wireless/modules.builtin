@@ -1,0 +1,6 @@
+drivers/net/wireless/cnss2/cnss2.ko
+drivers/net/wireless/cnss_genl/cnss_nl.ko
+drivers/net/wireless/cnss_prealloc/cnss_prealloc.ko
+drivers/net/wireless/cnss_utils/cnss_utils.ko
+drivers/net/wireless/cnss_utils/wlan_firmware_service_v01.ko
+drivers/net/wireless/cnss_utils/device_management_service_v01.ko

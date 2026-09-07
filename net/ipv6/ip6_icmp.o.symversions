@@ -1,0 +1,2 @@
+__crc_icmpv6_send = 0x3f8f2d12;
+__crc_icmpv6_ndo_send = 0x2a70a974;

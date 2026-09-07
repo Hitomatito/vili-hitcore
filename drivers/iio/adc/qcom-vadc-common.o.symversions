@@ -1,0 +1,5 @@
+__crc_adc_tm_scale_therm_voltage_100k_gen3 = 0x60f04798;
+__crc_adc_tm_absolute_rthr_gen3 = 0xb6683aee;
+__crc_qcom_vadc_scale = 0x360f700f;
+__crc_qcom_adc5_hw_scale = 0xc7aa93b4;
+__crc_qcom_vadc_decimation_from_dt = 0x70e6eca1;

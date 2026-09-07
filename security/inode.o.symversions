@@ -1,0 +1,4 @@
+__crc_securityfs_create_file = 0x77e1202b;
+__crc_securityfs_create_dir = 0x09e7ab85;
+__crc_securityfs_create_symlink = 0x2770844d;
+__crc_securityfs_remove = 0x0578a383;

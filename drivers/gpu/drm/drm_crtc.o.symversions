@@ -1,0 +1,5 @@
+__crc_drm_crtc_from_index = 0xaa71a5ed;
+__crc_drm_crtc_init_with_planes = 0xd9514ae4;
+__crc_drm_crtc_cleanup = 0x94e04f1f;
+__crc_drm_mode_set_config_internal = 0x8f4bc9bc;
+__crc_drm_crtc_check_viewport = 0x3c9b34ca;

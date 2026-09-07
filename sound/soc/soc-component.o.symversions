@@ -1,0 +1,12 @@
+__crc_snd_soc_component_set_sysclk = 0xf79afef1;
+__crc_snd_soc_component_set_pll = 0x41227b02;
+__crc_snd_soc_component_enable_pin = 0x0e6e4657;
+__crc_snd_soc_component_enable_pin_unlocked = 0x8573dade;
+__crc_snd_soc_component_disable_pin = 0xaee1b340;
+__crc_snd_soc_component_disable_pin_unlocked = 0x9d1b64bd;
+__crc_snd_soc_component_nc_pin = 0x08bb281b;
+__crc_snd_soc_component_nc_pin_unlocked = 0x571657bb;
+__crc_snd_soc_component_get_pin_status = 0x3414c07d;
+__crc_snd_soc_component_force_enable_pin = 0xf0359a52;
+__crc_snd_soc_component_force_enable_pin_unlocked = 0x901c39e6;
+__crc_snd_soc_component_set_jack = 0xcec267a1;

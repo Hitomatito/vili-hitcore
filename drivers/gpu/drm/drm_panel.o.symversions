@@ -1,0 +1,14 @@
+__crc_drm_panel_init = 0x35e5deb9;
+__crc_drm_panel_add = 0x69479214;
+__crc_drm_panel_remove = 0x921643ff;
+__crc_drm_panel_attach = 0x3d860d07;
+__crc_drm_panel_detach = 0xb126c3ca;
+__crc_drm_panel_prepare = 0xec029686;
+__crc_drm_panel_unprepare = 0x724c996d;
+__crc_drm_panel_enable = 0x3e1c9754;
+__crc_drm_panel_disable = 0xbdbeb6ba;
+__crc_drm_panel_get_modes = 0xb12ee795;
+__crc_of_drm_find_panel = 0x40e70e85;
+__crc_drm_panel_notifier_register = 0x58be3dd8;
+__crc_drm_panel_notifier_unregister = 0x78af1769;
+__crc_drm_panel_notifier_call_chain = 0x0d49afce;

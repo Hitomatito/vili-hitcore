@@ -1,0 +1,5 @@
+__crc_drm_scdc_read = 0x38c0b02a;
+__crc_drm_scdc_write = 0x371376d1;
+__crc_drm_scdc_get_scrambling_status = 0x31b7af1a;
+__crc_drm_scdc_set_scrambling = 0x2fd714ff;
+__crc_drm_scdc_set_high_tmds_clock_ratio = 0xaccac07e;

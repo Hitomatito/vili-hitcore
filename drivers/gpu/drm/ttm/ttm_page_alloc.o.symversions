@@ -1,0 +1,5 @@
+__crc_ttm_pool_populate = 0xfb49a40d;
+__crc_ttm_pool_unpopulate = 0xcab99cb9;
+__crc_ttm_populate_and_map_pages = 0xcfc27161;
+__crc_ttm_unmap_and_unpopulate_pages = 0xec65d53b;
+__crc_ttm_page_alloc_debugfs = 0xe8a93d2f;

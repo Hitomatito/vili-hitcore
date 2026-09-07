@@ -1,0 +1,9 @@
+__crc_udp_sock_create4 = 0xe79c3952;
+__crc_setup_udp_tunnel_sock = 0x804484b5;
+__crc_udp_tunnel_push_rx_port = 0x18d722d7;
+__crc_udp_tunnel_drop_rx_port = 0x91dfa9a8;
+__crc_udp_tunnel_notify_add_rx_port = 0x64d2b664;
+__crc_udp_tunnel_notify_del_rx_port = 0xa7927bd5;
+__crc_udp_tunnel_xmit_skb = 0x24310994;
+__crc_udp_tunnel_sock_release = 0xb49a7357;
+__crc_udp_tun_rx_dst = 0x803903b2;

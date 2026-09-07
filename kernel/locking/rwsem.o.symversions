@@ -1,0 +1,10 @@
+__crc___init_rwsem = 0x09859fe0;
+__crc_down_read = 0xb162aef5;
+__crc_down_read_killable = 0x8ca095ab;
+__crc_down_read_trylock = 0x93ff63d1;
+__crc_down_write = 0x486fdb09;
+__crc_down_write_killable = 0x63880712;
+__crc_down_write_trylock = 0x6e7df092;
+__crc_up_read = 0x98d747fd;
+__crc_up_write = 0x469de6d2;
+__crc_downgrade_write = 0x971410bd;

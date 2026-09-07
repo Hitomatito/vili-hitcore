@@ -1,0 +1,4 @@
+drivers/mfd/act8945a.ko
+drivers/mfd/mfd-core.ko
+drivers/mfd/qcom-i2c-pmic.ko
+drivers/mfd/qcom-spmi-pmic.ko

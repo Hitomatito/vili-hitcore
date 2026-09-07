@@ -1,0 +1,4 @@
+__crc_pci_iomap_range = 0x7b2200c1;
+__crc_pci_iomap_wc_range = 0x54927885;
+__crc_pci_iomap = 0x98a7b64b;
+__crc_pci_iomap_wc = 0x2d448e90;

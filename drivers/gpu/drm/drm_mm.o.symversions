@@ -1,0 +1,12 @@
+__crc___drm_mm_interval_first = 0x5fc3a33f;
+__crc_drm_mm_reserve_node = 0xa2e4bf0c;
+__crc_drm_mm_insert_node_in_range = 0x1d12fd6e;
+__crc_drm_mm_remove_node = 0x2c287154;
+__crc_drm_mm_replace_node = 0x871ffd42;
+__crc_drm_mm_scan_init_with_range = 0x9dd26089;
+__crc_drm_mm_scan_add_block = 0x80935c79;
+__crc_drm_mm_scan_remove_block = 0xc25f3e50;
+__crc_drm_mm_scan_color_evict = 0x4edfe9b9;
+__crc_drm_mm_init = 0x7b982195;
+__crc_drm_mm_takedown = 0xc307a10c;
+__crc_drm_mm_print = 0x05d93e65;

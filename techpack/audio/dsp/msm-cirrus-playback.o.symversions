@@ -1,0 +1,4 @@
+__crc_msm_crus_pb_set_copp_idx = 0x461de9cc;
+__crc_msm_crus_pb_add_controls = 0x83aa521f;
+__crc_crus_afe_port_start = 0x412695dc;
+__crc_crus_afe_port_close = 0xc168312e;

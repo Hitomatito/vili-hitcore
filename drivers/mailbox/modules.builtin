@@ -1,0 +1,3 @@
+drivers/mailbox/hi3660-mailbox.ko
+drivers/mailbox/hi6220-mailbox.ko
+drivers/mailbox/msm_qmp.ko

@@ -1,0 +1,4 @@
+__crc_ipv6_setsockopt = 0xa5246cf7;
+__crc_compat_ipv6_setsockopt = 0xc1f3d477;
+__crc_ipv6_getsockopt = 0x10b95dee;
+__crc_compat_ipv6_getsockopt = 0xe0dc98f7;

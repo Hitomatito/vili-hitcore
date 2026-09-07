@@ -1,0 +1,12 @@
+__crc_sdw_find_col_index = 0x60e31fbb;
+__crc_sdw_find_row_index = 0x1deee061;
+__crc_sdw_release_stream = 0xda5bce09;
+__crc_sdw_alloc_stream = 0x9e122d79;
+__crc_sdw_stream_remove_master = 0x6aa3ea26;
+__crc_sdw_stream_remove_slave = 0xda09c45a;
+__crc_sdw_stream_add_master = 0xd3032065;
+__crc_sdw_stream_add_slave = 0x76a7cdb5;
+__crc_sdw_prepare_stream = 0x16d1706b;
+__crc_sdw_enable_stream = 0xbbec2c2e;
+__crc_sdw_disable_stream = 0x4cde88bf;
+__crc_sdw_deprepare_stream = 0x71891d59;

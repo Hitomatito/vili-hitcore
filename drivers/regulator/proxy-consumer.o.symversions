@@ -1,0 +1,5 @@
+__crc_regulator_proxy_consumer_register = 0x46120a09;
+__crc_regulator_proxy_consumer_unregister = 0xf1cd053b;
+__crc_devm_regulator_proxy_consumer_register = 0xa130e92f;
+__crc_devm_regulator_proxy_consumer_unregister = 0xc917ebfa;
+__crc_regulator_proxy_consumer_sync_state = 0xb13cd64f;

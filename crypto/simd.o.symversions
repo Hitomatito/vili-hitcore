@@ -1,0 +1,10 @@
+__crc_simd_skcipher_create_compat = 0x88638552;
+__crc_simd_skcipher_create = 0x66983e96;
+__crc_simd_skcipher_free = 0xefe73979;
+__crc_simd_register_skciphers_compat = 0x3664697c;
+__crc_simd_unregister_skciphers = 0x1e772d81;
+__crc_simd_aead_create_compat = 0x504cb053;
+__crc_simd_aead_create = 0x851c747c;
+__crc_simd_aead_free = 0xbfd26f15;
+__crc_simd_register_aeads_compat = 0x603b966b;
+__crc_simd_unregister_aeads = 0xf5f39d8a;

@@ -1,0 +1,12 @@
+__crc_bpf_trace_run1 = 0x605d6bf9;
+__crc_bpf_trace_run2 = 0xa836de5e;
+__crc_bpf_trace_run3 = 0x3f8ea5e0;
+__crc_bpf_trace_run4 = 0x07ed8259;
+__crc_bpf_trace_run5 = 0xdac8ea71;
+__crc_bpf_trace_run6 = 0xe62cacff;
+__crc_bpf_trace_run7 = 0x3ef6b723;
+__crc_bpf_trace_run8 = 0xdf5fdf51;
+__crc_bpf_trace_run9 = 0x78577664;
+__crc_bpf_trace_run10 = 0x500f507c;
+__crc_bpf_trace_run11 = 0x8f2ccae7;
+__crc_bpf_trace_run12 = 0x59fb7ec1;

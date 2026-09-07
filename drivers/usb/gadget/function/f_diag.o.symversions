@@ -1,0 +1,6 @@
+__crc_usb_diag_open = 0x5752d0c4;
+__crc_usb_diag_close = 0xc6632b3c;
+__crc_usb_diag_alloc_req = 0x4f252ebe;
+__crc_usb_diag_request_size = 0xcd089a93;
+__crc_usb_diag_read = 0x818e3549;
+__crc_usb_diag_write = 0xe5747f22;

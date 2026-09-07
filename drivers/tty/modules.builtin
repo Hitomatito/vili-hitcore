@@ -1,0 +1,12 @@
+drivers/tty/hvc/hvc_haven.ko
+drivers/tty/serial/serial_core.ko
+drivers/tty/serial/amba-pl011.ko
+drivers/tty/serial/samsung_tty.ko
+drivers/tty/serial/msm_geni_serial.ko
+drivers/tty/serial/sprd_serial.ko
+drivers/tty/serial/serial_mctrl_gpio.ko
+drivers/tty/serial/8250/8250.ko
+drivers/tty/serial/8250/8250_base.ko
+drivers/tty/serial/8250/8250_pci.ko
+drivers/tty/serial/8250/8250_dw.ko
+drivers/tty/serial/8250/8250_of.ko

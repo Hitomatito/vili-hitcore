@@ -1,0 +1,9 @@
+__crc_relay_buf_full = 0xfaf7c631;
+__crc_relay_reset = 0x5f2e3984;
+__crc_relay_open = 0x1f5fcdfd;
+__crc_relay_late_setup_files = 0x56e947a0;
+__crc_relay_switch_subbuf = 0x530e1639;
+__crc_relay_subbufs_consumed = 0xe878a269;
+__crc_relay_close = 0x016241dc;
+__crc_relay_flush = 0x868a360c;
+__crc_relay_file_operations = 0xd3d8a9aa;

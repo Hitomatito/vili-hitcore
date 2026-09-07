@@ -1,0 +1,2 @@
+__crc_tty_lock = 0xd92e12a1;
+__crc_tty_unlock = 0xa498c0e4;

@@ -1,0 +1,3 @@
+__crc_blk_crypto_init_key = 0xf1c88e7a;
+__crc_blk_crypto_start_using_mode = 0x8d90b374;
+__crc_blk_crypto_evict_key = 0xb9f34c54;

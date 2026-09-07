@@ -1,0 +1,3 @@
+__crc_clk_vote_vdd_level = 0xd6aed7a5;
+__crc_clk_unvote_vdd_level = 0x17007cd2;
+__crc_clk_find_vdd_level = 0x1e50cfbf;

@@ -1,0 +1,7 @@
+__crc_vm_get_page_prot = 0x2c91e17c;
+__crc_get_unmapped_area = 0x61c2e57c;
+__crc_find_vma = 0x4fd403e4;
+__crc_find_extend_vma = 0x9bc0d1f9;
+__crc_vm_munmap = 0x5b56860c;
+__crc_vm_brk_flags = 0x01553371;
+__crc_vm_brk = 0xce7bfe70;

@@ -1,0 +1,12 @@
+__crc_dma_direct_get_required_mask = 0x45ff5f46;
+__crc_dma_direct_alloc = 0xe49085ca;
+__crc_dma_direct_free = 0xa0b91391;
+__crc_dma_direct_sync_single_for_device = 0x2ae16c4c;
+__crc_dma_direct_sync_sg_for_device = 0x0d6648ef;
+__crc_dma_direct_sync_single_for_cpu = 0xdfd4a854;
+__crc_dma_direct_sync_sg_for_cpu = 0xaafed809;
+__crc_dma_direct_unmap_page = 0x26a0143a;
+__crc_dma_direct_unmap_sg = 0x867880f9;
+__crc_dma_direct_map_page = 0xfa67a536;
+__crc_dma_direct_map_sg = 0xcc589fc6;
+__crc_dma_direct_map_resource = 0x9fac0c6f;

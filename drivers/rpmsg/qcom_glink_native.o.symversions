@@ -1,0 +1,5 @@
+__crc_glink_resume_pkt = 0x90576228;
+__crc_qcom_glink_native_probe = 0x6514a37b;
+__crc_qcom_glink_native_remove = 0x149236da;
+__crc_qcom_glink_native_unregister = 0xfd2d5a1d;
+__crc_glink_native_pm_ops = 0x15b7f2ed;

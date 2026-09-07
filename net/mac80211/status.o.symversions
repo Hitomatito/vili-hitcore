@@ -1,0 +1,6 @@
+__crc_ieee80211_tx_status_irqsafe = 0x7e39b92b;
+__crc_ieee80211_tx_status = 0xea39cf48;
+__crc_ieee80211_tx_status_ext = 0xcf1b30c9;
+__crc_ieee80211_tx_rate_update = 0xa97d2eb7;
+__crc_ieee80211_report_low_ack = 0xd65ec357;
+__crc_ieee80211_free_txskb = 0xa88096e1;

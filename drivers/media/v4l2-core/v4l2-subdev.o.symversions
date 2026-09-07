@@ -1,0 +1,7 @@
+__crc_v4l2_subdev_call_wrappers = 0x88bfe548;
+__crc_v4l2_subdev_link_validate_default = 0x4a472974;
+__crc_v4l2_subdev_link_validate = 0x83cfbeff;
+__crc_v4l2_subdev_alloc_pad_config = 0x7a29e9fe;
+__crc_v4l2_subdev_free_pad_config = 0x50d65b11;
+__crc_v4l2_subdev_init = 0xf3026e68;
+__crc_v4l2_subdev_notify_event = 0x6baee95f;

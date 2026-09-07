@@ -1,0 +1,2 @@
+__crc___tcp_bpf_recvmsg = 0x7d461c8d;
+__crc_tcp_bpf_sendmsg_redir = 0x97f8c953;

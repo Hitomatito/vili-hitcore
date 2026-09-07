@@ -1,0 +1,2 @@
+__crc___cpu_copy_user_page = 0x49e0fd21;
+__crc___cpu_clear_user_page = 0x43c2a786;

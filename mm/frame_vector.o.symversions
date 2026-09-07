@@ -1,0 +1,6 @@
+__crc_get_vaddr_frames = 0x655611bf;
+__crc_put_vaddr_frames = 0x568f2f3f;
+__crc_frame_vector_to_pages = 0x689f370d;
+__crc_frame_vector_to_pfns = 0xfcdc14d6;
+__crc_frame_vector_create = 0xa1dee5f1;
+__crc_frame_vector_destroy = 0xff903b43;

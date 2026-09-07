@@ -1,0 +1,10 @@
+__crc_cam_res_mgr_led_trigger_register = 0xfc2eb6f9;
+__crc_cam_res_mgr_led_trigger_unregister = 0xde745a89;
+__crc_cam_res_mgr_led_trigger_event = 0x1498277c;
+__crc_cam_res_mgr_util_get_idx_from_shared_pctrl_gpio = 0x91fe5310;
+__crc_cam_res_mgr_util_get_idx_from_shared_gpio = 0xab1ad390;
+__crc_cam_res_mgr_util_shared_gpio_check_hold = 0x1c8d927f;
+__crc_cam_res_mgr_gpio_request = 0x7ae2d3e6;
+__crc_cam_res_mgr_util_check_if_gpio_is_shared = 0x1026fe51;
+__crc_cam_res_mgr_gpio_free_arry = 0x0e8cf913;
+__crc_cam_res_mgr_gpio_set_value = 0x36ee6373;

@@ -1,0 +1,6 @@
+__crc_msm_ion_heap_device_by_id = 0xb01aa75f;
+__crc_msm_ion_heap_is_secure = 0xe544bafd;
+__crc_msm_ion_heap_prefetch = 0x2357d9f6;
+__crc_msm_ion_heap_drain = 0xcbeaeaf6;
+__crc_msm_ion_heap_add_memory = 0xea136698;
+__crc_msm_ion_heap_remove_memory = 0xae92a5d5;

@@ -1,0 +1,13 @@
+__crc_l2cap_add_psm = 0xc3001a70;
+__crc_l2cap_chan_create = 0x4cb9a542;
+__crc_l2cap_chan_hold = 0x9d6d229e;
+__crc_l2cap_chan_put = 0x95769f60;
+__crc_l2cap_chan_set_defaults = 0xbcecc047;
+__crc_l2cap_chan_del = 0xcb3bcd88;
+__crc_l2cap_chan_close = 0xbb499e3f;
+__crc_l2cap_register_user = 0x433a8108;
+__crc_l2cap_unregister_user = 0x8d297231;
+__crc_l2cap_conn_get = 0x9d65195b;
+__crc_l2cap_conn_put = 0x35fbf5a1;
+__crc_l2cap_chan_send = 0x53e96ec6;
+__crc_l2cap_chan_connect = 0x80236d42;

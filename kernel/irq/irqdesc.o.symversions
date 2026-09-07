@@ -1,0 +1,6 @@
+__crc_nr_irqs = 0xcdca3691;
+__crc_irq_to_desc = 0xa7fb080e;
+__crc_generic_handle_irq = 0x7ceaf0d5;
+__crc_irq_free_descs = 0x1c5b1f28;
+__crc___irq_alloc_descs = 0x5db075d0;
+__crc_irq_get_percpu_devid_partition = 0x6cfe3b6f;

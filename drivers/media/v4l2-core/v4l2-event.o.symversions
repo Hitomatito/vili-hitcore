@@ -1,0 +1,10 @@
+__crc_v4l2_event_dequeue = 0x98894314;
+__crc_v4l2_event_queue = 0xe6b550b0;
+__crc_v4l2_event_queue_fh = 0xc656b98f;
+__crc_v4l2_event_pending = 0xcb491fe6;
+__crc_v4l2_event_subscribe = 0x344090dd;
+__crc_v4l2_event_unsubscribe_all = 0x2e926caa;
+__crc_v4l2_event_unsubscribe = 0xdd7aba99;
+__crc_v4l2_event_subdev_unsubscribe = 0xc6088228;
+__crc_v4l2_src_change_event_subscribe = 0x0fc7dce8;
+__crc_v4l2_src_change_event_subdev_subscribe = 0x67f78bd6;

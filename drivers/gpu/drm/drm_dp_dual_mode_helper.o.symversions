@@ -1,0 +1,9 @@
+__crc_drm_dp_dual_mode_read = 0xe71264c5;
+__crc_drm_dp_dual_mode_write = 0xc6567be0;
+__crc_drm_dp_dual_mode_detect = 0xcfd15e79;
+__crc_drm_dp_dual_mode_max_tmds_clock = 0x7ccfa6de;
+__crc_drm_dp_dual_mode_get_tmds_output = 0x33b93135;
+__crc_drm_dp_dual_mode_set_tmds_output = 0x776b8661;
+__crc_drm_dp_get_dual_mode_type_name = 0x5407ae9e;
+__crc_drm_lspcon_get_mode = 0x2b6f3325;
+__crc_drm_lspcon_set_mode = 0x33caa4bc;

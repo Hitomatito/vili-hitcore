@@ -1,0 +1,3 @@
+__crc_mi_disp_register_client = 0xa292ba4e;
+__crc_mi_disp_unregister_client = 0x26ae4476;
+__crc_mi_disp_notifier_call_chain = 0x6262c652;

@@ -1,0 +1,4 @@
+drivers/usb/typec/typec.ko
+drivers/usb/typec/tcpm/tcpm.ko
+drivers/usb/typec/ucsi/typec_ucsi.ko
+drivers/usb/typec/ucsi/ucsi_glink.ko

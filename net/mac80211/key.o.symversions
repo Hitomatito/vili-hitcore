@@ -1,0 +1,7 @@
+__crc_ieee80211_iter_keys = 0xdd696e90;
+__crc_ieee80211_iter_keys_rcu = 0x1ac70753;
+__crc_ieee80211_gtk_rekey_notify = 0x99ba7550;
+__crc_ieee80211_get_key_rx_seq = 0xe345725f;
+__crc_ieee80211_set_key_rx_seq = 0x7ef775a3;
+__crc_ieee80211_remove_key = 0x5316cb29;
+__crc_ieee80211_gtk_rekey_add = 0xff628eec;

@@ -1,0 +1,12 @@
+__crc_qcrypto_get_num_engines = 0x5ed87c4c;
+__crc_qcrypto_get_engine_list = 0x17138353;
+__crc_qcrypto_cipher_set_device = 0x83302977;
+__crc_qcrypto_cipher_set_device_hw = 0x48a57031;
+__crc_qcrypto_aead_set_device = 0xf896e744;
+__crc_qcrypto_ahash_set_device = 0xb3fc10f6;
+__crc_qcrypto_cipher_set_flag = 0x66ae8184;
+__crc_qcrypto_aead_set_flag = 0xf8ea044b;
+__crc_qcrypto_ahash_set_flag = 0xa33d4cc2;
+__crc_qcrypto_cipher_clear_flag = 0xa14cc747;
+__crc_qcrypto_aead_clear_flag = 0xf6c03fb3;
+__crc_qcrypto_ahash_clear_flag = 0xf97e364e;

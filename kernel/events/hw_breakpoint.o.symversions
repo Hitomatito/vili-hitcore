@@ -1,0 +1,5 @@
+__crc_register_user_hw_breakpoint = 0xfd63a5ee;
+__crc_modify_user_hw_breakpoint = 0x51e6ddaa;
+__crc_unregister_hw_breakpoint = 0xc6983784;
+__crc_register_wide_hw_breakpoint = 0xccc7fc32;
+__crc_unregister_wide_hw_breakpoint = 0xbaf9b6df;

@@ -1,0 +1,6 @@
+__crc_msm_aud_evt_register_client = 0x60da26db;
+__crc_msm_aud_evt_unregister_client = 0xd321270e;
+__crc_msm_aud_evt_notifier_call_chain = 0x7d9f6197;
+__crc_msm_aud_evt_blocking_register_client = 0x71882f83;
+__crc_msm_aud_evt_blocking_unregister_client = 0xd89f59a4;
+__crc_msm_aud_evt_blocking_notifier_call_chain = 0x47870e4e;

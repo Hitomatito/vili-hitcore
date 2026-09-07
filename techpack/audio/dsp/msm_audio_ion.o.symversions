@@ -1,0 +1,9 @@
+__crc_msm_audio_ion_alloc = 0x5b629b1c;
+__crc_msm_audio_ion_dma_map = 0xdcc69069;
+__crc_msm_audio_ion_import = 0x1037ea42;
+__crc_msm_audio_ion_import_cma = 0xcabf659a;
+__crc_msm_audio_ion_free = 0xe52e1404;
+__crc_msm_audio_ion_free_cma = 0x1f70da6c;
+__crc_msm_audio_ion_mmap = 0x7f013f52;
+__crc_msm_audio_ion_cache_operations = 0x9e478fdf;
+__crc_msm_audio_populate_upper_32_bits = 0x6837e2fe;

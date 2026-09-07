@@ -1,0 +1,8 @@
+__crc_media_request_put = 0x0440517b;
+__crc_media_request_get_by_fd = 0x60f27908;
+__crc_media_request_object_find = 0xc5cc5e2a;
+__crc_media_request_object_put = 0x9795334c;
+__crc_media_request_object_init = 0xd858adfb;
+__crc_media_request_object_bind = 0xc947fb55;
+__crc_media_request_object_unbind = 0x001cce0a;
+__crc_media_request_object_complete = 0xec315ede;

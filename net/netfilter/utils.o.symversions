@@ -1,0 +1,5 @@
+__crc_nf_ip_checksum = 0xc8909b23;
+__crc_nf_ip6_checksum = 0x5516c788;
+__crc_nf_checksum = 0x2c1f6bcc;
+__crc_nf_checksum_partial = 0xf094a4fc;
+__crc_nf_route = 0xbe016927;

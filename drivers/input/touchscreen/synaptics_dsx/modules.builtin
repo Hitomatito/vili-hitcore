@@ -1,0 +1,4 @@
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_core.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_rmi_dev.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_fw_update.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.ko

@@ -1,0 +1,6 @@
+__crc_get_hw_version_platform = 0x4766f8d8;
+__crc_get_hw_id_value = 0x89a009ef;
+__crc_get_hw_country_version = 0x1b138c6d;
+__crc_get_hw_version_major = 0xae8bbffd;
+__crc_get_hw_version_minor = 0x5d6bcb5d;
+__crc_get_hw_version_build = 0x090a7fa1;

@@ -1,0 +1,7 @@
+__crc_qrtr_peek_pkt_size = 0x680df8f1;
+__crc_qrtr_endpoint_post = 0xbe4e29d0;
+__crc_qrtr_endpoint_register = 0x60398505;
+__crc_qrtr_endpoint_unregister = 0x36b2caad;
+__crc_qrtr_get_service_id = 0xc5e8cca7;
+__crc_qrtr_ns_init = 0x636a2832;
+__crc_qrtr_ns_remove = 0x8d25501f;

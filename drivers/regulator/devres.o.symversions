@@ -1,0 +1,13 @@
+__crc_devm_regulator_get = 0xe6b2bdc0;
+__crc_devm_regulator_get_exclusive = 0x4bd54110;
+__crc_devm_regulator_get_optional = 0x4e606767;
+__crc_devm_regulator_put = 0x4a3fb7bc;
+__crc_devm_regulator_bulk_get = 0x7875c44b;
+__crc_devm_regulator_register = 0xcfcbff6b;
+__crc_devm_regulator_unregister = 0xf6691f02;
+__crc_devm_regulator_register_supply_alias = 0x3f61e3f6;
+__crc_devm_regulator_unregister_supply_alias = 0xead24a35;
+__crc_devm_regulator_bulk_register_supply_alias = 0x77e6ea43;
+__crc_devm_regulator_bulk_unregister_supply_alias = 0x0cb4d4d5;
+__crc_devm_regulator_register_notifier = 0x0c4a2381;
+__crc_devm_regulator_unregister_notifier = 0x9354395b;

@@ -1,0 +1,7 @@
+__crc_irq_stat = 0x39f9769f;
+__crc__local_bh_enable = 0xee2d0fc7;
+__crc___local_bh_enable_ip = 0x3c3fce39;
+__crc___tasklet_schedule = 0x0faef0ed;
+__crc___tasklet_hi_schedule = 0x47939e0d;
+__crc_tasklet_init = 0x9545af6d;
+__crc_tasklet_kill = 0x82072614;

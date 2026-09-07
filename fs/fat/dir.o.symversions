@@ -1,0 +1,7 @@
+__crc_fat_search_long = 0xf119e10d;
+__crc_fat_get_dotdot_entry = 0x44cd6fd8;
+__crc_fat_dir_empty = 0x2a492a89;
+__crc_fat_scan = 0x9e3c346f;
+__crc_fat_remove_entries = 0xa6f41f26;
+__crc_fat_alloc_new_dir = 0xa5b912f3;
+__crc_fat_add_entries = 0x64599aaf;

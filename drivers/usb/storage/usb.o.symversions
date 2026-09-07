@@ -1,0 +1,10 @@
+__crc_usb_stor_suspend = 0x66309c13;
+__crc_usb_stor_resume = 0x7d9cbd31;
+__crc_usb_stor_reset_resume = 0xc4a9b295;
+__crc_usb_stor_pre_reset = 0x52cd3657;
+__crc_usb_stor_post_reset = 0x3e85ea2c;
+__crc_fill_inquiry_response = 0x7dd5ea6b;
+__crc_usb_stor_adjust_quirks = 0xdce0d943;
+__crc_usb_stor_probe1 = 0xdd073df5;
+__crc_usb_stor_probe2 = 0x1ab626d4;
+__crc_usb_stor_disconnect = 0xa755cf87;

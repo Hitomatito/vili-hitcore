@@ -1,0 +1,13 @@
+__crc_wcd937x_soc_get_mbhc = 0x0d4d1fe6;
+__crc_wcd937x_get_micb_vout_ctl_val = 0x0d992a40;
+__crc_wcd937x_mbhc_micb_adjust_voltage = 0x76c3645e;
+__crc_wcd937x_micbias_control = 0x6c262aaa;
+__crc_wcd937x_get_codec_variant = 0x56876b3d;
+__crc_wcd937x_info_create_codec_entry = 0xf16d40cd;
+__crc_wcd937x_mbhc_get_impedance = 0x5c9c57c3;
+__crc_wcd937x_mbhc_hs_detect = 0x4830d524;
+__crc_wcd937x_mbhc_hs_detect_exit = 0xab906b32;
+__crc_wcd937x_mbhc_ssr_down = 0x18854bd0;
+__crc_wcd937x_mbhc_post_ssr_init = 0xadcaa44f;
+__crc_wcd937x_mbhc_init = 0x9bdbe7fb;
+__crc_wcd937x_mbhc_deinit = 0xd9c17eae;

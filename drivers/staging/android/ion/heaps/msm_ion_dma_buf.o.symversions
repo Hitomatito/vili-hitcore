@@ -1,0 +1,2 @@
+__crc_msm_ion_dma_buf_lock = 0x375b6ea1;
+__crc_msm_ion_dma_buf_unlock = 0xdac8aa41;

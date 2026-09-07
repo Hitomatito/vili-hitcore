@@ -1,0 +1,5 @@
+__crc_pcpu_base_addr = 0xe7ffe877;
+__crc___alloc_percpu_gfp = 0xaf793668;
+__crc___alloc_percpu = 0x949f7342;
+__crc_free_percpu = 0xc9ec4e21;
+__crc___per_cpu_offset = 0x280f9f14;

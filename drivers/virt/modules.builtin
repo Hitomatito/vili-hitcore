@@ -1,0 +1,7 @@
+drivers/virt/haven/hh_ctrl.ko
+drivers/virt/haven/hh_msgq.ko
+drivers/virt/haven/hh_rm_drv.ko
+drivers/virt/haven/hh_dbl.ko
+drivers/virt/haven/hh_irq_lend.ko
+drivers/virt/haven/hh_mem_notifier.ko
+drivers/virt/haven/hh_virt_wdt.ko

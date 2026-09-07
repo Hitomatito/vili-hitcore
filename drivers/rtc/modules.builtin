@@ -1,0 +1,3 @@
+drivers/rtc/rtc-pl030.ko
+drivers/rtc/rtc-pl031.ko
+drivers/rtc/rtc-pm8xxx.ko

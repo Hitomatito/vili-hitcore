@@ -1,0 +1,11 @@
+__crc_ip6_xmit = 0xdf529471;
+__crc_ip6_fraglist_init = 0x111265a5;
+__crc_ip6_fraglist_prepare = 0x8b5a0661;
+__crc_ip6_frag_init = 0x1c27d9b9;
+__crc_ip6_frag_next = 0x91a00b97;
+__crc_ip6_dst_lookup = 0x9f896f1b;
+__crc_ip6_dst_lookup_flow = 0x79b3a03d;
+__crc_ip6_sk_dst_lookup_flow = 0x294abaa5;
+__crc_ip6_append_data = 0x63b48b25;
+__crc_ip6_push_pending_frames = 0x621b1c60;
+__crc_ip6_flush_pending_frames = 0xdf5b4471;

@@ -1,0 +1,7 @@
+drivers/leds/led-class.ko
+drivers/leds/led-class-flash.ko
+drivers/leds/led-class-multicolor.ko
+drivers/leds/leds-qti-flash.ko
+drivers/leds/leds-qti-tri-led.ko
+drivers/leds/leds-qpnp-vibrator-ldo.ko
+drivers/leds/trigger/ledtrig-timer.ko

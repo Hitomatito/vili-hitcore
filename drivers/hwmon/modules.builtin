@@ -1,0 +1,2 @@
+drivers/hwmon/hwmon.ko
+drivers/hwmon/qti_amoled_ecm.ko

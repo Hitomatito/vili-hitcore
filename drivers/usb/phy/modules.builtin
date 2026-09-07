@@ -1,0 +1,4 @@
+drivers/usb/phy/phy-generic.ko
+drivers/usb/phy/phy-qcom-emu.ko
+drivers/usb/phy/phy-msm-ssusb-qmp.ko
+drivers/usb/phy/phy-msm-snps-hs.ko

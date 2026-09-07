@@ -1,0 +1,17 @@
+__crc_skb_flow_dissector_init = 0x1e62643b;
+__crc___skb_flow_get_ports = 0xaad6b8ae;
+__crc_skb_flow_get_icmp_tci = 0x7ff2dae7;
+__crc_skb_flow_dissect_meta = 0x32939da1;
+__crc_skb_flow_dissect_ct = 0xfe4bb2b9;
+__crc_skb_flow_dissect_tunnel_info = 0x50f2eaa8;
+__crc___skb_flow_dissect = 0xa047ee69;
+__crc_flow_get_u32_src = 0xa9187154;
+__crc_flow_get_u32_dst = 0xe70dc092;
+__crc_flow_hash_from_keys = 0x9fa0aa32;
+__crc_make_flow_keys_digest = 0xad8028a4;
+__crc___skb_get_hash_symmetric = 0x6eb7958e;
+__crc___skb_get_hash = 0xe755e488;
+__crc_skb_get_hash_perturb = 0xf303773a;
+__crc___get_hash_from_flowi6 = 0x068e21af;
+__crc_flow_keys_dissector = 0xc025016c;
+__crc_flow_keys_basic_dissector = 0xa7e38f12;

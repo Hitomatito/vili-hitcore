@@ -1,0 +1,14 @@
+__crc_ufs_qcom_phy_write_tbl = 0x31baff65;
+__crc_ufs_qcom_phy_calibrate = 0xf073d06c;
+__crc_get_ufs_qcom_phy = 0xa0c15bdf;
+__crc_ufs_qcom_phy_generic_probe = 0xc5f83a7d;
+__crc_ufs_qcom_phy_get_reset = 0x3e7c82e9;
+__crc_ufs_qcom_phy_init_clks = 0x7d287086;
+__crc_ufs_qcom_phy_init_vregulators = 0x2a40b191;
+__crc_ufs_qcom_phy_set_tx_lane_enable = 0xc477ff0f;
+__crc_ufs_qcom_phy_save_controller_version = 0xf533fc15;
+__crc_ufs_qcom_phy_power_on = 0xcd0d0944;
+__crc_ufs_qcom_phy_power_off = 0xbfa5450a;
+__crc_ufs_qcom_phy_ctrl_rx_linecfg = 0x928fc2e9;
+__crc_ufs_qcom_phy_dump_regs = 0x7e3392e8;
+__crc_ufs_qcom_phy_dbg_register_dump = 0xb61f6882;

@@ -1,0 +1,6 @@
+__crc_wcd_request_irq = 0x429e1957;
+__crc_wcd_free_irq = 0x452ba7f7;
+__crc_wcd_enable_irq = 0x948cf083;
+__crc_wcd_disable_irq = 0xbb2d6a5c;
+__crc_wcd_irq_init = 0xfb4cc759;
+__crc_wcd_irq_exit = 0x896f92f8;

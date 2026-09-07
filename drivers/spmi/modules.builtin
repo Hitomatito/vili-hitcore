@@ -1,0 +1,4 @@
+drivers/spmi/spmi.ko
+drivers/spmi/spmi-pmic-arb.ko
+drivers/spmi/spmi-pmic-arb-debug.ko
+drivers/spmi/spmi-glink-debug.ko

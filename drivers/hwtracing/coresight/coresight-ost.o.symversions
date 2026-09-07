@@ -1,0 +1,3 @@
+__crc_stm_trace = 0x1e9cc3a7;
+__crc_stm_ost_packet = 0xab00899b;
+__crc_stm_set_ost_params = 0x3e567001;

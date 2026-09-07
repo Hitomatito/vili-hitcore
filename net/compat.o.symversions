@@ -1,0 +1,2 @@
+__crc_compat_mc_setsockopt = 0xfe57e8ee;
+__crc_compat_mc_getsockopt = 0x521b6264;

@@ -1,0 +1,3 @@
+__crc_sched_get_nr_running_avg = 0x1066c89b;
+__crc_sched_update_nr_prod = 0x9ef53570;
+__crc_core_ctl_set_boost = 0xba4235f0;

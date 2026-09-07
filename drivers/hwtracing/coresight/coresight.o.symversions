@@ -1,0 +1,7 @@
+__crc_coresight_enable_reg_clk = 0xd2ccc4b9;
+__crc_coresight_disable_reg_clk = 0xfd6fd9cf;
+__crc_coresight_enable = 0xe029c04c;
+__crc_coresight_disable = 0x4d6bed21;
+__crc_coresight_register = 0x244bbc24;
+__crc_coresight_unregister = 0x905d6c8c;
+__crc_coresight_alloc_device_name = 0x2bcfb09d;

@@ -1,0 +1,2 @@
+__crc_register_tgu_notifier = 0x0e949fff;
+__crc_unregister_tgu_notifier = 0x1f949b80;

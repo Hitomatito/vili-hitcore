@@ -1,0 +1,7 @@
+__crc_clk_rcg_ops = 0x0cb60421;
+__crc_clk_rcg_bypass_ops = 0xb3e01d0c;
+__crc_clk_rcg_bypass2_ops = 0x6e883076;
+__crc_clk_rcg_pixel_ops = 0xe99343d6;
+__crc_clk_rcg_esc_ops = 0x555e0ca6;
+__crc_clk_rcg_lcc_ops = 0x2dcf8b43;
+__crc_clk_dyn_rcg_ops = 0x8c0615d5;

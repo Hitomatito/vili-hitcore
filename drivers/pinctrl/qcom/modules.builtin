@@ -1,0 +1,6 @@
+drivers/pinctrl/qcom/pinctrl-msm.ko
+drivers/pinctrl/qcom/pinctrl-spmi-gpio.ko
+drivers/pinctrl/qcom/pinctrl-spmi-mpp.ko
+drivers/pinctrl/qcom/pinctrl-lahaina.ko
+drivers/pinctrl/qcom/pinctrl-shima.ko
+drivers/pinctrl/qcom/pinctrl-yupik.ko

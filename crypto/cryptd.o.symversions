@@ -1,0 +1,13 @@
+__crc_cryptd_alloc_skcipher = 0x4b904cfd;
+__crc_cryptd_skcipher_child = 0x6755e75f;
+__crc_cryptd_skcipher_queued = 0x9e1d63d1;
+__crc_cryptd_free_skcipher = 0xaa0c625f;
+__crc_cryptd_alloc_ahash = 0x13b3553b;
+__crc_cryptd_ahash_child = 0x4b1c6cd3;
+__crc_cryptd_shash_desc = 0xd72a219e;
+__crc_cryptd_ahash_queued = 0xd569e827;
+__crc_cryptd_free_ahash = 0x747faf5b;
+__crc_cryptd_alloc_aead = 0xbaaecb73;
+__crc_cryptd_aead_child = 0xa6527f6b;
+__crc_cryptd_aead_queued = 0xd733b421;
+__crc_cryptd_free_aead = 0x95c6d12b;

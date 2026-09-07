@@ -1,0 +1,6 @@
+__crc_ieee80211_chswitch_done = 0x47f2bee5;
+__crc_ieee80211_ap_probereq_get = 0x6b09ab08;
+__crc_ieee80211_beacon_loss = 0xe4452cd6;
+__crc_ieee80211_connection_loss = 0x9081925b;
+__crc_ieee80211_cqm_rssi_notify = 0x9329494d;
+__crc_ieee80211_cqm_beacon_loss_notify = 0x90132e34;

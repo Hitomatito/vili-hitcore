@@ -1,0 +1,8 @@
+__crc_rpmh_mode_solver_set = 0x7fb783f9;
+__crc_rpmh_write_async = 0x4a3075ab;
+__crc_rpmh_write = 0x21615703;
+__crc_rpmh_write_batch = 0xfd50f82e;
+__crc_rpmh_write_pdc_data = 0xf829507e;
+__crc_rpmh_flush = 0x5b1fcdde;
+__crc_rpmh_invalidate = 0xa69f4be5;
+__crc_rpmh_ctrlr_idle = 0x0f866c0f;

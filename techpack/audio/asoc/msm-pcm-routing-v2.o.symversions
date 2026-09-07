@@ -1,0 +1,12 @@
+__crc_snd_pcm_add_soft_volume_ctls = 0x9b4e7129;
+__crc_snd_pcm_add_volume_ctls = 0x0c220af0;
+__crc_snd_pcm_add_usr_ctls = 0x838f1dae;
+__crc_msm_pcm_routing_send_chmix_cfg = 0x6426566b;
+__crc_msm_pcm_routing_set_channel_mixer_cfg = 0xdb1ca020;
+__crc_msm_pcm_routing_set_stream_ec_ref_chmix_cfg = 0x6e47c1c0;
+__crc_msm_pcm_routing_reg_stream_app_type_cfg = 0x6f5306cc;
+__crc_msm_pcm_routing_get_stream_app_type_cfg = 0x0052e293;
+__crc_msm_pcm_routing_get_pp_ch_cnt = 0x17f410ce;
+__crc_msm_pcm_routing_set_channel_mixer_runtime = 0x3384200f;
+__crc_msm_pcm_routing_get_portid_copp_idx = 0x2f64d29a;
+__crc_msm_pcm_asm_cfg_get = 0x1f4b7e1d;

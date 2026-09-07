@@ -1,0 +1,8 @@
+__crc_keyslot_manager_create = 0xbbf27229;
+__crc_keyslot_manager_set_max_dun_bytes = 0xfbb99950;
+__crc_keyslot_manager_reprogram_all_keys = 0xe9bb582f;
+__crc_keyslot_manager_private = 0x44d0da72;
+__crc_keyslot_manager_destroy = 0xa53d1420;
+__crc_keyslot_manager_create_passthrough = 0xf3618ea3;
+__crc_keyslot_manager_intersect_modes = 0x0c4996ca;
+__crc_keyslot_manager_derive_raw_secret = 0xfbe1ed5c;

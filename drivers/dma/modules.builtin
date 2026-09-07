@@ -1,0 +1,2 @@
+drivers/dma/virt-dma.ko
+drivers/dma/qcom/gpi.ko

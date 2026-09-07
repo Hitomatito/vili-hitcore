@@ -1,0 +1,6 @@
+drivers/gpu/drm/drm_kms_helper.ko
+drivers/gpu/drm/drm_panel_orientation_quirks.ko
+drivers/gpu/drm/ttm/ttm.ko
+drivers/gpu/msm/msm_kgsl.ko
+drivers/gpu/msm/governor_msm_adreno_tz.ko
+drivers/gpu/msm/governor_gpubw_mon.ko

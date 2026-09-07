@@ -1,0 +1,13 @@
+sound/soundcore.ko
+sound/core/snd.ko
+sound/core/snd-hwdep.ko
+sound/core/snd-timer.ko
+sound/core/snd-hrtimer.ko
+sound/core/snd-pcm.ko
+sound/core/snd-pcm-dmaengine.ko
+sound/core/snd-rawmidi.ko
+sound/core/snd-compress.ko
+sound/soc/snd-soc-core.ko
+sound/usb/snd-usb-audio.ko
+sound/usb/snd-usbmidi-lib.ko
+sound/usb/snd-usb-audio-qmi.ko

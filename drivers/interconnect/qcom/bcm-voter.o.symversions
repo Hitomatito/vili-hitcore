@@ -1,0 +1,4 @@
+__crc_of_bcm_voter_get = 0xd29967bf;
+__crc_qcom_icc_bcm_voter_add = 0xd71e6adc;
+__crc_qcom_icc_bcm_voter_commit = 0x0b39b783;
+__crc_qcom_icc_bcm_voter_clear_init = 0x3b5d1493;

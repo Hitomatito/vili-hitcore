@@ -1,0 +1,8 @@
+__crc_cpuidle_pause_and_lock = 0xf553318d;
+__crc_cpuidle_resume_and_unlock = 0xcabe04de;
+__crc_cpuidle_enable_device = 0x58d13ea7;
+__crc_cpuidle_disable_device = 0xa06f135f;
+__crc_cpuidle_register_device = 0x0a936085;
+__crc_cpuidle_unregister_device = 0x8e97b6c0;
+__crc_cpuidle_unregister = 0x781d4d66;
+__crc_cpuidle_register = 0x2cf1f23c;

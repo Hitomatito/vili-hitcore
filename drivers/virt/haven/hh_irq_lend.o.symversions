@@ -1,0 +1,10 @@
+__crc_hh_irq_lend_v2 = 0xf3e9fbe4;
+__crc_hh_irq_lend = 0xf8162d21;
+__crc_hh_irq_lend_notify = 0xaffdbf9e;
+__crc_hh_irq_reclaim = 0x0b371443;
+__crc_hh_irq_wait_for_lend_v2 = 0xa768df97;
+__crc_hh_irq_wait_for_lend = 0xd1573bcf;
+__crc_hh_irq_accept = 0x53ebc1af;
+__crc_hh_irq_accept_notify = 0xa9092550;
+__crc_hh_irq_release = 0x5b33eee0;
+__crc_hh_irq_release_notify = 0x35a8c952;

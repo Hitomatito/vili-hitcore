@@ -1,0 +1,2 @@
+__crc_ttm_bo_mmap = 0x046fdd0d;
+__crc_ttm_fbdev_mmap = 0x1857f433;

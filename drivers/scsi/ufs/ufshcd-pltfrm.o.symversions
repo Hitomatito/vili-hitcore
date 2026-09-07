@@ -1,0 +1,8 @@
+__crc_ufshcd_pltfrm_suspend = 0x1a3c6941;
+__crc_ufshcd_pltfrm_resume = 0x43002df0;
+__crc_ufshcd_pltfrm_runtime_suspend = 0x979fe529;
+__crc_ufshcd_pltfrm_runtime_resume = 0xe881b0ef;
+__crc_ufshcd_pltfrm_runtime_idle = 0xb826d00f;
+__crc_ufshcd_pltfrm_shutdown = 0xb5842fe2;
+__crc_ufshcd_get_pwr_dev_param = 0xff85cd6b;
+__crc_ufshcd_pltfrm_init = 0x7cb6726f;

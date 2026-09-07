@@ -1,0 +1,8 @@
+__crc_llcc_slice_getd = 0x0679b34d;
+__crc_llcc_slice_putd = 0xb68b1300;
+__crc_llcc_slice_activate = 0xad3516c4;
+__crc_llcc_slice_deactivate = 0xb534ec76;
+__crc_llcc_get_slice_id = 0x7e773088;
+__crc_llcc_get_slice_size = 0x03c9a66d;
+__crc_qcom_llcc_remove = 0xfbcced81;
+__crc_qcom_llcc_probe = 0xeb5c0012;

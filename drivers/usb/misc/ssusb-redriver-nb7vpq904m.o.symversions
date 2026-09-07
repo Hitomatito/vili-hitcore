@@ -1,0 +1,5 @@
+__crc_redriver_orientation_get = 0xb95aec9f;
+__crc_redriver_notify_connect = 0x98f72804;
+__crc_redriver_notify_disconnect = 0xb8807418;
+__crc_redriver_release_usb_lanes = 0x073293a6;
+__crc_redriver_gadget_pullup = 0xaef6be41;

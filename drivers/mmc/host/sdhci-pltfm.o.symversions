@@ -1,0 +1,9 @@
+__crc_sdhci_pltfm_clk_get_max_clock = 0x53ca9abe;
+__crc_sdhci_get_property = 0x5df73d82;
+__crc_sdhci_pltfm_init = 0x4176fbc1;
+__crc_sdhci_pltfm_free = 0x636d6b38;
+__crc_sdhci_pltfm_register = 0x71a1e60c;
+__crc_sdhci_pltfm_unregister = 0xc82cfed5;
+__crc_sdhci_pltfm_suspend = 0x65afe1d2;
+__crc_sdhci_pltfm_resume = 0xace3e55d;
+__crc_sdhci_pltfm_pmops = 0x311839ec;

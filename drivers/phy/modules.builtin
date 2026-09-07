@@ -1,0 +1,8 @@
+drivers/phy/qualcomm/phy-qcom-ufs.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qmp-v4-yupik.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qmp-v4-lahaina.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qmp-v4.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qmp-v3.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qmp-v3-660.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qmp-14nm.ko
+drivers/phy/qualcomm/phy-qcom-ufs-qrbtc-sdm845.ko

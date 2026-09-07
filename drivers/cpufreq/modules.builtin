@@ -1,0 +1,6 @@
+drivers/cpufreq/cpufreq_performance.ko
+drivers/cpufreq/cpufreq_powersave.ko
+drivers/cpufreq/cpufreq_conservative.ko
+drivers/cpufreq/qcom-cpufreq-hw.ko
+drivers/cpufreq/scmi-cpufreq.ko
+drivers/cpufreq/scpi-cpufreq.ko

@@ -1,0 +1,4 @@
+__crc___tracepoint_vb2_buf_done = 0x8ddae992;
+__crc___tracepoint_vb2_buf_queue = 0xc88264fe;
+__crc___tracepoint_vb2_dqbuf = 0x90828029;
+__crc___tracepoint_vb2_qbuf = 0x3f623848;

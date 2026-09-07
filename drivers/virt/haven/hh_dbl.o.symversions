@@ -1,0 +1,9 @@
+__crc_hh_dbl_read_and_clean = 0x4df62f5b;
+__crc_hh_dbl_set_mask = 0x4c05dce1;
+__crc_hh_dbl_send = 0x1ee74651;
+__crc_hh_dbl_reset = 0xfb53c153;
+__crc_hh_dbl_tx_register = 0x1c971ed7;
+__crc_hh_dbl_rx_register = 0xd9dc75d0;
+__crc_hh_dbl_tx_unregister = 0x6bffef5a;
+__crc_hh_dbl_rx_unregister = 0x002483fc;
+__crc_hh_dbl_populate_cap_info = 0xd0ddc0d9;

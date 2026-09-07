@@ -1,0 +1,4 @@
+__crc_memstart_addr = 0x9688de8b;
+__crc_physvirt_offset = 0x1ba7c500;
+__crc_vmemmap = 0x1dcd8ed3;
+__crc_pfn_valid = 0x51e77c97;

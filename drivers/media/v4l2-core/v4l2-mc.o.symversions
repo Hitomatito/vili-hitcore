@@ -1,0 +1,6 @@
+__crc_v4l2_mc_create_media_graph = 0xaa158fe6;
+__crc_v4l_enable_media_source = 0x4b4adf44;
+__crc_v4l_disable_media_source = 0x100759a8;
+__crc_v4l_vb2q_enable_media_source = 0x4cb36e6b;
+__crc_v4l2_pipeline_pm_use = 0x7096fdf4;
+__crc_v4l2_pipeline_link_notify = 0xf7be749b;

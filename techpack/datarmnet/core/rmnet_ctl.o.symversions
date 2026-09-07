@@ -1,0 +1,5 @@
+__crc_rmnet_ctl_register_client = 0xe96f35d9;
+__crc_rmnet_ctl_unregister_client = 0xf18f9c1f;
+__crc_rmnet_ctl_send_client = 0x6abb55b8;
+__crc_rmnet_ctl_log = 0xce3bfb6e;
+__crc_rmnet_ctl_if = 0x9bc90447;

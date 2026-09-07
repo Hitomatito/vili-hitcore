@@ -1,0 +1,4 @@
+__crc_hid_ignore = 0x662f0d3a;
+__crc_hid_quirks_init = 0xfa355613;
+__crc_hid_quirks_exit = 0x19d52f1f;
+__crc_hid_lookup_quirk = 0xb1169a3a;

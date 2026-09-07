@@ -1,0 +1,4 @@
+__crc_pinconf_generic_parse_dt_config = 0x0472fc90;
+__crc_pinconf_generic_dt_subnode_to_map = 0xe278d47d;
+__crc_pinconf_generic_dt_node_to_map = 0x08778c1d;
+__crc_pinconf_generic_dt_free_map = 0x2c93836f;

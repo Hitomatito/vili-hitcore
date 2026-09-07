@@ -1,0 +1,5 @@
+__crc_qseecom_start_app = 0x802d7623;
+__crc_qseecom_shutdown_app = 0xd516a511;
+__crc_qseecom_send_command = 0x53d35828;
+__crc_qseecom_set_bandwidth = 0x19a18856;
+__crc_qseecom_process_listener_from_smcinvoke = 0x3eb297e8;

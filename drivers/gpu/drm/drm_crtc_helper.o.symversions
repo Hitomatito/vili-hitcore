@@ -1,0 +1,8 @@
+__crc_drm_helper_encoder_in_use = 0x53bd76f6;
+__crc_drm_helper_crtc_in_use = 0x13a90340;
+__crc_drm_helper_disable_unused_functions = 0x05d6952e;
+__crc_drm_crtc_helper_set_mode = 0xa0eec402;
+__crc_drm_crtc_helper_set_config = 0x332b47a4;
+__crc_drm_helper_connector_dpms = 0x58873e86;
+__crc_drm_helper_resume_force_mode = 0x0b18610a;
+__crc_drm_helper_force_disable_all = 0xaa2a418a;

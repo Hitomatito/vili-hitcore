@@ -1,0 +1,12 @@
+__crc_cnss_utils_set_wlan_unsafe_channel = 0x41158c97;
+__crc_cnss_utils_get_wlan_unsafe_channel = 0x15402d17;
+__crc_cnss_utils_wlan_set_dfs_nol = 0x2e516c6f;
+__crc_cnss_utils_wlan_get_dfs_nol = 0x04a0376e;
+__crc_cnss_utils_increment_driver_load_cnt = 0xab350c0a;
+__crc_cnss_utils_get_driver_load_cnt = 0x428c6fd8;
+__crc_cnss_utils_set_wlan_mac_address = 0x63e6106f;
+__crc_cnss_utils_set_wlan_derived_mac_address = 0x08c023b5;
+__crc_cnss_utils_get_wlan_mac_address = 0xe71fbfc2;
+__crc_cnss_utils_get_wlan_derived_mac_address = 0xfd42b9b4;
+__crc_cnss_utils_set_cc_source = 0xf97b7a45;
+__crc_cnss_utils_get_cc_source = 0x032fb30a;

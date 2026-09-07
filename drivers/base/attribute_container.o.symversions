@@ -1,0 +1,4 @@
+__crc_attribute_container_classdev_to_container = 0x561d9e5f;
+__crc_attribute_container_register = 0x32647855;
+__crc_attribute_container_unregister = 0xb854af52;
+__crc_attribute_container_find_class_device = 0xcf3e3434;

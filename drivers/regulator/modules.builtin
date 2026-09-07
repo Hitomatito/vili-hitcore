@@ -1,0 +1,9 @@
+drivers/regulator/fixed.ko
+drivers/regulator/qti-fixed-regulator.ko
+drivers/regulator/proxy-consumer.ko
+drivers/regulator/qcom_pm8008-regulator.ko
+drivers/regulator/qpnp-lcdb-regulator.ko
+drivers/regulator/qpnp-amoled-regulator.ko
+drivers/regulator/refgen.ko
+drivers/regulator/rpmh-regulator.ko
+drivers/regulator/stub-regulator.ko

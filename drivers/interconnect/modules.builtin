@@ -1,0 +1,8 @@
+drivers/interconnect/icc-core.ko
+drivers/interconnect/qcom/qnoc-lahaina.ko
+drivers/interconnect/qcom/qnoc-shima.ko
+drivers/interconnect/qcom/qnoc-yupik.ko
+drivers/interconnect/qcom/icc-bcm-voter.ko
+drivers/interconnect/qcom/icc-rpmh.ko
+drivers/interconnect/qcom/qnoc-qos.ko
+drivers/interconnect/qcom/epss-l3.ko

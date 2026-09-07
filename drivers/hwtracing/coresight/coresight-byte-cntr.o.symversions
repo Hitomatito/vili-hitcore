@@ -1,0 +1,7 @@
+__crc_tmc_etr_byte_cntr_start = 0x1c57fe45;
+__crc_tmc_etr_byte_cntr_stop = 0x06e98add;
+__crc_etr_pcie_start = 0x1e81b148;
+__crc_etr_pcie_stop = 0xf337bcd8;
+__crc_usb_bypass_stop = 0xbf23cb0f;
+__crc_usb_bypass_notifier = 0x6c8d2f96;
+__crc_byte_cntr_init = 0xaadaa330;

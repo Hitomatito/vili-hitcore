@@ -1,0 +1,3 @@
+__crc_icmp6_send = 0x67ea87c3;
+__crc_ip6_err_gen_icmpv6_unreach = 0x2c7087f2;
+__crc_icmpv6_err_convert = 0xae316c11;

@@ -1,0 +1,12 @@
+__crc_ip_tos2prio = 0x1fbd16da;
+__crc_ip_idents_reserve = 0xda89ea3b;
+__crc___ip_select_ident = 0x8652c365;
+__crc_ipv4_update_pmtu = 0xae00eef0;
+__crc_ipv4_sk_update_pmtu = 0x93ac146c;
+__crc_ipv4_redirect = 0xe1b2ed82;
+__crc_ipv4_sk_redirect = 0x779a8f17;
+__crc_rt_dst_alloc = 0xbb81c89d;
+__crc_rt_dst_clone = 0xb70c4435;
+__crc_ip_route_input_noref = 0x29ff8de3;
+__crc_ip_route_output_key_hash = 0xde4b49bc;
+__crc_ip_route_output_flow = 0xca8e0520;

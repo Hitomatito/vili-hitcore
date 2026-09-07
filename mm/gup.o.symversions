@@ -1,0 +1,9 @@
+__crc_put_user_pages_dirty_lock = 0x9fb0b1bf;
+__crc_put_user_pages = 0xbcd209bb;
+__crc_fixup_user_fault = 0x1073aa81;
+__crc_get_user_pages_remote = 0xfa4561fc;
+__crc_get_user_pages = 0x00e484b2;
+__crc_get_user_pages_locked = 0x3aaf12b6;
+__crc_get_user_pages_unlocked = 0xe1e1ecc3;
+__crc___get_user_pages_fast = 0xdc575800;
+__crc_get_user_pages_fast = 0x4d8d8eb4;

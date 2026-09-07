@@ -1,0 +1,17 @@
+__crc_rmnet_is_real_dev_registered = 0x99fa7ac7;
+__crc_rmnet_get_port = 0x9585bef1;
+__crc_rmnet_get_endpoint = 0x818d0f12;
+__crc_rmnet_get_qmi_pt = 0x40d36d82;
+__crc_rmnet_get_qos_pt = 0x971060ce;
+__crc_rmnet_get_rmnet_port = 0x558bfe06;
+__crc_rmnet_get_rmnet_dev = 0xe9d35cef;
+__crc_rmnet_reset_qmi_pt = 0x3b9f9277;
+__crc_rmnet_init_qmi_pt = 0x03a722d9;
+__crc_rmnet_get_packets = 0xfd113e84;
+__crc_rmnet_set_powersave_format = 0x01c9ffc8;
+__crc_rmnet_clear_powersave_format = 0x7f740800;
+__crc_rmnet_enable_all_flows = 0x5cf274e4;
+__crc_rmnet_all_flows_enabled = 0xb2a1b34f;
+__crc_rmnet_get_powersave_notif = 0x73937bc9;
+__crc_rmnet_get_real_dev = 0x42478dd5;
+__crc_rmnet_get_dlmarker_info = 0xca8c6074;

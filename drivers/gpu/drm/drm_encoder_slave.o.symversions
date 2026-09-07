@@ -1,0 +1,10 @@
+__crc_drm_i2c_encoder_init = 0xab2696b0;
+__crc_drm_i2c_encoder_destroy = 0x9164de18;
+__crc_drm_i2c_encoder_dpms = 0x3a75a2f1;
+__crc_drm_i2c_encoder_mode_fixup = 0x1e63348a;
+__crc_drm_i2c_encoder_prepare = 0x0e61be23;
+__crc_drm_i2c_encoder_commit = 0x993ae433;
+__crc_drm_i2c_encoder_mode_set = 0xdeb5a56f;
+__crc_drm_i2c_encoder_detect = 0x01a81c45;
+__crc_drm_i2c_encoder_save = 0x5ebda326;
+__crc_drm_i2c_encoder_restore = 0xa13f4030;

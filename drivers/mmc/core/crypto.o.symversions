@@ -1,0 +1,2 @@
+__crc_mmc_crypto_setup_queue = 0x4c028d96;
+__crc_mmc_crypto_prepare_req = 0x86f7548e;

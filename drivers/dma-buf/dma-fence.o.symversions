@@ -1,0 +1,17 @@
+__crc___tracepoint_dma_fence_emit = 0x349ac524;
+__crc___tracepoint_dma_fence_enable_signal = 0x85532eb1;
+__crc___tracepoint_dma_fence_signaled = 0xfa08f4b8;
+__crc_dma_fence_get_stub = 0x013f26ae;
+__crc_dma_fence_context_alloc = 0x14605535;
+__crc_dma_fence_signal_locked = 0x3d02cd70;
+__crc_dma_fence_signal = 0x731c4a9c;
+__crc_dma_fence_wait_timeout = 0x98c039dc;
+__crc_dma_fence_release = 0xe123f3d9;
+__crc_dma_fence_free = 0xdd8166a1;
+__crc_dma_fence_enable_sw_signaling = 0x8d9ca0e6;
+__crc_dma_fence_add_callback = 0x8e21c9a1;
+__crc_dma_fence_get_status = 0x2e0b1deb;
+__crc_dma_fence_remove_callback = 0x3b20fb95;
+__crc_dma_fence_default_wait = 0x350ea558;
+__crc_dma_fence_wait_any_timeout = 0x051d58e8;
+__crc_dma_fence_init = 0x16dee44d;

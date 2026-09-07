@@ -1,0 +1,2 @@
+__crc_ipa3_qmi_enable_force_clear_datapath_send = 0x19499b6b;
+__crc_ipa3_qmi_disable_force_clear_datapath_send = 0x3418a115;

@@ -1,0 +1,11 @@
+__crc_cec_notifier_get_conn = 0x198fab00;
+__crc_cec_notifier_put = 0x0b4e2add;
+__crc_cec_notifier_conn_register = 0xae658a1b;
+__crc_cec_notifier_conn_unregister = 0xaee236c6;
+__crc_cec_notifier_cec_adap_register = 0x1bef3b11;
+__crc_cec_notifier_cec_adap_unregister = 0x02958f88;
+__crc_cec_notifier_set_phys_addr = 0xa01fbb6b;
+__crc_cec_notifier_set_phys_addr_from_edid = 0xf8c99364;
+__crc_cec_notifier_register = 0x77bc320f;
+__crc_cec_notifier_unregister = 0xe0a22305;
+__crc_cec_notifier_parse_hdmi_phandle = 0x8b4958c3;

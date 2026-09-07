@@ -1,0 +1,13 @@
+__crc___tracepoint_suspend_resume = 0x0fe7617c;
+__crc___tracepoint_cpu_idle = 0x2b260a74;
+__crc___tracepoint_cpu_frequency = 0x1418238a;
+__crc___tracepoint_powernv_throttle = 0xdd7f0765;
+__crc___tracepoint_memlat_dev_update = 0xd1b1b6e4;
+__crc___tracepoint_memlat_dev_meas = 0x91369dbf;
+__crc___tracepoint_cache_hwmon_update = 0x88800ba6;
+__crc___tracepoint_cache_hwmon_meas = 0x199720e9;
+__crc___tracepoint_bw_hwmon_update = 0xe5624781;
+__crc___tracepoint_bw_hwmon_meas = 0x045de84f;
+__crc___tracepoint_bw_hwmon_debug = 0x810495fa;
+__crc___tracepoint_device_pm_callback_start = 0xb99c3304;
+__crc___tracepoint_device_pm_callback_end = 0x1102bd7d;

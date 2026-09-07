@@ -1,0 +1,3 @@
+__crc_nf_tproxy_handle_time_wait4 = 0x28a9b847;
+__crc_nf_tproxy_laddr4 = 0x222cdf2c;
+__crc_nf_tproxy_get_sock_v4 = 0x83cd166f;

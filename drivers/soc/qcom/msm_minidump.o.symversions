@@ -1,0 +1,4 @@
+__crc_msm_minidump_enabled = 0x584e21a2;
+__crc_msm_minidump_update_region = 0x3cd056fa;
+__crc_msm_minidump_add_region = 0x5bb305e8;
+__crc_msm_minidump_remove_region = 0x817876ce;

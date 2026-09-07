@@ -1,0 +1,2 @@
+__crc_msm_cpuidle_get_deep_idle_latency = 0x9b803c61;
+__crc_register_system_pm_ops = 0x628d5f36;

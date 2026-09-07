@@ -1,0 +1,12 @@
+__crc_pm_qos_request = 0xab6babaf;
+__crc_pm_qos_request_active = 0xdb64bcb2;
+__crc_pm_qos_add_request = 0x2c763745;
+__crc_pm_qos_update_request = 0xe7dc742f;
+__crc_pm_qos_remove_request = 0xfd4e9d03;
+__crc_pm_qos_add_notifier = 0x1e5b03dc;
+__crc_pm_qos_remove_notifier = 0xbcac6160;
+__crc_freq_qos_add_request = 0xdc83dc59;
+__crc_freq_qos_update_request = 0x09b28a16;
+__crc_freq_qos_remove_request = 0x156f33cf;
+__crc_freq_qos_add_notifier = 0x30fdbd15;
+__crc_freq_qos_remove_notifier = 0xf8413cf2;

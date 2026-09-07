@@ -1,0 +1,10 @@
+__crc_of_find_device_by_node = 0xccf2f1e4;
+__crc_of_device_alloc = 0xcf93f433;
+__crc_of_platform_device_create = 0xf8369db5;
+__crc_of_platform_bus_probe = 0xc41da8af;
+__crc_of_platform_populate = 0x37266fa4;
+__crc_of_platform_default_populate = 0x9c8bf2e9;
+__crc_of_platform_device_destroy = 0xd010d556;
+__crc_of_platform_depopulate = 0xa9f1cb9e;
+__crc_devm_of_platform_populate = 0xeb3ee186;
+__crc_devm_of_platform_depopulate = 0xede5f06e;

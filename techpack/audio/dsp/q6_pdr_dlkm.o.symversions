@@ -1,0 +1,4 @@
+__crc_audio_pdr_register = 0xf66a8089;
+__crc_audio_pdr_deregister = 0xcb0149a3;
+__crc_audio_pdr_service_register = 0x458155b2;
+__crc_audio_pdr_service_deregister = 0x10fed888;

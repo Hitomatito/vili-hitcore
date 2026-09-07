@@ -1,0 +1,3 @@
+__crc_handle_sysrq = 0x7647726c;
+__crc_register_sysrq_key = 0x4d974b9c;
+__crc_unregister_sysrq_key = 0xcbc9557f;

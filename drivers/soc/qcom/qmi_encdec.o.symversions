@@ -1,0 +1,3 @@
+__crc_qmi_encode_message = 0x0ef12cc9;
+__crc_qmi_decode_message = 0x68772745;
+__crc_qmi_response_type_v01_ei = 0x21ce5888;

@@ -1,0 +1,4 @@
+__crc_setattr_prepare = 0x585f25bd;
+__crc_inode_newsize_ok = 0x0f456bf3;
+__crc_setattr_copy = 0x6abb72ac;
+__crc_notify_change = 0x226423e6;

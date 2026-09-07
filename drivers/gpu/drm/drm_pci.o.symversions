@@ -1,0 +1,5 @@
+__crc_drm_pci_alloc = 0x1cc7cc05;
+__crc_drm_pci_free = 0x766ed104;
+__crc_drm_get_pci_dev = 0xce01bdb9;
+__crc_drm_legacy_pci_init = 0x2a9fd38c;
+__crc_drm_legacy_pci_exit = 0xf9df9311;

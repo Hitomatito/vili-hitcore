@@ -1,0 +1,6 @@
+__crc_public_key_signature_free = 0x1ac458a1;
+__crc_query_asymmetric_key = 0x19815d8c;
+__crc_encrypt_blob = 0x4a478d82;
+__crc_decrypt_blob = 0xe5d10def;
+__crc_create_signature = 0x53bbd61b;
+__crc_verify_signature = 0x660777ce;

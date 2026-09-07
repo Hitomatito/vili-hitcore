@@ -1,0 +1,2 @@
+__crc_clk_regmap_div_ops = 0x500ca2cf;
+__crc_clk_regmap_div_ro_ops = 0xa8773ffc;

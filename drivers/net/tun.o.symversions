@@ -1,0 +1,6 @@
+__crc_tun_is_xdp_frame = 0xd8602b6a;
+__crc_tun_xdp_to_ptr = 0x578a1876;
+__crc_tun_ptr_to_xdp = 0xa6841fb6;
+__crc_tun_ptr_free = 0x4099f919;
+__crc_tun_get_socket = 0xd06e3064;
+__crc_tun_get_tx_ring = 0xd3a2a74e;

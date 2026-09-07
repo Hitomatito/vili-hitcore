@@ -1,0 +1,10 @@
+__crc_tcp_select_initial_window = 0x956b2e66;
+__crc_tcp_release_cb = 0x7af7e440;
+__crc_tcp_mtu_to_mss = 0xef20abe9;
+__crc_tcp_mss_to_mtu = 0x78543f98;
+__crc_tcp_mtup_init = 0xaadd583a;
+__crc_tcp_sync_mss = 0x628e43b3;
+__crc_tcp_make_synack = 0x1abfcd6b;
+__crc_tcp_connect = 0xfb87acbe;
+__crc___tcp_send_ack = 0xdf6577d9;
+__crc_tcp_rtx_synack = 0x34003ad0;

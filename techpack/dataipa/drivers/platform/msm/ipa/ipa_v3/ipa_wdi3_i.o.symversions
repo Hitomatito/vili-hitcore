@@ -1,0 +1,4 @@
+__crc_ipa3_conn_wdi3_pipes = 0x74122197;
+__crc_ipa3_disconn_wdi3_pipes = 0x926a6ac0;
+__crc_ipa3_enable_wdi3_pipes = 0x84543673;
+__crc_ipa3_disable_wdi3_pipes = 0x0263d3f4;

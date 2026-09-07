@@ -1,0 +1,5 @@
+__crc_usb_qdss_free_req = 0xc91fb89a;
+__crc_usb_qdss_alloc_req = 0xec57bf2e;
+__crc_usb_qdss_write = 0x2600d2a7;
+__crc_usb_qdss_open = 0xd18785ac;
+__crc_usb_qdss_close = 0x4bab0736;

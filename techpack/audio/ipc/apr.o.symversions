@@ -1,0 +1,11 @@
+__crc_apr_get_modem_state = 0xf5843df2;
+__crc_apr_set_modem_state = 0x154ce440;
+__crc_apr_get_q6_state = 0x8a7e2c53;
+__crc_apr_set_q6_state = 0xc533bfb4;
+__crc_apr_send_pkt = 0xd93f171c;
+__crc_apr_register = 0x5cf9d42e;
+__crc_apr_register_adsp_state_cb = 0x826f96fd;
+__crc_apr_start_rx_rt = 0xa0ddd564;
+__crc_apr_end_rx_rt = 0x6c64676c;
+__crc_apr_deregister = 0x521d8898;
+__crc_apr_reset = 0x72409b16;

@@ -1,0 +1,8 @@
+__crc_mhi_device_configure = 0x49665de5;
+__crc_of_register_mhi_controller = 0xc8195b21;
+__crc_mhi_unregister_mhi_controller = 0xe62b3043;
+__crc_mhi_alloc_controller = 0x58aa7cf5;
+__crc_mhi_prepare_for_power_up = 0x8cdb5cd3;
+__crc_mhi_unprepare_after_power_down = 0x603af5ee;
+__crc_mhi_driver_register = 0xfbdee930;
+__crc_mhi_driver_unregister = 0xed1a5d51;

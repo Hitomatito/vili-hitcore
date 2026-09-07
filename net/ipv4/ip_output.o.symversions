@@ -1,0 +1,10 @@
+__crc_ip_send_check = 0x02124474;
+__crc_ip_local_out = 0x9bf9a1ba;
+__crc_ip_build_and_send_pkt = 0x96f2c4f5;
+__crc___ip_queue_xmit = 0x7506d8ff;
+__crc_ip_fraglist_init = 0x2cb01218;
+__crc_ip_fraglist_prepare = 0xcd5bdd2e;
+__crc_ip_frag_init = 0x99cbde5c;
+__crc_ip_frag_next = 0xed5952d2;
+__crc_ip_do_fragment = 0x72d787c9;
+__crc_ip_generic_getfrag = 0xb9e3cd14;

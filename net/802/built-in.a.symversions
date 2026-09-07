@@ -1,0 +1,6 @@
+__crc_register_8022_client = 0xed2ee53c;
+__crc_unregister_8022_client = 0x22cb5f84;
+__crc_register_snap_client = 0xac66f543;
+__crc_unregister_snap_client = 0xbc657b91;
+__crc_stp_proto_register = 0x90e2a6f0;
+__crc_stp_proto_unregister = 0xec4b953c;

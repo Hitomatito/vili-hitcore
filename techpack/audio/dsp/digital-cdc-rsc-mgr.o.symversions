@@ -1,0 +1,3 @@
+__crc_digital_cdc_rsc_mgr_hw_vote_enable = 0xbcb15f8a;
+__crc_digital_cdc_rsc_mgr_hw_vote_disable = 0xc1346cc1;
+__crc_digital_cdc_rsc_mgr_hw_vote_reset = 0x05850611;

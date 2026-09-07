@@ -1,0 +1,9 @@
+__crc_ipa3_mhi_stop_gsi_channel = 0xbcf806b7;
+__crc_ipa3_mhi_reset_channel_internal = 0x370c33d3;
+__crc_ipa3_mhi_init_engine = 0x802f6841;
+__crc_ipa3_connect_mhi_pipe = 0xb60809eb;
+__crc_ipa3_disconnect_mhi_pipe = 0x0a27ddee;
+__crc_ipa3_mhi_resume_channels_internal = 0x5329ead7;
+__crc_ipa3_mhi_query_ch_info = 0xb351ca05;
+__crc_ipa3_has_open_aggr_frame = 0xc91b8e3a;
+__crc_ipa3_mhi_destroy_channel = 0x151bc714;

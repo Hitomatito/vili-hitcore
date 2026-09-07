@@ -1,0 +1,15 @@
+__crc_xdp_rxq_info_unreg_mem_model = 0x4997a00b;
+__crc_xdp_rxq_info_unreg = 0x52ef4c1d;
+__crc_xdp_rxq_info_reg = 0x9b4e462e;
+__crc_xdp_rxq_info_unused = 0x6b02e0e6;
+__crc_xdp_rxq_info_is_reg = 0x320110ef;
+__crc_xdp_rxq_info_reg_mem_model = 0x8882d091;
+__crc_xdp_return_frame = 0xf7b18c73;
+__crc_xdp_return_frame_rx_napi = 0xe97c59d9;
+__crc_xdp_return_buff = 0x1033c66a;
+__crc___xdp_release_frame = 0x20835a9f;
+__crc_xdp_attachment_query = 0xbd3e23bf;
+__crc_xdp_attachment_flags_ok = 0x17b29e73;
+__crc_xdp_attachment_setup = 0xe342348e;
+__crc_xdp_convert_zc_to_xdp_frame = 0xd2905ad1;
+__crc_xdp_warn = 0xbb7195a5;

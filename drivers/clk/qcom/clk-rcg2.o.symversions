@@ -1,0 +1,11 @@
+__crc_clk_rcg2_ops = 0x2be83a1a;
+__crc_clk_rcg2_floor_ops = 0x041a2adc;
+__crc_clk_edp_pixel_ops = 0xef1fd751;
+__crc_clk_byte_ops = 0x2deeeb94;
+__crc_clk_byte2_ops = 0x90c225f6;
+__crc_clk_pixel_ops = 0x7e724a9a;
+__crc_clk_dp_ops = 0x21760c2a;
+__crc_clk_gfx3d_ops = 0xc8ef413a;
+__crc_clk_rcg2_shared_ops = 0x697466a4;
+__crc_qcom_cc_register_rcg_dfs = 0x4ec5a05d;
+__crc_clk_rcg2_dependent_ops = 0x6c1cc6e9;

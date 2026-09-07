@@ -1,0 +1,2 @@
+__crc_udp_sock_create6 = 0x92481ecd;
+__crc_udp_tunnel6_xmit_skb = 0xe7a1739a;

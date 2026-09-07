@@ -1,0 +1,10 @@
+__crc_usb_bam_alloc_fifos = 0x7803609d;
+__crc_usb_bam_free_fifos = 0x1ba2ffc4;
+__crc_get_qdss_bam_info = 0x4672870a;
+__crc_usb_bam_connect = 0x69d80ab0;
+__crc_usb_bam_get_pipe_type = 0x47f91acf;
+__crc_usb_bam_disconnect_pipe = 0xe7838d88;
+__crc_get_bam2bam_connection_info = 0x96478687;
+__crc_get_qdss_bam_connection_info = 0x5c6563cd;
+__crc_usb_bam_get_connection_idx = 0xb9793ee5;
+__crc_usb_bam_get_bam_type = 0xca94d11c;

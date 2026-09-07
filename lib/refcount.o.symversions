@@ -1,0 +1,10 @@
+__crc_refcount_warn_saturate = 0x0296695f;
+__crc_refcount_dec_if_one = 0xf915179e;
+__crc_refcount_dec_not_one = 0xe441e95a;
+__crc_refcount_dec_and_mutex_lock = 0xc156c981;
+__crc_refcount_dec_and_lock = 0xd9e8aee7;
+__crc_refcount_dec_and_lock_irqsave = 0x3d5bb3fd;
+__crc_refcount_inc_checked = 0x1ee8d6d4;
+__crc_refcount_inc_not_zero_checked = 0x957b1fb6;
+__crc_refcount_dec_checked = 0xa8223179;
+__crc_refcount_dec_and_test_checked = 0xb62b74af;

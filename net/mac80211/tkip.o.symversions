@@ -1,0 +1,4 @@
+__crc_ieee80211_tkip_add_iv = 0x1d81afc9;
+__crc_ieee80211_get_tkip_p1k_iv = 0x4b668bbe;
+__crc_ieee80211_get_tkip_rx_p1k = 0x6d0d73fd;
+__crc_ieee80211_get_tkip_p2k = 0xe371b46b;

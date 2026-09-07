@@ -1,0 +1,4 @@
+__crc_audio_notifier_deregister = 0xc5656b4d;
+__crc_audio_notifier_register = 0xa7fe7810;
+__crc_audio_ssr_register = 0xf6f6cd82;
+__crc_audio_ssr_deregister = 0x630fbd5c;

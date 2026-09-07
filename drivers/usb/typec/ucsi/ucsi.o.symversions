@@ -1,0 +1,10 @@
+__crc_ucsi_send_command = 0x9333172a;
+__crc_ucsi_resume = 0x6aca9898;
+__crc_ucsi_connector_change = 0xd096d647;
+__crc_ucsi_init = 0x92fe4b76;
+__crc_ucsi_get_drvdata = 0xa25621ff;
+__crc_ucsi_set_drvdata = 0x79b5fba7;
+__crc_ucsi_create = 0xe63a6143;
+__crc_ucsi_destroy = 0x01cfcdf3;
+__crc_ucsi_register = 0x87a2cfdd;
+__crc_ucsi_unregister = 0x5bcb4d9f;

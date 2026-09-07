@@ -1,0 +1,9 @@
+__crc_snd_soc_set_runtime_hwparams = 0xbf0ee502;
+__crc_dpcm_be_dai_trigger = 0xcc280cda;
+__crc_snd_soc_dpcm_fe_can_update = 0xc4a1ce31;
+__crc_snd_soc_dpcm_be_can_update = 0x09265049;
+__crc_snd_soc_dpcm_get_substream = 0x42fa0681;
+__crc_snd_soc_dpcm_be_get_state = 0x2ba74096;
+__crc_snd_soc_dpcm_be_set_state = 0x85c0003e;
+__crc_snd_soc_dpcm_can_be_free_stop = 0xc377a841;
+__crc_snd_soc_dpcm_can_be_params = 0x545cd353;

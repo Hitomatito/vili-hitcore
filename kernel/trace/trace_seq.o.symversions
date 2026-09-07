@@ -1,0 +1,10 @@
+__crc_trace_seq_printf = 0x8888b156;
+__crc_trace_seq_bitmask = 0x130de01d;
+__crc_trace_seq_vprintf = 0x1a021e66;
+__crc_trace_seq_bprintf = 0xcfbd3cae;
+__crc_trace_seq_puts = 0xf3d16a69;
+__crc_trace_seq_putc = 0x1e68ce14;
+__crc_trace_seq_putmem = 0xdb916fd0;
+__crc_trace_seq_putmem_hex = 0x7cd8c6e5;
+__crc_trace_seq_path = 0x3f004f8b;
+__crc_trace_seq_to_user = 0xa386c029;

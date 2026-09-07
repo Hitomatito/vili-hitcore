@@ -1,0 +1,12 @@
+__crc_ipv6_mod_enabled = 0x437eb1df;
+__crc_inet6_sock_destruct = 0x130a8b0c;
+__crc_inet6_bind = 0x210144de;
+__crc_inet6_release = 0xa95415cd;
+__crc_inet6_destroy_sock = 0x40215c16;
+__crc_inet6_cleanup_sock = 0x4e4dd5dc;
+__crc_inet6_getname = 0x4e02838f;
+__crc_inet6_ioctl = 0x043a1580;
+__crc_inet6_register_protosw = 0xc1ebca3b;
+__crc_inet6_unregister_protosw = 0x06a16a69;
+__crc_inet6_sk_rebuild_header = 0xdb8310e5;
+__crc_ipv6_opt_accepted = 0x6f5ea3bf;

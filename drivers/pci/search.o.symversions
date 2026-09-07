@@ -1,0 +1,8 @@
+__crc_pci_find_bus = 0x60e09100;
+__crc_pci_find_next_bus = 0x0e35a2be;
+__crc_pci_get_slot = 0x94fc00c2;
+__crc_pci_get_domain_bus_and_slot = 0xf570aff3;
+__crc_pci_get_subsys = 0xefd2e5bc;
+__crc_pci_get_device = 0xc1624cc7;
+__crc_pci_get_class = 0xd71e38f2;
+__crc_pci_dev_present = 0x3145216f;

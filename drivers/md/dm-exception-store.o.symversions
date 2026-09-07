@@ -1,0 +1,4 @@
+__crc_dm_exception_store_type_register = 0x92b15a33;
+__crc_dm_exception_store_type_unregister = 0xa96f32c5;
+__crc_dm_exception_store_create = 0x791e6876;
+__crc_dm_exception_store_destroy = 0xbb5c7c5c;

@@ -1,0 +1,4 @@
+drivers/input/misc/qpnp-power-on.ko
+drivers/input/misc/qcom-hv-haptics.ko
+drivers/input/misc/uinput.ko
+drivers/input/misc/aw8697_haptic/aw8697-haptic.ko

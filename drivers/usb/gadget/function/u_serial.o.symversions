@@ -1,0 +1,6 @@
+__crc_gs_alloc_req = 0xbe9964ce;
+__crc_gs_free_req = 0x57133707;
+__crc_gserial_free_line = 0xb6652875;
+__crc_gserial_alloc_line = 0x33bfdca2;
+__crc_gserial_connect = 0x1c28b74d;
+__crc_gserial_disconnect = 0x5bca5c30;

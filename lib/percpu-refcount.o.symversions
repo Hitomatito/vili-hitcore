@@ -1,0 +1,8 @@
+__crc_percpu_ref_init = 0x41b200f9;
+__crc_percpu_ref_exit = 0x284fe794;
+__crc_percpu_ref_switch_to_atomic = 0xb407c1df;
+__crc_percpu_ref_switch_to_atomic_sync = 0x12dbc8f6;
+__crc_percpu_ref_switch_to_percpu = 0x26c622ee;
+__crc_percpu_ref_kill_and_confirm = 0x81d7c5b7;
+__crc_percpu_ref_reinit = 0x85b38978;
+__crc_percpu_ref_resurrect = 0xfe69325f;

@@ -1,0 +1,4 @@
+__crc_qcom_smem_alloc = 0x34b57571;
+__crc_qcom_smem_get = 0xeeffa750;
+__crc_qcom_smem_get_free_space = 0x5a710273;
+__crc_qcom_smem_virt_to_phys = 0x9979b76e;

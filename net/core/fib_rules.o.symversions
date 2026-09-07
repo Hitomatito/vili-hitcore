@@ -1,0 +1,9 @@
+__crc_fib_rule_matchall = 0x0b2da76a;
+__crc_fib_default_rule_add = 0x500d20dc;
+__crc_fib_rules_register = 0xf051770f;
+__crc_fib_rules_unregister = 0x6b772a94;
+__crc_fib_rules_lookup = 0x100cf7eb;
+__crc_fib_rules_dump = 0x75d1f12b;
+__crc_fib_rules_seq_read = 0x8580cc75;
+__crc_fib_nl_newrule = 0xf6f02ae2;
+__crc_fib_nl_delrule = 0x2a7e594d;

@@ -1,0 +1,16 @@
+__crc_dm_vcalloc = 0xc79bcd36;
+__crc_dm_get_dev_t = 0xfc14bb2e;
+__crc_dm_get_device = 0x39ba21c3;
+__crc_dm_put_device = 0xf6e86eb4;
+__crc_dm_read_arg = 0x11e0ec41;
+__crc_dm_read_arg_group = 0xc7d094b5;
+__crc_dm_shift_arg = 0x5eb24829;
+__crc_dm_consume_args = 0x7deff673;
+__crc_dm_table_set_type = 0xb464f1b8;
+__crc_dm_table_event = 0xad84bef8;
+__crc_dm_table_get_size = 0x2473f47e;
+__crc_dm_table_get_mode = 0xc66d919f;
+__crc_dm_table_add_target_callbacks = 0xb1425b32;
+__crc_dm_table_get_md = 0xc5b0269d;
+__crc_dm_table_device_name = 0xfdf637af;
+__crc_dm_table_run_md_queue_async = 0x37af3190;

@@ -1,0 +1,6 @@
+drivers/iio/industrialio.ko
+drivers/iio/adc/qcom-spmi-adc5.ko
+drivers/iio/adc/qcom-vadc-common.ko
+drivers/iio/buffer/industrialio-buffer-cb.ko
+drivers/iio/buffer/industrialio-triggered-buffer.ko
+drivers/iio/buffer/kfifo_buf.ko

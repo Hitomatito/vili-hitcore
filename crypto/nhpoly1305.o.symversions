@@ -1,0 +1,6 @@
+__crc_crypto_nhpoly1305_setkey = 0x1d26a813;
+__crc_crypto_nhpoly1305_init = 0x6e374d2e;
+__crc_crypto_nhpoly1305_update_helper = 0xae814850;
+__crc_crypto_nhpoly1305_update = 0x5125bc4d;
+__crc_crypto_nhpoly1305_final_helper = 0x7449d2ef;
+__crc_crypto_nhpoly1305_final = 0xa4dc21b8;

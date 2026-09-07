@@ -1,0 +1,9 @@
+__crc_drm_open = 0x8efcf60a;
+__crc_drm_release = 0xeb632718;
+__crc_drm_read = 0xf48fd96a;
+__crc_drm_poll = 0xbf7a1e34;
+__crc_drm_event_reserve_init_locked = 0x6e4502aa;
+__crc_drm_event_reserve_init = 0x56f366ba;
+__crc_drm_event_cancel_free = 0x955e3f61;
+__crc_drm_send_event_locked = 0x7b5d8e8a;
+__crc_drm_send_event = 0x1675588f;

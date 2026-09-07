@@ -1,0 +1,10 @@
+__crc_irq_gc_mask_set_bit = 0xf18d8842;
+__crc_irq_gc_mask_clr_bit = 0x294e98e5;
+__crc_irq_gc_ack_set_bit = 0x03d17188;
+__crc_irq_alloc_generic_chip = 0x9192b43d;
+__crc___irq_alloc_domain_generic_chips = 0x5e656083;
+__crc_irq_get_domain_generic_chip = 0x82f37e9c;
+__crc_irq_generic_chip_ops = 0xeacf733d;
+__crc_irq_setup_generic_chip = 0xd536d541;
+__crc_irq_setup_alt_chip = 0x77ff787d;
+__crc_irq_remove_generic_chip = 0xa58a8d4d;

@@ -1,0 +1,6 @@
+__crc_drm_noop = 0x8c5f8381;
+__crc_drm_invalid_op = 0x1b3b023b;
+__crc_drm_ioctl_permit = 0xeb456474;
+__crc_drm_ioctl_kernel = 0xf5b17854;
+__crc_drm_ioctl = 0x06237d51;
+__crc_drm_ioctl_flags = 0x57b6efe3;

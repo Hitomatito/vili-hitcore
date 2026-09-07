@@ -1,0 +1,13 @@
+__crc_snd_timer_open = 0x1587e1bd;
+__crc_snd_timer_close = 0xf2054fef;
+__crc_snd_timer_resolution = 0xe88bba72;
+__crc_snd_timer_start = 0x6afc3048;
+__crc_snd_timer_stop = 0xc36d61d8;
+__crc_snd_timer_continue = 0x78da0625;
+__crc_snd_timer_pause = 0x709325f7;
+__crc_snd_timer_interrupt = 0x9c4aa273;
+__crc_snd_timer_new = 0xe79b3774;
+__crc_snd_timer_notify = 0xf15d2056;
+__crc_snd_timer_global_new = 0x45b8dc28;
+__crc_snd_timer_global_free = 0xe2155f9d;
+__crc_snd_timer_global_register = 0x2e3b3cb2;

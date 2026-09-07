@@ -1,0 +1,8 @@
+__crc_msm_qdss_csr_enable_bam_to_usb = 0x9b150412;
+__crc_msm_qdss_csr_enable_flush = 0x5b3cc0ae;
+__crc_msm_qdss_csr_disable_bam_to_usb = 0xaf4e8c38;
+__crc_msm_qdss_csr_disable_flush = 0x8f753304;
+__crc_coresight_csr_hwctrl_set = 0x4dcbd5e8;
+__crc_coresight_csr_set_byte_cntr = 0xd9b72a8e;
+__crc_coresight_csr_get = 0xb4feef5a;
+__crc_of_get_coresight_csr_name = 0x36b3cc73;

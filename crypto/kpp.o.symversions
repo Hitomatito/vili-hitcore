@@ -1,0 +1,3 @@
+__crc_crypto_alloc_kpp = 0x70782531;
+__crc_crypto_register_kpp = 0x05b19bc9;
+__crc_crypto_unregister_kpp = 0x7dc3be17;

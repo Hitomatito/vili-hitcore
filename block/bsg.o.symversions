@@ -1,0 +1,2 @@
+__crc_bsg_unregister_queue = 0x433cfb18;
+__crc_bsg_scsi_register_queue = 0xaa3702ab;

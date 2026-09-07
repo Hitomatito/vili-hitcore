@@ -1,0 +1,12 @@
+__crc_ipa_assert = 0xc973d1d2;
+__crc_ipa_smmu_store_sgt = 0xc0f3d614;
+__crc_ipa_smmu_free_sgt = 0x511f5eb9;
+__crc_ipa3_get_dma_dev = 0x7eeb1526;
+__crc_ipa3_inc_client_enable_clks = 0xf42314fd;
+__crc_ipa3_inc_client_enable_clks_no_block = 0x4b4aced0;
+__crc_ipa3_dec_client_disable_clks = 0xab40656a;
+__crc_ipa3_set_required_perf_profile = 0x551916a1;
+__crc_ipa3_notify_clients_registered = 0xcbdd873b;
+__crc_ipa3_get_ctx = 0x73f66059;
+__crc_ipa3_get_smmu_params = 0x3f5f007b;
+__crc_ipa3_get_transport_info = 0x331d8d9a;

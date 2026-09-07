@@ -1,0 +1,9 @@
+__crc_cal_utils_create_cal_types = 0xf72d0956;
+__crc_cal_utils_destroy_cal_types = 0x35df742c;
+__crc_cal_utils_get_only_cal_block = 0x71804c29;
+__crc_cal_utils_match_buf_num = 0xcef46f9a;
+__crc_cal_utils_alloc_cal = 0x2bb50d7c;
+__crc_cal_utils_dealloc_cal = 0x094bb294;
+__crc_cal_utils_set_cal = 0xaa8107a3;
+__crc_cal_utils_mark_cal_used = 0x6207a76d;
+__crc_cal_utils_is_cal_stale = 0x66342a21;

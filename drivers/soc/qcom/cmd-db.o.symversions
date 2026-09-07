@@ -1,0 +1,5 @@
+__crc_cmd_db_ready = 0x5203d176;
+__crc_cmd_db_read_addr = 0x08e39398;
+__crc_cmd_db_read_aux_data = 0xf0b2419f;
+__crc_cmd_db_read_slave_id = 0x450d9a35;
+__crc_cmd_db_is_standalone = 0x90651c92;

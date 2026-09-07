@@ -1,0 +1,6 @@
+__crc_hh_msgq_recv = 0xdb68bc10;
+__crc_hh_msgq_send = 0xaf67a2cc;
+__crc_hh_msgq_register = 0x728a413f;
+__crc_hh_msgq_unregister = 0x38070aca;
+__crc_hh_msgq_populate_cap_info = 0x1256cc92;
+__crc_hh_msgq_probe = 0xd899f95b;

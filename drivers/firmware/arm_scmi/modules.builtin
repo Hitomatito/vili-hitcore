@@ -1,0 +1,2 @@
+drivers/firmware/arm_scmi/memlat_vendor.ko
+drivers/firmware/arm_scmi/plh_vendor.ko

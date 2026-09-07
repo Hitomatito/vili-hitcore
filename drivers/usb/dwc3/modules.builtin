@@ -1,0 +1,5 @@
+drivers/usb/dwc3/dwc3.ko
+drivers/usb/dwc3/dwc3-haps.ko
+drivers/usb/dwc3/dwc3-of-simple.ko
+drivers/usb/dwc3/dwc3-qcom.ko
+drivers/usb/dwc3/dwc3-msm.ko

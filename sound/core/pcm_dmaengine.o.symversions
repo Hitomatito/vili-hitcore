@@ -1,0 +1,11 @@
+__crc_snd_dmaengine_pcm_get_chan = 0x16d80519;
+__crc_snd_hwparams_to_dma_slave_config = 0xfb5a3530;
+__crc_snd_dmaengine_pcm_set_config_from_dai_data = 0x628c717b;
+__crc_snd_dmaengine_pcm_trigger = 0x9ca91442;
+__crc_snd_dmaengine_pcm_pointer_no_residue = 0xddea2986;
+__crc_snd_dmaengine_pcm_pointer = 0xc3657983;
+__crc_snd_dmaengine_pcm_request_channel = 0xec035241;
+__crc_snd_dmaengine_pcm_open = 0xb09fb3b0;
+__crc_snd_dmaengine_pcm_open_request_chan = 0x22a20fd0;
+__crc_snd_dmaengine_pcm_close = 0x132d6137;
+__crc_snd_dmaengine_pcm_close_release_chan = 0xc55b4082;

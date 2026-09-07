@@ -1,0 +1,4 @@
+__crc_dwc3_set_prtcap = 0x6363651b;
+__crc_dwc3_core_init = 0xf8d02351;
+__crc_dwc3_set_notifier = 0x2e18ccde;
+__crc_dwc3_notify_event = 0x1ff886fc;

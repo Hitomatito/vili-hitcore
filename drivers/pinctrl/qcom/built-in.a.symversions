@@ -1,0 +1,7 @@
+__crc_msm_pinctrl_dev_pm_ops = 0xb47b53d1;
+__crc_msm_qup_write = 0x05c8d2c7;
+__crc_msm_spare_write = 0x62bf5f41;
+__crc_msm_spare_read = 0xa3454c9a;
+__crc_msm_gpio_mpm_wake_set = 0xdc9d499c;
+__crc_msm_pinctrl_probe = 0x4cf7ecde;
+__crc_msm_pinctrl_remove = 0xeaef6c4a;

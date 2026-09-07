@@ -1,0 +1,2 @@
+__crc_coresight_get_cpu = 0xb009609b;
+__crc_coresight_get_platform_data = 0x5bd34907;

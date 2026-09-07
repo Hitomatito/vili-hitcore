@@ -1,0 +1,4 @@
+__crc_drm_legacy_ioremap = 0x286b1cca;
+__crc_drm_legacy_ioremap_wc = 0xc604c55f;
+__crc_drm_legacy_ioremapfree = 0x212349de;
+__crc_drm_need_swiotlb = 0xb6127243;

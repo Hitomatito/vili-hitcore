@@ -1,0 +1,4 @@
+__crc_cfi_module_add = 0x56d33717;
+__crc_cfi_module_remove = 0x678ad5a8;
+__crc___cfi_slowpath_diag = 0x4411a445;
+__crc___ubsan_handle_cfi_check_fail = 0xf7eb54dd;

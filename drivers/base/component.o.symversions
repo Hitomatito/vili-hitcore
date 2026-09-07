@@ -1,0 +1,9 @@
+__crc_component_match_add_release = 0x4f6be645;
+__crc_component_match_add_typed = 0xa99c3a28;
+__crc_component_master_add_with_match = 0xe6a0904d;
+__crc_component_master_del = 0x7ec6d1e8;
+__crc_component_unbind_all = 0xc72154e3;
+__crc_component_bind_all = 0x74259a08;
+__crc_component_add_typed = 0x586f601f;
+__crc_component_add = 0x505344a1;
+__crc_component_del = 0xf0386a27;

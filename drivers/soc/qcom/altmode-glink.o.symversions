@@ -1,0 +1,5 @@
+__crc_altmode_register_notifier = 0x3db27b75;
+__crc_altmode_deregister_notifier = 0xa68e5f79;
+__crc_altmode_send_data = 0x107d0406;
+__crc_altmode_register_client = 0x9bbbc627;
+__crc_altmode_deregister_client = 0x9a7e7b53;

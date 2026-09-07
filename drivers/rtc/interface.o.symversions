@@ -1,0 +1,10 @@
+__crc_rtc_read_time = 0x141c5277;
+__crc_rtc_set_time = 0xc59c0541;
+__crc_rtc_read_alarm = 0x34700ba1;
+__crc_rtc_set_alarm = 0x0cd4dae1;
+__crc_rtc_initialize_alarm = 0xa4fe0926;
+__crc_rtc_alarm_irq_enable = 0xfd5e6ef6;
+__crc_rtc_update_irq_enable = 0xb1f51476;
+__crc_rtc_update_irq = 0x7cc95d5a;
+__crc_rtc_class_open = 0x70fc9937;
+__crc_rtc_class_close = 0x26f45434;

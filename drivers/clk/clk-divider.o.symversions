@@ -1,0 +1,12 @@
+__crc_divider_recalc_rate = 0xcb998640;
+__crc_divider_round_rate_parent = 0xb014861e;
+__crc_divider_ro_round_rate_parent = 0xf6b8b234;
+__crc_divider_get_val = 0x5e798ffb;
+__crc_clk_divider_ops = 0x91473b04;
+__crc_clk_divider_ro_ops = 0x7400efd7;
+__crc_clk_register_divider = 0xb86c364b;
+__crc_clk_hw_register_divider = 0xd11a3643;
+__crc_clk_register_divider_table = 0x2093f4dd;
+__crc_clk_hw_register_divider_table = 0x10d9da11;
+__crc_clk_unregister_divider = 0xff291ecf;
+__crc_clk_hw_unregister_divider = 0xa51e40c8;

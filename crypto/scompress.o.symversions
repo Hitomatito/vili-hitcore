@@ -1,0 +1,4 @@
+__crc_crypto_register_scomp = 0x60846951;
+__crc_crypto_unregister_scomp = 0x0c290b0e;
+__crc_crypto_register_scomps = 0x07ca99ae;
+__crc_crypto_unregister_scomps = 0xbfa6c152;

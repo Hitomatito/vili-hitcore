@@ -1,0 +1,15 @@
+__crc_hci_alloc_dev = 0x842d44fb;
+__crc_hci_free_dev = 0xaf4bcd99;
+__crc_hci_register_dev = 0x14b23d43;
+__crc_hci_unregister_dev = 0xe5c37bc9;
+__crc_hci_suspend_dev = 0x894d4a3d;
+__crc_hci_resume_dev = 0x1583df7b;
+__crc_hci_reset_dev = 0x6a27dcf7;
+__crc_hci_recv_frame = 0x2fd60a3a;
+__crc_hci_recv_diag = 0x02995ecc;
+__crc_hci_set_hw_info = 0xe35e0ed0;
+__crc_hci_set_fw_info = 0x050b6524;
+__crc_hci_register_cb = 0xe0e6fda1;
+__crc_hci_unregister_cb = 0x26ae0a89;
+__crc___hci_cmd_send = 0x974e3117;
+__crc_hci_cmd_sync = 0x67f64aa9;

@@ -1,0 +1,4 @@
+__crc_iio_triggered_buffer_setup = 0xfb4d0409;
+__crc_iio_triggered_buffer_cleanup = 0xa351c3f3;
+__crc_devm_iio_triggered_buffer_setup = 0x3a31a8b1;
+__crc_devm_iio_triggered_buffer_cleanup = 0xe3b14b87;

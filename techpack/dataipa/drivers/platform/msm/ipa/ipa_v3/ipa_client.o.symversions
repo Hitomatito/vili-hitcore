@@ -1,0 +1,16 @@
+__crc_ipa3_reset_gsi_channel = 0x11708ab6;
+__crc_ipa3_reset_gsi_event_ring = 0x56880c3c;
+__crc_ipa3_smmu_map_peer_reg = 0xb2d84a20;
+__crc_ipa3_smmu_map_peer_buff = 0xa9093464;
+__crc_ipa3_register_client_callback = 0x8079ce3a;
+__crc_ipa3_deregister_client_callback = 0x526892c5;
+__crc_ipa3_request_gsi_channel = 0x092e8a5d;
+__crc_ipa3_set_usb_max_packet_size = 0xe962490e;
+__crc_ipa3_xdci_connect = 0x017da7aa;
+__crc_ipa3_xdci_start = 0xe9062857;
+__crc_ipa3_xdci_ep_delay_rm = 0x6028648a;
+__crc_ipa3_xdci_disconnect = 0xa3c4fb10;
+__crc_ipa3_release_gsi_channel = 0x561252c5;
+__crc_ipa3_xdci_suspend = 0xdcfb1eb1;
+__crc_ipa3_start_gsi_channel = 0x15d21684;
+__crc_ipa3_xdci_resume = 0x845446d1;

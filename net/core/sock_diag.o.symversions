@@ -1,0 +1,9 @@
+__crc_sock_diag_check_cookie = 0x5a805954;
+__crc_sock_diag_save_cookie = 0x8ea38748;
+__crc_sock_diag_put_meminfo = 0xe2f2fcb1;
+__crc_sock_diag_put_filterinfo = 0x1c5209d9;
+__crc_sock_diag_register_inet_compat = 0x9e431a23;
+__crc_sock_diag_unregister_inet_compat = 0x25243720;
+__crc_sock_diag_register = 0x0e5ffd36;
+__crc_sock_diag_unregister = 0xeb37df1c;
+__crc_sock_diag_destroy = 0x048deda9;

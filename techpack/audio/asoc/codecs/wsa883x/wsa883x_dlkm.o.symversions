@@ -1,0 +1,3 @@
+__crc_wsa883x_codec_info_create_codec_entry = 0x9adf1d61;
+__crc_wsa883x_codec_get_dev_num = 0xe637896a;
+__crc_wsa883x_set_channel_map = 0xfce3e9ba;

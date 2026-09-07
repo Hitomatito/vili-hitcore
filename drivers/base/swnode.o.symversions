@@ -1,0 +1,11 @@
+__crc_is_software_node = 0x77246b31;
+__crc_to_software_node = 0x6b2d414a;
+__crc_software_node_fwnode = 0x26c0bc8e;
+__crc_property_entries_dup = 0x7caf306c;
+__crc_property_entries_free = 0x2a4cf402;
+__crc_software_node_find_by_name = 0xeca5d40d;
+__crc_software_node_register_nodes = 0x8db2c04f;
+__crc_software_node_unregister_nodes = 0x4bfba5f1;
+__crc_software_node_register = 0xf29cdf27;
+__crc_fwnode_create_software_node = 0xa80f9923;
+__crc_fwnode_remove_software_node = 0xf6b17243;

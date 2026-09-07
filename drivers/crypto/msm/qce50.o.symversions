@@ -1,0 +1,15 @@
+__crc_qce_get_driver_stats = 0x8a41438e;
+__crc_qce_clear_driver_stats = 0xec092a95;
+__crc_qce_pm_table = 0x4541bcae;
+__crc_qce_aead_req = 0x71d2b072;
+__crc_qce_ablk_cipher_req = 0xd250b5e4;
+__crc_qce_process_sha_req = 0x9f8000c3;
+__crc_qce_f8_req = 0x1bb41409;
+__crc_qce_f8_multi_pkt_req = 0x416e209d;
+__crc_qce_f9_req = 0x144b95b9;
+__crc_qce_enable_clk = 0x0d26f8cb;
+__crc_qce_disable_clk = 0x81a61e31;
+__crc_qce_open = 0x98194a05;
+__crc_qce_close = 0x575c81e1;
+__crc_qce_hw_support = 0x46a7cef5;
+__crc_qce_dump_req = 0xd5d0c31d;

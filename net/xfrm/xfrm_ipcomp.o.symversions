@@ -1,0 +1,4 @@
+__crc_ipcomp_input = 0x95469612;
+__crc_ipcomp_output = 0xfc12091c;
+__crc_ipcomp_destroy = 0x06095aaf;
+__crc_ipcomp_init_state = 0x1eade788;

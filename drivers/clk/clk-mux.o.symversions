@@ -1,0 +1,10 @@
+__crc_clk_mux_val_to_index = 0x67d20828;
+__crc_clk_mux_index_to_val = 0x14d01690;
+__crc_clk_mux_ops = 0x3316dc27;
+__crc_clk_mux_ro_ops = 0x43581385;
+__crc_clk_hw_register_mux_table = 0x7ac973fb;
+__crc_clk_register_mux_table = 0x556d2606;
+__crc_clk_register_mux = 0xf17e6282;
+__crc_clk_hw_register_mux = 0x58e2ae42;
+__crc_clk_unregister_mux = 0x47de0dc7;
+__crc_clk_hw_unregister_mux = 0xd8f6d137;

@@ -1,0 +1,9 @@
+__crc_ipa3_wigig_internal_init = 0x2852992d;
+__crc_ipa3_conn_wigig_rx_pipe_i = 0x42709c50;
+__crc_ipa3_conn_wigig_client_i = 0xd6f32f65;
+__crc_ipa3_disconn_wigig_pipe_i = 0x46aa9572;
+__crc_ipa3_wigig_uc_msi_init = 0xd00472c5;
+__crc_ipa3_enable_wigig_pipe_i = 0xeea0b212;
+__crc_ipa3_disable_wigig_pipe_i = 0xd75f30d3;
+__crc_ipa_wigig_send_wlan_msg = 0x0f22f760;
+__crc_ipa_wigig_send_msg = 0xc5cdd9f6;

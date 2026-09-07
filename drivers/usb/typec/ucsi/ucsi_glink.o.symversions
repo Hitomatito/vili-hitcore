@@ -1,0 +1,2 @@
+__crc_register_ucsi_glink_notifier = 0x69ea286a;
+__crc_unregister_ucsi_glink_notifier = 0xf8c1938f;

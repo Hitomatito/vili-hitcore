@@ -1,0 +1,7 @@
+__crc_sdw_add_bus_master = 0x9fcfc027;
+__crc_sdw_delete_bus_master = 0xd3e799ad;
+__crc_sdw_nread = 0x1c6e111b;
+__crc_sdw_nwrite = 0x4849ab4e;
+__crc_sdw_read = 0x1da61976;
+__crc_sdw_write = 0x8f443d2b;
+__crc_sdw_handle_slave_status = 0x092b1a03;

@@ -1,0 +1,5 @@
+__crc_nf_reject_ip_tcphdr_get = 0x6a1c73ab;
+__crc_nf_reject_iphdr_put = 0xbf1f4706;
+__crc_nf_reject_ip_tcphdr_put = 0x903c0a39;
+__crc_nf_send_reset = 0x42425446;
+__crc_nf_send_unreach = 0x88278bf9;

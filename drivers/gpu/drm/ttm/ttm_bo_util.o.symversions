@@ -1,0 +1,13 @@
+__crc_ttm_bo_move_ttm = 0xd26691d9;
+__crc_ttm_mem_io_lock = 0xd1b420bc;
+__crc_ttm_mem_io_unlock = 0xb8c3ca0d;
+__crc_ttm_mem_io_reserve = 0xd9bcb766;
+__crc_ttm_mem_io_free = 0x5bfa2f05;
+__crc_ttm_kmap_atomic_prot = 0xbac6001d;
+__crc_ttm_kunmap_atomic_prot = 0xde0ed454;
+__crc_ttm_bo_move_memcpy = 0xd52244d2;
+__crc_ttm_io_prot = 0x81b453b5;
+__crc_ttm_bo_kmap = 0x18a9f743;
+__crc_ttm_bo_kunmap = 0x2ce0655a;
+__crc_ttm_bo_move_accel_cleanup = 0xdf664404;
+__crc_ttm_bo_pipeline_move = 0xff4e4fe0;

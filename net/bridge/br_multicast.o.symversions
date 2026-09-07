@@ -1,0 +1,5 @@
+__crc_br_multicast_enabled = 0x7ea2982c;
+__crc_br_multicast_router = 0xdf06fccc;
+__crc_br_multicast_list_adjacent = 0x431e649d;
+__crc_br_multicast_has_querier_anywhere = 0xb1ed6d1d;
+__crc_br_multicast_has_querier_adjacent = 0x2d6de4da;

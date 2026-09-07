@@ -1,0 +1,6 @@
+__crc_dax_region_put = 0x462ef57c;
+__crc_alloc_dax_region = 0xb67a156b;
+__crc_kill_dev_dax = 0x9ef5fc23;
+__crc___devm_create_dev_dax = 0xd5edeb8c;
+__crc___dax_driver_register = 0x4e1bf5d3;
+__crc_dax_driver_unregister = 0x644fd41a;

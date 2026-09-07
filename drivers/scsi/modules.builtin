@@ -1,0 +1,12 @@
+drivers/scsi/scsi_mod.ko
+drivers/scsi/sd_mod.ko
+drivers/scsi/sg.ko
+drivers/scsi/ufs/tc-dwc-g210-pltfrm.ko
+drivers/scsi/ufs/ufshcd-dwc.ko
+drivers/scsi/ufs/tc-dwc-g210.ko
+drivers/scsi/ufs/ufs-qcom.ko
+drivers/scsi/ufs/ufshcd-core.ko
+drivers/scsi/ufs/ufshcd-pci.ko
+drivers/scsi/ufs/ufshcd-pltfrm.ko
+drivers/scsi/ufs/ufs-hisi.ko
+drivers/scsi/ufs/ufshcd-crypto-qti.ko

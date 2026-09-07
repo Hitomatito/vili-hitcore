@@ -1,0 +1,14 @@
+__crc_fuse_conn_init = 0xff5a0107;
+__crc_fuse_conn_put = 0x58b2ce87;
+__crc_fuse_conn_get = 0x29856a26;
+__crc_fuse_mount_put = 0x4343b812;
+__crc_fuse_mount_get = 0x052a085f;
+__crc_fuse_send_init = 0xfb556fff;
+__crc_fuse_free_conn = 0x8241093b;
+__crc_fuse_dev_alloc = 0xb1d3a124;
+__crc_fuse_dev_install = 0x1792093f;
+__crc_fuse_dev_alloc_install = 0xfb95d74a;
+__crc_fuse_dev_free = 0xea61f2d6;
+__crc_fuse_fill_super_common = 0xd3203cad;
+__crc_fuse_mount_remove = 0x882614b9;
+__crc_fuse_conn_destroy = 0x91ad3eff;

@@ -1,0 +1,11 @@
+__crc_mfd_cell_enable = 0x5b7a53d1;
+__crc_mfd_cell_disable = 0x20c53c82;
+__crc_mfd_add_devices = 0xb5921ea5;
+__crc_mfd_remove_devices = 0xcd8eef37;
+__crc_devm_mfd_add_devices = 0x2d7cba5f;
+__crc_mfd_clone_cell = 0xdaea6e0d;
+__crc_device_node_to_regmap = 0x926db87d;
+__crc_syscon_node_to_regmap = 0x799485df;
+__crc_syscon_regmap_lookup_by_compatible = 0xee6b71c4;
+__crc_syscon_regmap_lookup_by_phandle = 0x0228a8ef;
+__crc_syscon_regmap_lookup_by_phandle_args = 0x91656d57;

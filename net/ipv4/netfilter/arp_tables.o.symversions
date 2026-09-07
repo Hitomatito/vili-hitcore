@@ -1,0 +1,5 @@
+__crc_arpt_alloc_initial_table = 0xd961be04;
+__crc_arpt_unregister_table_pre_exit = 0x31eb4a36;
+__crc_arpt_register_table = 0xefec95cc;
+__crc_arpt_unregister_table = 0x47044867;
+__crc_arpt_do_table = 0x8b9e1a36;

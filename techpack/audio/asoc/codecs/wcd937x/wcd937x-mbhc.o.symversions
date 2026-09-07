@@ -1,0 +1,7 @@
+__crc_wcd937x_mbhc_get_impedance = 0x5c9c57c3;
+__crc_wcd937x_mbhc_hs_detect = 0x4830d524;
+__crc_wcd937x_mbhc_hs_detect_exit = 0xab906b32;
+__crc_wcd937x_mbhc_ssr_down = 0x18854bd0;
+__crc_wcd937x_mbhc_post_ssr_init = 0xadcaa44f;
+__crc_wcd937x_mbhc_init = 0x9bdbe7fb;
+__crc_wcd937x_mbhc_deinit = 0xd9c17eae;

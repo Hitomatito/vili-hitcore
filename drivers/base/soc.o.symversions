@@ -1,0 +1,3 @@
+__crc_soc_device_register = 0xa4ee2132;
+__crc_soc_device_unregister = 0x19c20269;
+__crc_soc_device_match = 0xebe80f10;

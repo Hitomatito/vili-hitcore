@@ -1,0 +1,3 @@
+__crc_neuron_protocol_add = 0xd06b357a;
+__crc_neuron_register_protocol_driver = 0x8e1f4f98;
+__crc_neuron_unregister_protocol_driver = 0x153f0cb7;

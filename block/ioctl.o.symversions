@@ -1,0 +1,4 @@
+__crc___blkdev_reread_part = 0x89e71f6b;
+__crc_blkdev_reread_part = 0xbb650bf9;
+__crc___blkdev_driver_ioctl = 0x68b30293;
+__crc_blkdev_ioctl = 0x5525f297;

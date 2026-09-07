@@ -1,0 +1,5 @@
+__crc_hh_rm_register_notifier = 0xcf1635dc;
+__crc_hh_rm_unregister_notifier = 0x1544557e;
+__crc_hh_rm_virq_to_irq = 0x77427819;
+__crc_hh_rm_irq_to_virq = 0x29fc6cd7;
+__crc_hh_rm_populate_hyp_res = 0x8f8678f8;

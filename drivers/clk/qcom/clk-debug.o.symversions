@@ -1,0 +1,6 @@
+__crc_clk_debug_mux_ops = 0x820e82df;
+__crc_clk_debug_measure_add = 0x091c02bb;
+__crc_clk_debug_measure_register = 0xc57434ab;
+__crc_map_debug_bases = 0x00691ed4;
+__crc_qcom_clk_dump = 0xa9a939b7;
+__crc_qcom_clk_bulk_dump = 0xd8712449;

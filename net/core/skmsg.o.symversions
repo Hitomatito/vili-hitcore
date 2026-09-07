@@ -1,0 +1,15 @@
+__crc_sk_msg_alloc = 0x6054641a;
+__crc_sk_msg_clone = 0x8957145e;
+__crc_sk_msg_return_zero = 0x76fbaaea;
+__crc_sk_msg_return = 0x541d4c71;
+__crc_sk_msg_free_nocharge = 0x09169864;
+__crc_sk_msg_free = 0x09f948b8;
+__crc_sk_msg_free_partial = 0xa60a38e4;
+__crc_sk_msg_trim = 0x05a677df;
+__crc_sk_msg_zerocopy_from_iter = 0x780e9315;
+__crc_sk_msg_memcopy_from_iter = 0xfc293b85;
+__crc_sk_psock_init = 0x052066b0;
+__crc_sk_psock_destroy = 0xf880cf6b;
+__crc_sk_psock_drop = 0x68236f87;
+__crc_sk_psock_msg_verdict = 0xe04b2c9a;
+__crc_sk_psock_tls_strp_read = 0x53424e5a;

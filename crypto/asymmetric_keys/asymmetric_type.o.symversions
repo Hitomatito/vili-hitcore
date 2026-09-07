@@ -1,0 +1,8 @@
+__crc_key_being_used_for = 0xf311e156;
+__crc_find_asymmetric_key = 0xbb1b48c6;
+__crc_asymmetric_key_generate_id = 0xbb6f025a;
+__crc_asymmetric_key_id_same = 0x975519c1;
+__crc_asymmetric_key_id_partial = 0x3a9be019;
+__crc_key_type_asymmetric = 0x9dbaed77;
+__crc_register_asymmetric_key_parser = 0x2af1890f;
+__crc_unregister_asymmetric_key_parser = 0xad90ab18;

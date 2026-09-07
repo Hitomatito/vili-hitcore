@@ -1,0 +1,14 @@
+drivers/thermal/qcom/qcom-spmi-temp-alarm.ko
+drivers/thermal/qcom/qti-adc-tm.ko
+drivers/thermal/qcom/qti_qmi_sensor.ko
+drivers/thermal/qcom/qti_qmi_cdev.ko
+drivers/thermal/qcom/cpu_isolate.ko
+drivers/thermal/qcom/cpu_hotplug.ko
+drivers/thermal/qcom/bcl_pmic5.ko
+drivers/thermal/qcom/bcl_soc.ko
+drivers/thermal/qcom/msm_lmh_dcvs.ko
+drivers/thermal/qcom/cpu_voltage_cooling.ko
+drivers/thermal/qcom/policy_engine.ko
+drivers/thermal/qcom/sdpm_clk.ko
+drivers/thermal/qcom/ddr_cdev.ko
+drivers/thermal/qcom/max31760_fan.ko

@@ -1,0 +1,3 @@
+__crc_neuron_app_add = 0xa104c1d8;
+__crc_neuron_register_app_driver = 0xd131dc8e;
+__crc_neuron_unregister_app_driver = 0x2c58f7dc;

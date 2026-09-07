@@ -1,0 +1,6 @@
+__crc_devm_request_threaded_irq = 0xa844bf0b;
+__crc_devm_request_any_context_irq = 0xa953b40a;
+__crc_devm_free_irq = 0xd2761a50;
+__crc___devm_irq_alloc_descs = 0xa165425b;
+__crc_devm_irq_alloc_generic_chip = 0x28809a49;
+__crc_devm_irq_setup_generic_chip = 0xba5d0f4a;

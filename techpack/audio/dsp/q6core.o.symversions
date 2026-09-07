@@ -1,0 +1,17 @@
+__crc_q6core_init_uevent_data = 0x6d4d60c3;
+__crc_q6core_destroy_uevent_data = 0xea77c5e4;
+__crc_q6core_send_uevent = 0x92e34c9c;
+__crc_q6core_get_service_version = 0x250d0437;
+__crc_q6core_get_fwk_version_size = 0xd3f8c4aa;
+__crc_q6core_get_avcs_api_version_per_service = 0x7392ae67;
+__crc_q6core_get_avcs_avs_build_version_info = 0xea5e87ad;
+__crc_core_set_license = 0x2bfec7fc;
+__crc_core_get_license_status = 0x20d58b5c;
+__crc_core_set_dolby_manufacturer_id = 0xe125bd6f;
+__crc_q6core_avcs_load_unload_modules = 0x71367d69;
+__crc_q6core_load_unload_topo_modules = 0x920dda13;
+__crc_q6core_is_adsp_ready = 0x7e52e977;
+__crc_q6core_create_lpass_npa_client = 0x170524a8;
+__crc_q6core_destroy_lpass_npa_client = 0x34911636;
+__crc_q6core_request_island_transition = 0x78c1cb6a;
+__crc_q6core_map_mdf_memory_regions = 0xe472c7fc;

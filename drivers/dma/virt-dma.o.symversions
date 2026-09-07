@@ -1,0 +1,5 @@
+__crc_vchan_tx_submit = 0xa0939bdc;
+__crc_vchan_tx_desc_free = 0xe03f2fca;
+__crc_vchan_find_desc = 0x984a02c0;
+__crc_vchan_dma_desc_free_list = 0x0593cbe4;
+__crc_vchan_init = 0x2cb02639;

@@ -1,0 +1,8 @@
+__crc_fscrypt_file_open = 0x1401cdb2;
+__crc___fscrypt_prepare_link = 0x21913d78;
+__crc___fscrypt_prepare_rename = 0x8d34aff9;
+__crc___fscrypt_prepare_lookup = 0xf3a6c4d3;
+__crc___fscrypt_prepare_symlink = 0xb38f0ae6;
+__crc___fscrypt_encrypt_symlink = 0xfaf2d0ba;
+__crc_fscrypt_get_symlink = 0x2d991096;
+__crc_fscrypt_symlink_getattr = 0x62029f46;

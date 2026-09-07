@@ -1,0 +1,3 @@
+drivers/clk/hisilicon/crg-hi3516cv300.ko
+drivers/clk/hisilicon/clk-hi3519.ko
+drivers/clk/hisilicon/crg-hi3798cv200.ko

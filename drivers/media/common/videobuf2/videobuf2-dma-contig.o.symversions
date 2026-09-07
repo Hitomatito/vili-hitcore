@@ -1,0 +1,3 @@
+__crc_vb2_dma_contig_memops = 0x6f429d75;
+__crc_vb2_dma_contig_set_max_seg_size = 0x7b2d9718;
+__crc_vb2_dma_contig_clear_max_seg_size = 0x6c764db6;

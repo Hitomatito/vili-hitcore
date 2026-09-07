@@ -1,0 +1,12 @@
+__crc_of_bcm_voter_get = 0xd29967bf;
+__crc_qcom_icc_bcm_voter_add = 0xd71e6adc;
+__crc_qcom_icc_bcm_voter_commit = 0x0b39b783;
+__crc_qcom_icc_bcm_voter_clear_init = 0x3b5d1493;
+__crc_qcom_icc_pre_aggregate = 0x3fc1aeb9;
+__crc_qcom_icc_aggregate = 0x98424922;
+__crc_qcom_icc_set = 0x184b27b0;
+__crc_qcom_icc_bcm_init = 0x889a268b;
+__crc_qcom_icc_enable_qos_deps = 0x2a338b94;
+__crc_qcom_icc_disable_qos_deps = 0xc3595c9a;
+__crc_icc_qnoc_qos_regs = 0xc893232c;
+__crc_qcom_qnoc4_ops = 0xb63a879e;

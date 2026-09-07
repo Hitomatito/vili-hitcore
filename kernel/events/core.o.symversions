@@ -1,0 +1,17 @@
+__crc_perf_event_disable = 0x43d9e16a;
+__crc_perf_event_enable = 0x58c5617c;
+__crc_perf_event_addr_filters_sync = 0x16b4ed8a;
+__crc_perf_event_refresh = 0x32f8154d;
+__crc_perf_event_release_kernel = 0xdcb00ebe;
+__crc_perf_event_read_value = 0xa3de2724;
+__crc_perf_event_update_userpage = 0x6730b9ad;
+__crc_perf_register_guest_info_callbacks = 0xab9bd884;
+__crc_perf_unregister_guest_info_callbacks = 0xaa230f88;
+__crc_perf_swevent_get_recursion_context = 0x4ef5bcf4;
+__crc_perf_trace_run_bpf_submit = 0x0ae4135e;
+__crc_perf_tp_event = 0x042fbe6f;
+__crc_perf_pmu_register = 0xdd326572;
+__crc_perf_pmu_unregister = 0x52ebced0;
+__crc_perf_event_create_kernel_counter = 0x74378301;
+__crc_perf_pmu_migrate_context = 0x469453bd;
+__crc_perf_event_sysfs_show = 0xaf4a4720;

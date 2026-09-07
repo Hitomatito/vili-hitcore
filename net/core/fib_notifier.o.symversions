@@ -1,0 +1,6 @@
+__crc_call_fib_notifier = 0x4a101502;
+__crc_call_fib_notifiers = 0xc414f163;
+__crc_register_fib_notifier = 0x6cff3b90;
+__crc_unregister_fib_notifier = 0xfc3bba0f;
+__crc_fib_notifier_ops_register = 0xb0d25c27;
+__crc_fib_notifier_ops_unregister = 0x15e14c46;

@@ -1,0 +1,10 @@
+drivers/input/touchscreen/of_touchscreen.ko
+drivers/input/touchscreen/atmel_mxt_ts.ko
+drivers/input/touchscreen/usbtouchscreen.ko
+drivers/input/touchscreen/fts_spi/fts_touch_spi.ko
+drivers/input/touchscreen/nt36xxx/nvt_36xxx.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_core.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_rmi_dev.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_fw_update.ko
+drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_test_reporting.ko
+drivers/input/touchscreen/xiaomi/xiaomi_touch.ko

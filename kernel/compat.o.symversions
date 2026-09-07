@@ -1,0 +1,6 @@
+__crc_compat_get_timeval = 0x321bdbb1;
+__crc_compat_put_timeval = 0x6921aa34;
+__crc_compat_get_timespec = 0xfa901b31;
+__crc_compat_put_timespec = 0x08bc0870;
+__crc_get_compat_sigset = 0x3ba01b47;
+__crc_compat_alloc_user_space = 0xbffde8ec;

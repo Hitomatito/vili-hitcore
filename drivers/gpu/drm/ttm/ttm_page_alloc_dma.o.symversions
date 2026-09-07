@@ -1,0 +1,3 @@
+__crc_ttm_dma_populate = 0x16b40596;
+__crc_ttm_dma_unpopulate = 0x9538fc03;
+__crc_ttm_dma_page_alloc_debugfs = 0x0d4571b3;

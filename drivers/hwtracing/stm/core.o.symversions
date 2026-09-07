@@ -1,0 +1,8 @@
+__crc_stm_register_protocol = 0x19768c1a;
+__crc_stm_unregister_protocol = 0xb741b1c9;
+__crc_stm_data_write = 0x35bc8d01;
+__crc_stm_register_device = 0xcfed025c;
+__crc_stm_unregister_device = 0xc1a7fc01;
+__crc_stm_source_register_device = 0xead288d1;
+__crc_stm_source_unregister_device = 0xea3fc06c;
+__crc_stm_source_write = 0x59e59b9c;

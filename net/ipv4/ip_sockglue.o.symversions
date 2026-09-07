@@ -1,0 +1,5 @@
+__crc_ip_cmsg_recv_offset = 0x9ee45a8f;
+__crc_ip_setsockopt = 0x44dac4f8;
+__crc_compat_ip_setsockopt = 0x719e6543;
+__crc_ip_getsockopt = 0x17fd710f;
+__crc_compat_ip_getsockopt = 0xf64e849e;

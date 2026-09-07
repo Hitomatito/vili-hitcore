@@ -1,0 +1,4 @@
+__crc___tracepoint_rpm_return_int = 0x88066be2;
+__crc___tracepoint_rpm_idle = 0xc4ac8eef;
+__crc___tracepoint_rpm_suspend = 0x85b1c626;
+__crc___tracepoint_rpm_resume = 0xd5b57ab3;

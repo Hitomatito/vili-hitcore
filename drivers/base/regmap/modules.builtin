@@ -1,0 +1,4 @@
+drivers/base/regmap/regmap-i2c.ko
+drivers/base/regmap/regmap-spi.ko
+drivers/base/regmap/regmap-spmi.ko
+drivers/base/regmap/regmap-mmio.ko

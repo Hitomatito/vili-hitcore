@@ -1,0 +1,2 @@
+__crc_register_kobj_under_mmsysfs = 0x3bc885ab;
+__crc_on_calibration_under_mmsysfs = 0x44f68f92;

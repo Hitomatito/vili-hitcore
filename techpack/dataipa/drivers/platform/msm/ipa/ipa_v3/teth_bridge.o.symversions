@@ -1,0 +1,3 @@
+__crc_ipa3_teth_bridge_init = 0xd3eab59f;
+__crc_ipa3_teth_bridge_disconnect = 0x7b600622;
+__crc_ipa3_teth_bridge_connect = 0x42dba7c3;

@@ -1,0 +1,10 @@
+__crc_gnet_stats_start_copy_compat = 0x7613b270;
+__crc_gnet_stats_start_copy = 0x0a3a91ee;
+__crc___gnet_stats_copy_basic = 0xa7904be1;
+__crc_gnet_stats_copy_basic = 0xa9daf79e;
+__crc_gnet_stats_copy_basic_hw = 0x9705c580;
+__crc_gnet_stats_copy_rate_est = 0xdfc01e27;
+__crc___gnet_stats_copy_queue = 0x10c3f57e;
+__crc_gnet_stats_copy_queue = 0x0135d3bb;
+__crc_gnet_stats_copy_app = 0x9ba344ce;
+__crc_gnet_stats_finish_copy = 0x520a6554;

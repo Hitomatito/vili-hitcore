@@ -1,0 +1,8 @@
+__crc_iio_buffer_init = 0x6f8b6886;
+__crc_iio_buffer_set_attrs = 0x52621ab8;
+__crc_iio_update_buffers = 0xb67f6e3d;
+__crc_iio_validate_scan_mask_onehot = 0x62786013;
+__crc_iio_push_to_buffers = 0x83dd5ae0;
+__crc_iio_buffer_get = 0x9aa8b5af;
+__crc_iio_buffer_put = 0x1e1ebc0a;
+__crc_iio_device_attach_buffer = 0x20b530fd;

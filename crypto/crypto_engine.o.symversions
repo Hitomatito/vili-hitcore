@@ -1,0 +1,14 @@
+__crc_crypto_transfer_ablkcipher_request_to_engine = 0x1323ed32;
+__crc_crypto_transfer_aead_request_to_engine = 0x9cd8ba8c;
+__crc_crypto_transfer_akcipher_request_to_engine = 0xd3c6108c;
+__crc_crypto_transfer_hash_request_to_engine = 0x498a5c03;
+__crc_crypto_transfer_skcipher_request_to_engine = 0x1f7fb0cd;
+__crc_crypto_finalize_ablkcipher_request = 0x0e4deab5;
+__crc_crypto_finalize_aead_request = 0x392c88c4;
+__crc_crypto_finalize_akcipher_request = 0x74b5127c;
+__crc_crypto_finalize_hash_request = 0x5bf386b0;
+__crc_crypto_finalize_skcipher_request = 0xc22bd062;
+__crc_crypto_engine_start = 0x29ef0f88;
+__crc_crypto_engine_stop = 0xc2854c30;
+__crc_crypto_engine_alloc_init = 0xe4900d91;
+__crc_crypto_engine_exit = 0xc4e0d22d;

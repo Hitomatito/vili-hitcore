@@ -1,0 +1,3 @@
+__crc_service_notif_pd_restart = 0x32f08115;
+__crc_service_notif_register_notifier = 0xcba4bcae;
+__crc_service_notif_unregister_notifier = 0xd9fb38d8;
