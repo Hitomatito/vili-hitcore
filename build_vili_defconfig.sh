@@ -1,28 +1,42 @@
 #!/bin/bash
-# Script adaptado para generar defconfig de vili
+# Script para generar defconfig de vili-hitcore
 
 set -e
 
-# Directorio del kernel
-KERNEL_DIR=/home/james/Proyectos/kernel_xiaomi_sm8350
-cd "$KERNEL_DIR"
+# Detectar directorio del kernel desde la ubicación del script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+KERNEL_DIR="$SCRIPT_DIR"
+cd "$KERNEL_DIR" || { echo "❌ No se pudo entrar a $KERNEL_DIR"; exit 1; }
 
-# Herramientas
-export PATH="/opt/kernel-tools/clang-r416183b/bin:/opt/kernel-tools/gcc-arm/bin:$PATH"
+# Verificar que KernelSU-Next está inicializado
+if [ ! -f "KernelSU-Next/kernel/Makefile" ]; then
+    echo "❌ KernelSU-Next no está inicializado"
+    echo "   Ejecuta: git submodule update --init --recursive"
+    exit 1
+fi
+
+# Herramientas — Android Clang r522817
+export PATH="/opt/kernel-tools/clang-r522817/bin:$PATH"
+export LLVM=1
+export LLVM_IAS=1
 
 # Variables de entorno para generate_defconfig.sh
 export ARCH=arm64
 export CROSS_COMPILE=aarch64-linux-gnu-
 export CLANG_TRIPLE=aarch64-linux-gnu-
 export REAL_CC=clang
-export HOSTCC=gcc
-export HOSTLD=ld
-export HOSTAR=ar
+export HOSTCC=clang
+export HOSTLD=ld.lld
+export HOSTAR=llvm-ar
 export TARGET_BUILD_VARIANT=user
 
 echo "=== Verificar herramientas ==="
+if ! command -v clang &>/dev/null; then
+    echo "❌ clang no encontrado en PATH"
+    echo "   Asegúrate de tener /opt/kernel-tools/clang-r522817/bin en PATH"
+    exit 1
+fi
 echo "Clang: $(which clang) - $(clang --version | head -1)"
-echo "GCC: $(which aarch64-linux-gnu-gcc) - $(aarch64-linux-gnu-gcc --version | head -1)"
 echo ""
 
 echo "=== Generar defconfig ==="

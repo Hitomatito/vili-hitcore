@@ -29,7 +29,11 @@ git clone git@github.com:Hitomatito/vili-hitcore.git
 cd vili-hitcore
 ```
 
-No submodules needed — everything is included.
+Initialize submodules (KernelSU-Next):
+
+```bash
+git submodule update --init --recursive
+```
 
 ### 2. Set up toolchain
 
