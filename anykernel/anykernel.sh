@@ -6,7 +6,7 @@
 properties() { '
 kernel.string=QGKI Kernel for Xiaomi 11T Pro (vili)
 do.devicecheck=1
-do.modules=1
+do.modules=0
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
@@ -40,30 +40,4 @@ PATCH_VBMETA_FLAG=auto;
 # boot install (kernel + ramdisk)
 dump_boot;
 write_boot;
-
-reset_ak;
-
-# vendor_boot install (dtb + módulos)
-BLOCK=vendor_boot;
-IS_SLOT_DEVICE=1;
-setup_ak;
-split_boot;
-
-# Unpack stock vendor_ramdisk and replace modules
-cd $SPLITIMG;
-for cpio in vendor_ramdisk/*.cpio; do
-  [ -f "$cpio" ] && unpack_vendorrd $cpio;
-done;
-cd $AKHOME;
-
-for vndrdir in $VENDORRD/*/; do
-  if [ -d "$vndrdir/lib/modules" ]; then
-    cp -af $AKHOME/vendor_ramdisk/lib/modules/*.ko "$vndrdir/lib/modules/";
-    cp -af $AKHOME/vendor_ramdisk/lib/modules/modules.load "$vndrdir/lib/modules/";
-    cp -af $AKHOME/vendor_ramdisk/lib/modules/modules.dep "$vndrdir/lib/modules/";
-    cp -af $AKHOME/vendor_ramdisk/lib/modules/modules.softdep "$vndrdir/lib/modules/";
-  fi;
-done;
-
-flash_boot;
 ## end boot install
