@@ -58,7 +58,6 @@ cd $AKHOME;
 
 for vndrdir in $VENDORRD/*/; do
   if [ -d "$vndrdir/lib/modules" ]; then
-    rm -f "$vndrdir/lib/modules"/*.ko;
     cp -af $AKHOME/vendor_ramdisk/lib/modules/*.ko "$vndrdir/lib/modules/";
     cp -af $AKHOME/vendor_ramdisk/lib/modules/modules.load "$vndrdir/lib/modules/";
     cp -af $AKHOME/vendor_ramdisk/lib/modules/modules.dep "$vndrdir/lib/modules/";
