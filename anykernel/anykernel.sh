@@ -42,7 +42,7 @@ write_boot;
 reset_ak;
 
 # vendor_boot install (dtb + módulos)
-BLOCK=vendor_boot;
+BLOCK=/dev/block/bootdevice/by-name/vendor_boot;
 IS_SLOT_DEVICE=1;
 RAMDISK_COMPRESSION=auto;
 PATCH_VBMETA_FLAG=auto;
