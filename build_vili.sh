@@ -44,6 +44,13 @@ DEFCONFIG="lahaina-qgki_defconfig"
 LOG_DIR="${SCRIPT_DIR}/out/logs"
 BUILD_LOG="${LOG_DIR}/build-$(date +%Y%m%d-%H%M%S).log"
 
+# LOCALVERSION: inyectar versión en el kernel (ej: -hitcore-v15)
+if [ "$VERSION" != "custom" ]; then
+    LOCALVERSION="-hitcore-${VERSION}"
+else
+    LOCALVERSION=""
+fi
+
 # ─── NPROC: limitar para LTO (ThinLTO usa ~1.5GB por job) ──────
 # Detectar RAM disponible y limitar jobs para no causar OOM
 detect_nproc() {
@@ -143,6 +150,13 @@ do_build() {
     # Cargar defconfig
     make O="${OUT_DIR}" ARCH=arm64 "${DEFCONFIG}"
 
+    # Inyectar LOCALVERSION si se especificó versión
+    if [ -n "$LOCALVERSION" ]; then
+        echo "  LOCALVERSION=${LOCALVERSION}"
+        scripts/config --file "${OUT_DIR}/.config" --set-str LOCALVERSION "${LOCALVERSION}"
+        make O="${OUT_DIR}" ARCH=arm64 olddefconfig
+    fi
+
     # Compilar
     make O="${OUT_DIR}" \
         ARCH=arm64 \
@@ -153,6 +167,7 @@ do_build() {
         HOSTCC=clang \
         HOSTLD=ld.lld \
         HOSTAR=llvm-ar \
+        LOCALVERSION="${LOCALVERSION}" \
         -j"${NPROC}" \
         Image modules
 

@@ -69,6 +69,14 @@ else
     echo "   Ejecuta primero: bash build_vili.sh"
     exit 1
 fi
+
+# Verificar que Image no es demasiado viejo (>24 horas = posiblemente obsoleto)
+IMAGE_AGE_HOURS=$(( ($(date +%s) - $(stat -c %Y "$IMAGE_SRC")) / 3600 ))
+if [ "$IMAGE_AGE_HOURS" -gt 24 ]; then
+    echo "⚠️  Advertencia: Image tiene ${IMAGE_AGE_HOURS} horas"
+    echo "   Puede estar desactualizado. Considera ejecutar build_vili.sh build"
+fi
+
 echo "  ✓ Image: $(du -h "$IMAGE_SRC" | cut -f1)"
 
 # Buscar .ko en out/ y techpack/
@@ -96,9 +104,9 @@ for mod in "${MODULES[@]}"; do
 
     # Buscar en out/lib/modules/
     if [ -f "${KERN_OUT_MODULES}/${mod}" ]; then
-        cp "${KERN_OUT_MODULES}/${mod}" "${STAGING}/vendor_ramdisk/lib/modules/"
+        llvm-strip --strip-debug "${KERN_OUT_MODULES}/${mod}" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
         MODULES_FOUND+=("$mod")
-        echo "  ✓ $mod (out/lib/modules/)"
+        echo "  ✓ $mod (out/lib/modules/) [stripped]"
         FOUND=1
         continue
     fi
@@ -106,9 +114,9 @@ for mod in "${MODULES[@]}"; do
     # Buscar en techpack/
     if [ "$FOUND" -eq 0 ]; then
         while IFS= read -r -d '' f; do
-            cp "$f" "${STAGING}/vendor_ramdisk/lib/modules/"
+            llvm-strip --strip-debug "$f" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
             MODULES_FOUND+=("$mod")
-            echo "  ✓ $mod (techpack/)"
+            echo "  ✓ $mod (techpack/) [stripped]"
             FOUND=1
             break
         done < <(find "$TECHPACK_MODULES" -name "$mod" -print0 2>/dev/null)
@@ -116,18 +124,18 @@ for mod in "${MODULES[@]}"; do
 
     # Buscar en drivers/staging/qcacld-3.0/
     if [ "$FOUND" -eq 0 ] && [ -f "${DRIVERS_MODULES}/${mod}" ]; then
-        cp "${DRIVERS_MODULES}/${mod}" "${STAGING}/vendor_ramdisk/lib/modules/"
+        llvm-strip --strip-debug "${DRIVERS_MODULES}/${mod}" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
         MODULES_FOUND+=("$mod")
-        echo "  ✓ $mod (drivers/staging/qcacld-3.0/)"
+        echo "  ✓ $mod (drivers/staging/qcacld-3.0/) [stripped]"
         FOUND=1
     fi
 
     # Buscar en todo out/ recursivamente
     if [ "$FOUND" -eq 0 ]; then
         while IFS= read -r -d '' f; do
-            cp "$f" "${STAGING}/vendor_ramdisk/lib/modules/"
+            llvm-strip --strip-debug "$f" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
             MODULES_FOUND+=("$mod")
-            echo "  ✓ $mod (out/)"
+            echo "  ✓ $mod (out/) [stripped]"
             FOUND=1
             break
         done < <(find "$OUT_DIR" -name "$mod" -print0 2>/dev/null)
@@ -141,6 +149,13 @@ done
 # ─── Generar modules.load ───────────────────────────────────────
 echo ""
 echo "=== Generar metadata de módulos ==="
+
+if [ ${#MODULES_FOUND[@]} -eq 0 ]; then
+    echo "❌ Error: ningún módulo fue encontrado. No se puede generar modules.load"
+    echo "   Verifica que el build generó los .ko correctamente"
+    exit 1
+fi
+
 printf '%s\n' "${MODULES_FOUND[@]}" > "${STAGING}/vendor_ramdisk/lib/modules/modules.load"
 echo "  ✓ modules.load (${#MODULES_FOUND[@]} módulos)"
 
@@ -168,12 +183,38 @@ cd "$STAGING"
 zip -r9 "$ZIP_OUTPUT" . -x '*.git*'
 cd "$KERNEL_DIR"
 
+# ─── Verificar zip ──────────────────────────────────────────────
+echo ""
+echo "=== Verificar zip ==="
+
+# Verificar que el zip no está corrupto
+if ! unzip -t "$ZIP_OUTPUT" &>/dev/null; then
+    echo "❌ Error: zip corrupto"
+    exit 1
+fi
+
+# Verificar archivos críticos en el zip
+ZIP_CONTENTS=$(unzip -l "$ZIP_OUTPUT" 2>/dev/null)
+
+for required in "Image" "anykernel.sh" "META-INF/com/google/android/update-binary" "vendor_ramdisk/lib/modules/modules.load"; do
+    if echo "$ZIP_CONTENTS" | grep -q "$required"; then
+        echo "  ✓ $required"
+    else
+        echo "  ❌ FALTA: $required"
+        exit 1
+    fi
+done
+
+# Contar módulos en el zip
+MODULE_COUNT=$(echo "$ZIP_CONTENTS" | grep -c '\.ko$' || true)
+echo "  ✓ ${MODULE_COUNT} módulos .ko en el zip"
+
 # ─── Verificar resultado ────────────────────────────────────────
 echo ""
 echo "=== Resultado ==="
 if [ -f "$ZIP_OUTPUT" ]; then
     SIZE=$(du -h "$ZIP_OUTPUT" | cut -f1)
-    echo "✅ Zip creado exitosamente"
+    echo "✅ Zip creado y verificado exitosamente"
     echo "   Archivo: ${ZIP_OUTPUT}"
     echo "   Tamaño:  ${SIZE}"
     echo ""

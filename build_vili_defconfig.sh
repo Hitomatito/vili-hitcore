@@ -109,6 +109,20 @@ echo ""
 
 scripts/kconfig/merge_config.sh $MERGE_FRAGMENTS
 
+# ─── Verificar opciones duplicadas entre fragments ───────────────
+echo ""
+echo "=== Verificar opciones duplicadas ==="
+DUPLICATES=$(grep -h '^CONFIG_' $MERGE_FRAGMENTS 2>/dev/null \
+    | sed 's/=.*//' | sort | uniq -d)
+if [ -n "$DUPLICATES" ]; then
+    echo "⚠️  Opciones definidas en múltiples fragments (el último valor gana):"
+    echo "$DUPLICATES" | while read -r opt; do
+        echo "    $opt"
+    done
+else
+    echo "  ✓ Sin opciones duplicadas entre fragments"
+fi
+
 # ─── Generar defconfig final ────────────────────────────────────
 echo ""
 echo "=== Generar savedefconfig ==="
