@@ -18,7 +18,6 @@ Based on [android_kernel_qcom_sm8350](https://github.com/xiaomi-lisa-devs/androi
 - Linux (tested on CachyOS / Arch)
 - Android Clang toolchain: `r522817`
 - GCC cross-compiler: `aarch64-linux-gnu`
-- [AnyKernel3](https://github.com/osm0sis/AnyKernel3) (for packaging)
 
 ## Quick Start
 
@@ -27,11 +26,6 @@ Based on [android_kernel_qcom_sm8350](https://github.com/xiaomi-lisa-devs/androi
 ```bash
 git clone git@github.com:Hitomatito/vili-hitcore.git
 cd vili-hitcore
-```
-
-Initialize submodules (KernelSU-Next):
-
-```bash
 git submodule update --init --recursive
 ```
 
@@ -39,59 +33,56 @@ git submodule update --init --recursive
 
 Download [Android Clang r522817](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/main/clang-r522817) and extract to `/opt/kernel-tools/clang-r522817/`.
 
-```bash
-export PATH=/opt/kernel-tools/clang-r522817/bin:$PATH
-```
-
-### 3. Build
+### 3. Build (todo en uno)
 
 ```bash
-# Generate defconfig
-bash build_vili_defconfig.sh
-
-# Build kernel + modules
-make ARCH=arm64 CC=clang CROSS_COMPILE=aarch64-linux-gnu- LLVM=1 -j$(nproc) Image modules
+bash build_vili.sh all v15
 ```
 
-Output:
-- `arch/arm64/boot/Image` — kernel image
-- `techpack/audio/**/*.ko` — audio modules
-- `drivers/staging/qcacld-3.0/wlan.ko` — WiFi module
+Esto ejecuta automáticamente:
+1. Genera el defconfig (merge completo: gki → lahaina_GKI → lahaina_QGKI → xiaomi_QGKI → vili_QGKI)
+2. Compila el kernel + módulos
+3. Empaqueta el zip AnyKernel3
 
-### 4. Package flashable zip
+Output: `out/vili-hitcore-v15.zip`
 
-Set up an [AnyKernel3](https://github.com/osm0sis/AnyKernel3) directory:
-
-```
-AnyKernel3/
-├── Image                              # from arch/arm64/boot/Image
-├── anykernel.sh
-├── tools/
-├── bin/
-└── vendor_ramdisk/lib/modules/        # compiled .ko files
-    ├── adsp_loader_dlkm.ko
-    ├── apr_dlkm.ko
-    ├── q6_notifier_dlkm.ko
-    ├── q6_pdr_dlkm.ko
-    ├── snd_event_dlkm.ko
-    ├── mmhardware_sysfs_dlkm.ko
-    ├── wlan.ko
-    ├── modules.load
-    ├── modules.dep
-    └── modules.softdep
-```
+### 4. Build paso a paso (opcional)
 
 ```bash
-zip -r9 vili-hitcore-vXX.zip AnyKernel3/
+# Solo defconfig
+bash build_vili.sh defconfig
+
+# Solo compilar
+bash build_vili.sh build
+
+# Solo empaquetar (requiere build previo)
+bash build_vili.sh package v15
 ```
 
 ### 5. Flash
 
 ```bash
-adb sideload vili-hitcore-vXX.zip
+adb sideload out/vili-hitcore-vXX.zip
 ```
 
 Requires stock recovery or TWRP. Device must be in A/B slot.
+
+## Build structure
+
+```
+vili-hitcore/
+├── build_vili.sh              # Script maestro (defconfig + build + package)
+├── build_vili_defconfig.sh    # Genera defconfig con merge completo
+├── package_vili.sh            # Empaquetado AnyKernel3
+├── anykernel/                 # Template AnyKernel3 (committeado)
+│   ├── anykernel.sh
+│   ├── META-INF/
+│   └── tools/
+└── out/                      # Build output (gitignored)
+    ├── arch/arm64/boot/Image
+    ├── lib/modules/*.ko
+    └── vili-hitcore-vXX.zip
+```
 
 ## What changed from stock
 
@@ -103,7 +94,8 @@ Modifications on top of the original kernel source:
 | `Makefile` | Adds `obj-$(CONFIG_KSU) += KernelSU-Next/kernel/` |
 | `kernel/module.c` | Vermagic matching for stock module compatibility |
 | `drivers/usb/typec/ucsi/ucsi_glink.c` | CVE-2024-46693 fix |
-| `arch/arm64/configs/vendor/lahaina-qgki_defconfig` | Enabled KSU, LTO_CLANG, CFI_CLANG, audio modules |
+| `build_vili_defconfig.sh` | Full defconfig merge with device-specific configs |
+| `scripts/gki/envsetup.sh` | Fixed quoting and error handling |
 
 ## Syncing with upstream
 
