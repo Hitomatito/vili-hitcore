@@ -2,7 +2,7 @@
 # Script para generar defconfig de vili-hitcore
 # Merge completo: gki_defconfig → lahaina_GKI → lahaina_QGKI → xiaomi_QGKI → vili_QGKI
 
-set -e
+set -euo pipefail
 
 # ─── Detectar directorio del kernel ─────────────────────────────
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

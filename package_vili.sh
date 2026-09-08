@@ -3,7 +3,7 @@
 # Uso: bash package_vili.sh [version]
 # Ejemplo: bash package_vili.sh v14
 
-set -e
+set -euo pipefail
 
 # ─── Configuración ──────────────────────────────────────────────
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -12,8 +12,9 @@ VERSION="${1:-custom}"
 ZIP_NAME="vili-hitcore-${VERSION}.zip"
 
 # Directorios de source (post-build)
-IMAGE_SRC="${KERNEL_DIR}/arch/arm64/boot/Image"
+# build_vili.sh usa make O=out/, así que Image está en out/arch/arm64/boot/Image
 OUT_DIR="${KERNEL_DIR}/out"
+IMAGE_SRC="${OUT_DIR}/arch/arm64/boot/Image"
 
 # AnyKernel3 template
 AK3_DIR="${KERNEL_DIR}/anykernel"
@@ -41,11 +42,30 @@ MODULE_SOFTDEPS=(
     "softdep q6_notifier_dlkm: q6_pdr_dlkm"
 )
 
+# modules.dep: dependencias hard (formato: modulo: dependencia1 dependencia2 ...)
+# El orden importa — modprobe resuelve en orden
+MODULE_DEPS=(
+    "adsp_loader_dlkm.ko: apr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko mmhardware_sysfs_dlkm.ko snd_event_dlkm.ko"
+    "apr_dlkm.ko: q6_notifier_dlkm.ko q6_pdr_dlkm.ko mmhardware_sysfs_dlkm.ko snd_event_dlkm.ko"
+    "q6_notifier_dlkm.ko: q6_pdr_dlkm.ko"
+    "q6_pdr_dlkm.ko:"
+    "snd_event_dlkm.ko:"
+    "mmhardware_sysfs_dlkm.ko:"
+    "wlan.ko:"
+)
+
 # ─── Verificar prerequisitos ────────────────────────────────────
 echo "=== Verificar prerequisitos ==="
 
-if [ ! -f "$IMAGE_SRC" ]; then
-    echo "❌ Image no encontrado: $IMAGE_SRC"
+# Buscar Image en out/ (build normal) o en raíz (build manual)
+if [ -f "$IMAGE_SRC" ]; then
+    :
+elif [ -f "${KERNEL_DIR}/arch/arm64/boot/Image" ]; then
+    IMAGE_SRC="${KERNEL_DIR}/arch/arm64/boot/Image"
+else
+    echo "❌ Image no encontrado"
+    echo "   Busqué en: out/arch/arm64/boot/Image"
+    echo "              arch/arm64/boot/Image"
     echo "   Ejecuta primero: bash build_vili.sh"
     exit 1
 fi
@@ -128,11 +148,9 @@ echo "  ✓ modules.load (${#MODULES_FOUND[@]} módulos)"
 printf '%s\n' "${MODULE_SOFTDEPS[@]}" > "${STAGING}/vendor_ramdisk/lib/modules/modules.softdep"
 echo "  ✓ modules.softdep"
 
-# ─── Generar modules.dep (placeholder — depmod real requiere kernel build dir)
-# El kernel real ejecuta depmod contra el build tree. Para el zip usamos un
-# depmod simplificado que las tools de AnyKernel3 pueden resolver.
-: > "${STAGING}/vendor_ramdisk/lib/modules/modules.dep"
-echo "  ✓ modules.dep (vacío — resuelto por AK3 en flash)"
+# ─── Generar modules.dep ────────────────────────────────────────
+printf '%s\n' "${MODULE_DEPS[@]}" > "${STAGING}/vendor_ramdisk/lib/modules/modules.dep"
+echo "  ✓ modules.dep (${#MODULE_DEPS[@]} entradas)"
 
 # ─── Copiar AnyKernel3 framework ────────────────────────────────
 echo ""
