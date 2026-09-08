@@ -147,8 +147,10 @@ do_build() {
     echo "╚══════════════════════════════════════════╝"
     echo ""
 
-    # Cargar defconfig
+    # Cargar defconfig (está en vendor/)
+    cp "arch/arm64/configs/vendor/${DEFCONFIG}" "arch/arm64/configs/${DEFCONFIG}"
     make O="${OUT_DIR}" ARCH=arm64 "${DEFCONFIG}"
+    rm -f "arch/arm64/configs/${DEFCONFIG}"
 
     # Inyectar LOCALVERSION si se especificó versión
     if [ -n "$LOCALVERSION" ]; then
