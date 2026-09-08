@@ -169,7 +169,6 @@ do_build() {
         HOSTCC=clang \
         HOSTLD=ld.lld \
         HOSTAR=llvm-ar \
-        LOCALVERSION="${LOCALVERSION}" \
         -j"${NPROC}" \
         Image modules
 
