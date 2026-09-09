@@ -25,3 +25,8 @@ vmlinux
 __pycache__/
 *.swp
 *~
+
+# archivos generados por kbuild/kconfig (controlados por O=out)
+include/config/
+include/generated/
+arch/arm64/include/generated/
