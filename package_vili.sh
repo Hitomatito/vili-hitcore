@@ -1,7 +1,10 @@
 #!/bin/bash
 # package_vili.sh — Empaquetado AnyKernel3 para vili-hitcore
+# Estructura fiel al kernel de referencia (qgki por swiitchOFF):
+#   Image, dtb, dtbo.img, anykernel.sh, META-INF/, tools/,
+#   modules/vendor/lib/modules/*.ko + modules.{load,dep,softdep,alias}
 # Uso: bash package_vili.sh [version]
-# Ejemplo: bash package_vili.sh v14
+# Ejemplo: bash package_vili.sh v20
 
 set -euo pipefail
 
@@ -11,161 +14,137 @@ KERNEL_DIR="$SCRIPT_DIR"
 VERSION="${1:-custom}"
 ZIP_NAME="vili-hitcore-${VERSION}.zip"
 
-# Directorios de source (post-build)
-# build_vili.sh usa make O=out/, así que Image está en out/arch/arm64/boot/Image
 OUT_DIR="${KERNEL_DIR}/out"
 IMAGE_SRC="${OUT_DIR}/arch/arm64/boot/Image"
+DTB_SRC="${OUT_DIR}/arch/arm64/boot/dts/vendor/qcom/lahaina-v2.1.dtb"
+DTBO_SRC="${OUT_DIR}/arch/arm64/boot/dts/vendor/qcom/vili-sm8350-overlay.dtbo"
+MODULES_ORDER="${OUT_DIR}/modules.order"
 
-# AnyKernel3 template
 AK3_DIR="${KERNEL_DIR}/anykernel"
 
-# Output
 STAGING="${KERNEL_DIR}/out/anykernel-staging"
+MODS_DIR="${STAGING}/modules/vendor/lib/modules"
 ZIP_OUTPUT="${KERNEL_DIR}/out/${ZIP_NAME}"
 
-# ─── Módulos esperados (orden de carga) ─────────────────────────
-# El orden en modules.load es crítico para el audio y WiFi
-MODULES=(
-    adsp_loader_dlkm.ko
-    apr_dlkm.ko
-    q6_notifier_dlkm.ko
-    q6_pdr_dlkm.ko
-    snd_event_dlkm.ko
-    mmhardware_sysfs_dlkm.ko
-    wlan.ko
-)
-
-# ─── Dependencias entre módulos ─────────────────────────────────
-MODULE_SOFTDEPS=(
-    "softdep adsp_loader_dlkm: apr_dlkm q6_notifier_dlkm q6_pdr_dlkm mmhardware_sysfs_dlkm snd_event_dlkm"
-    "softdep apr_dlkm: q6_notifier_dlkm q6_pdr_dlkm mmhardware_sysfs_dlkm snd_event_dlkm"
-    "softdep q6_notifier_dlkm: q6_pdr_dlkm"
-)
-
-# modules.dep: dependencias hard (formato: modulo: dependencia1 dependencia2 ...)
-# El orden importa — modprobe resuelve en orden
-MODULE_DEPS=(
-    "adsp_loader_dlkm.ko: apr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko mmhardware_sysfs_dlkm.ko snd_event_dlkm.ko"
-    "apr_dlkm.ko: q6_notifier_dlkm.ko q6_pdr_dlkm.ko mmhardware_sysfs_dlkm.ko snd_event_dlkm.ko"
-    "q6_notifier_dlkm.ko: q6_pdr_dlkm.ko"
-    "q6_pdr_dlkm.ko:"
-    "snd_event_dlkm.ko:"
-    "mmhardware_sysfs_dlkm.ko:"
-    "wlan.ko:"
-)
+export PATH="/opt/kernel-tools/clang-r522817/bin:$PATH"
 
 # ─── Verificar prerequisitos ────────────────────────────────────
 echo "=== Verificar prerequisitos ==="
 
-# Buscar Image en out/ (build normal) o en raíz (build manual)
-if [ -f "$IMAGE_SRC" ]; then
-    :
-elif [ -f "${KERNEL_DIR}/arch/arm64/boot/Image" ]; then
-    IMAGE_SRC="${KERNEL_DIR}/arch/arm64/boot/Image"
-else
-    echo "❌ Image no encontrado"
-    echo "   Busqué en: out/arch/arm64/boot/Image"
-    echo "              arch/arm64/boot/Image"
-    echo "   Ejecuta primero: bash build_vili.sh"
-    exit 1
-fi
+for f in "$IMAGE_SRC" "$DTB_SRC" "$DTBO_SRC" "$MODULES_ORDER"; do
+    if [ ! -f "$f" ]; then
+        echo "❌ Falta: $f"
+        echo "   Ejecuta primero: bash build_vili.sh all"
+        exit 1
+    fi
+done
+echo "  ✓ Image:        $(du -h "$IMAGE_SRC" | cut -f1)"
+echo "  ✓ dtb:          $(du -h "$DTB_SRC" | cut -f1)"
+echo "  ✓ dtbo:         $(du -h "$DTBO_SRC" | cut -f1)"
 
-# Verificar que Image no es demasiado viejo (>24 horas = posiblemente obsoleto)
-IMAGE_AGE_HOURS=$(( ($(date +%s) - $(stat -c %Y "$IMAGE_SRC")) / 3600 ))
-if [ "$IMAGE_AGE_HOURS" -gt 24 ]; then
-    echo "⚠️  Advertencia: Image tiene ${IMAGE_AGE_HOURS} horas"
-    echo "   Puede estar desactualizado. Considera ejecutar build_vili.sh build"
-fi
-
-echo "  ✓ Image: $(du -h "$IMAGE_SRC" | cut -f1)"
-
-# Buscar .ko en out/ y techpack/
-KERN_OUT_MODULES="${OUT_DIR}/lib/modules"
-TECHPACK_MODULES="${KERNEL_DIR}/techpack"
-DRIVERS_MODULES="${KERNEL_DIR}/drivers/staging/qcacld-3.0"
-
-# ─── Crear staging directory ────────────────────────────────────
+# ─── Crear staging ──────────────────────────────────────────────
 echo ""
 echo "=== Preparar empaquetado ==="
 rm -rf "$STAGING"
-mkdir -p "${STAGING}/vendor_ramdisk/lib/modules"
+mkdir -p "$MODS_DIR"
+mkdir -p "${STAGING}/modules/system/lib/modules"
 
-# ─── Copiar Image ───────────────────────────────────────────────
+# ─── Copiar Image / dtb / anykernel framework ───────────────────
 cp "$IMAGE_SRC" "${STAGING}/Image"
-echo "  ✓ Image copiado"
+cp "$DTB_SRC" "${STAGING}/dtb"
+echo "  ✓ Image y dtb copiados"
 
-# ─── Copiar módulos .ko ─────────────────────────────────────────
+# ─── Generar dtbo.img (formato dt_table, 1 overlay) ─────────────
 echo ""
-echo "=== Copiar módulos ==="
+echo "=== Generar dtbo.img ==="
+python3 - "$DTBO_SRC" "${STAGING}/dtbo.img" <<'EOF'
+import struct, sys
+
+src, dst = sys.argv[1], sys.argv[2]
+data = open(src, "rb").read()
+size = len(data)
+total = 32 + 32 + size
+# header dt_table (big-endian, igual que mkdtimg)
+hdr = struct.pack(">IIIIIIII",
+    0xD7B7AB1E, total, 32, 32, 1, 32, 4096, 0)
+# entry[0]
+entry = struct.pack(">IIIIIIII", size, 64, 0, 0, 0, 0, 0, 0)
+with open(dst, "wb") as f:
+    f.write(hdr + entry + data)
+print(f"  ✓ dtbo.img generado ({total} bytes, payload {size} bytes)")
+EOF
+
+# ─── Copiar módulos (todos los .ko del build) ───────────────────
+echo ""
+echo "=== Copiar módulos (order = modules.order) ==="
+
 MODULES_FOUND=()
-
-for mod in "${MODULES[@]}"; do
-    FOUND=0
-
-    # Buscar en out/lib/modules/
-    if [ -f "${KERN_OUT_MODULES}/${mod}" ]; then
-        llvm-strip --strip-debug "${KERN_OUT_MODULES}/${mod}" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
-        MODULES_FOUND+=("$mod")
-        echo "  ✓ $mod (out/lib/modules/) [stripped]"
-        FOUND=1
+while IFS= read -r rel; do
+    [ -z "$rel" ] && continue
+    name="${rel##*/}"
+    mod="${OUT_DIR}/${rel}"
+    if [ ! -f "$mod" ]; then
+        # búsqueda de respaldo
+        mod=$(find "$OUT_DIR" -name "$name" -not -path '*/anykernel-staging/*' 2>/dev/null | head -n1)
+    fi
+    if [ -z "${mod:-}" ] || [ ! -f "$mod" ]; then
+        echo "  ⚠️  $name no encontrado — omitido"
         continue
     fi
+    llvm-strip --strip-debug "$mod" -o "${MODS_DIR}/${name}"
+    MODULES_FOUND+=("$name")
+done < "$MODULES_ORDER"
 
-    # Buscar en techpack/
-    if [ "$FOUND" -eq 0 ]; then
-        while IFS= read -r -d '' f; do
-            llvm-strip --strip-debug "$f" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
-            MODULES_FOUND+=("$mod")
-            echo "  ✓ $mod (techpack/) [stripped]"
-            FOUND=1
-            break
-        done < <(find "$TECHPACK_MODULES" -name "$mod" -print0 2>/dev/null)
-    fi
+echo "  ✓ ${#MODULES_FOUND[@]} módulos copiados"
 
-    # Buscar en drivers/staging/qcacld-3.0/
-    if [ "$FOUND" -eq 0 ] && [ -f "${DRIVERS_MODULES}/${mod}" ]; then
-        llvm-strip --strip-debug "${DRIVERS_MODULES}/${mod}" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
-        MODULES_FOUND+=("$mod")
-        echo "  ✓ $mod (drivers/staging/qcacld-3.0/) [stripped]"
-        FOUND=1
-    fi
-
-    # Buscar en todo out/ recursivamente
-    if [ "$FOUND" -eq 0 ]; then
-        while IFS= read -r -d '' f; do
-            llvm-strip --strip-debug "$f" -o "${STAGING}/vendor_ramdisk/lib/modules/${mod}"
-            MODULES_FOUND+=("$mod")
-            echo "  ✓ $mod (out/) [stripped]"
-            FOUND=1
-            break
-        done < <(find "$OUT_DIR" -name "$mod" -print0 2>/dev/null)
-    fi
-
-    if [ "$FOUND" -eq 0 ]; then
-        echo "  ⚠️  $mod no encontrado — omitido"
-    fi
-done
-
-# ─── Generar modules.load ───────────────────────────────────────
-echo ""
-echo "=== Generar metadata de módulos ==="
-
-if [ ${#MODULES_FOUND[@]} -eq 0 ]; then
-    echo "❌ Error: ningún módulo fue encontrado. No se puede generar modules.load"
-    echo "   Verifica que el build generó los .ko correctamente"
+if [ "${#MODULES_FOUND[@]}" -eq 0 ]; then
+    echo "❌ Error: ningún módulo copiado"
     exit 1
 fi
 
-printf '%s\n' "${MODULES_FOUND[@]}" > "${STAGING}/vendor_ramdisk/lib/modules/modules.load"
+# ─── Metadata de módulos (modules.load/dep/softdep/alias) ───────
+echo ""
+echo "=== Generar metadata de módulos ==="
+
+# modules.load: orden del build (mismo criterio que la referencia)
+printf '%s\n' "${MODULES_FOUND[@]}" > "${MODS_DIR}/modules.load"
 echo "  ✓ modules.load (${#MODULES_FOUND[@]} módulos)"
 
-# ─── Generar modules.softdep ────────────────────────────────────
-printf '%s\n' "${MODULE_SOFTDEPS[@]}" > "${STAGING}/vendor_ramdisk/lib/modules/modules.softdep"
-echo "  ✓ modules.softdep"
+# modules.dep/softdep/alias vía depmod en árbol temporal
+KREL=$(cat "${OUT_DIR}/include/config/kernel.release" 2>/dev/null || echo 5.4.302-hitcore)
+TMPMODS="${STAGING}/lib/modules/${KREL}"
+mkdir -p "$TMPMODS"
+for name in "${MODULES_FOUND[@]}"; do
+    cp "${MODS_DIR}/${name}" "$TMPMODS/"
+done
 
-# ─── Generar modules.dep ────────────────────────────────────────
-printf '%s\n' "${MODULE_DEPS[@]}" > "${STAGING}/vendor_ramdisk/lib/modules/modules.dep"
-echo "  ✓ modules.dep (${#MODULE_DEPS[@]} entradas)"
+if command -v depmod &>/dev/null; then
+    depmod -b "${STAGING}" "${KREL}" 2>/dev/null || true
+    # transformar rutas del árbol temporal → estilo vendor
+    if [ -f "$TMPMODS/modules.dep" ]; then
+        # rutas relativas de depmod → estilo vendor (/vendor/lib/modules/)
+        awk -v p="/vendor/lib/modules/" '{
+            out=""
+            for (i=1;i<=NF;i++) {
+                f=$i
+                if (f ~ /\.ko(\:|$)/) {
+                    sub(/\.ko$/, "", f); sub(/\.ko:$/, "", f)
+                    f = p f ".ko"
+                    if ($i ~ /:$/) f = f ":"
+                }
+                out = (i == 1) ? f : out " " f
+            }
+            print out
+        }' "$TMPMODS/modules.dep" > "${MODS_DIR}/modules.dep"
+        echo "  ✓ modules.dep"
+    fi
+    [ -f "$TMPMODS/modules.softdep" ] && cp "$TMPMODS/modules.softdep" "${MODS_DIR}/modules.softdep" && echo "  ✓ modules.softdep"
+    [ -f "$TMPMODS/modules.alias" ] && cp "$TMPMODS/modules.alias" "${MODS_DIR}/modules.alias" && echo "  ✓ modules.alias"
+else
+    echo "  ⚠️  depmod no disponible — modules.dep vacío"
+    : > "${MODS_DIR}/modules.dep"
+fi
+rm -rf "${STAGING}/lib"
 
 # ─── Copiar AnyKernel3 framework ────────────────────────────────
 echo ""
@@ -179,6 +158,7 @@ echo "  ✓ anykernel.sh, META-INF, tools"
 echo ""
 echo "=== Crear zip ==="
 mkdir -p "$(dirname "$ZIP_OUTPUT")"
+rm -f "$ZIP_OUTPUT"
 cd "$STAGING"
 zip -r9 "$ZIP_OUTPUT" . -x '*.git*'
 cd "$KERNEL_DIR"
@@ -187,16 +167,14 @@ cd "$KERNEL_DIR"
 echo ""
 echo "=== Verificar zip ==="
 
-# Verificar que el zip no está corrupto
 if ! unzip -t "$ZIP_OUTPUT" &>/dev/null; then
     echo "❌ Error: zip corrupto"
     exit 1
 fi
 
-# Verificar archivos críticos en el zip
 ZIP_CONTENTS=$(unzip -l "$ZIP_OUTPUT" 2>/dev/null)
 
-for required in "Image" "anykernel.sh" "META-INF/com/google/android/update-binary" "vendor_ramdisk/lib/modules/modules.load"; do
+for required in "Image" "dtb" "dtbo.img" "anykernel.sh" "META-INF/com/google/android/update-binary" "modules/vendor/lib/modules/modules.load"; do
     if echo "$ZIP_CONTENTS" | grep -q "$required"; then
         echo "  ✓ $required"
     else
@@ -205,22 +183,16 @@ for required in "Image" "anykernel.sh" "META-INF/com/google/android/update-binar
     fi
 done
 
-# Contar módulos en el zip
 MODULE_COUNT=$(echo "$ZIP_CONTENTS" | grep -c '\.ko$' || true)
 echo "  ✓ ${MODULE_COUNT} módulos .ko en el zip"
 
 # ─── Verificar resultado ────────────────────────────────────────
 echo ""
 echo "=== Resultado ==="
-if [ -f "$ZIP_OUTPUT" ]; then
-    SIZE=$(du -h "$ZIP_OUTPUT" | cut -f1)
-    echo "✅ Zip creado y verificado exitosamente"
-    echo "   Archivo: ${ZIP_OUTPUT}"
-    echo "   Tamaño:  ${SIZE}"
-    echo ""
-    echo "Para flashear:"
-    echo "   adb sideload ${ZIP_OUTPUT}"
-else
-    echo "❌ Error: no se creó el zip"
-    exit 1
-fi
+SIZE=$(du -h "$ZIP_OUTPUT" | cut -f1)
+echo "✅ Zip creado y verificado exitosamente"
+echo "   Archivo: ${ZIP_OUTPUT}"
+echo "   Tamaño:  ${SIZE}"
+echo ""
+echo "Para flashear:"
+echo "   adb sideload ${ZIP_OUTPUT}"

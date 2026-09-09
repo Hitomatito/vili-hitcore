@@ -9,8 +9,12 @@ Based on [android_kernel_qcom_sm8350](https://github.com/xiaomi-lisa-devs/androi
 - **KernelSU-Next v3.2.0-legacy** (kprobe mode) — root access
 - **CVE-2024-46693** fix (UCSI glink)
 - **LTO_CLANG** + **CFI_CLANG** (permissive)
+- **CONFIG_MODVERSIONS=y** — vermagic compatible con los módulos stock
+  del `vendor_boot` (battery, USB, WiFi, camera) sin parchear el kernel
 - Audio techpack modules (adsp, apr, q6, snd_event)
 - WiFi (wlan.ko / qcacld-3.0)
+- DTB/DTBO propios: `lahaina-v2.1.dtb` + `dtbo.img` byte-idénticos al
+  kernel de referencia (swiitchOFF / qgki), flasheados vía vendor_boot
 - Built with **Android Clang 18.0.1 (r522817)**
 
 ## Requirements
@@ -73,14 +77,17 @@ Requires stock recovery or TWRP. Device must be in A/B slot.
 vili-hitcore/
 ├── build_vili.sh              # Script maestro (defconfig + build + package)
 ├── build_vili_defconfig.sh    # Genera defconfig con merge completo
-├── package_vili.sh            # Empaquetado AnyKernel3
+├── package_vili.sh            # Empaquetado AnyKernel3 (Image + dtb + dtbo.img + 90 .ko)
+├── arch/arm64/configs/vendor/ # Fragmentos de config (vili_QGKI.config, ...)
 ├── anykernel/                 # Template AnyKernel3 (committeado)
 │   ├── anykernel.sh
 │   ├── META-INF/
 │   └── tools/
 └── out/                      # Build output (gitignored)
     ├── arch/arm64/boot/Image
-    ├── lib/modules/*.ko
+    ├── arch/arm64/boot/dts/vendor/qcom/lahaina-v2.1.dtb
+    ├── arch/arm64/boot/dts/vendor/qcom/vili-sm8350-overlay.dtbo
+    ├── modules.order         # Orden de carga de módulos
     └── vili-hitcore-vXX.zip
 ```
 
@@ -92,10 +99,39 @@ Modifications on top of the original kernel source:
 |------|--------|
 | `Kconfig` | Sources `KernelSU-Next/kernel/Kconfig` |
 | `Makefile` | Adds `obj-$(CONFIG_KSU) += KernelSU-Next/kernel/` |
-| `kernel/module.c` | Vermagic matching for stock module compatibility |
+| `arch/arm64/configs/vendor/vili_QGKI.config` | `CONFIG_MODVERSIONS=y` (compat vermagic con stock) |
 | `drivers/usb/typec/ucsi/ucsi_glink.c` | CVE-2024-46693 fix |
 | `build_vili_defconfig.sh` | Full defconfig merge with device-specific configs |
 | `scripts/gki/envsetup.sh` | Fixed quoting and error handling |
+
+Los drivers (battery, USB, WiFi, camera) los cargan los **módulos stock del
+`vendor_boot` del dispositivo** (no se flashean): el kernel activa
+`CONFIG_MODVERSIONS=y` y como el sufijo de vermagic es idéntico
+(`SMP preempt mod_unload modversions aarch64`), `same_magic()` en
+`kernel/module.c` iguala los módulos saltándose el prefijo de versión
+(`5.4.302-hitcore-vXX` vs `5.4.302-qgki`) porque llevan CRCs.
+
+## Flash anatomy (zip)
+
+```
+vili-hitcore-vXX.zip
+├── Image              # Kernel con MODVERSIONS=y
+├── dtb                # lahaina-v2.1.dtb (flasheado a vendor_boot)
+├── dtbo.img           # dt_table → vili-sm8350-overlay.dtbo (flasheado a dtbo)
+├── anykernel.sh       # boot + vendor_boot (do.systemless=1)
+├── META-INF/          # updater
+├── tools/             # ak3-core.sh, magiskboot, ...
+└── modules/vendor/lib/modules/   # 90 módulos del build
+    ├── *.ko
+    ├── modules.load   # orden de carga
+    ├── modules.dep
+    ├── modules.softdep
+    └── modules.alias
+```
+
+El `vendor_ramdisk` stock se conserva intacto (se reemplaza solo el `dtb`
+en el `vendor_boot`), de modo que los drivers native de Xiaomi cargan sobre
+el kernel custom.
 
 ## Syncing with upstream
 
@@ -118,6 +154,7 @@ git merge upstream/lineage-23.2
 ## Credits
 
 - [xiaomi-lisa-devs](https://github.com/xiaomi-lisa-devs) — base kernel source
+- [swiitchOFF](https://xda-developers.com) — kernel de referencia `qgki-vili-20260903` (arquitectura de flasheo + DTB/DTBO)
 - [rifsxd/KernelSU-Next](https://github.com/rifsxd/KernelSU-Next) — KernelSU integration
 - [osm0sis/AnyKernel3](https://github.com/osm0sis/AnyKernel3) — flashable zip packaging
 

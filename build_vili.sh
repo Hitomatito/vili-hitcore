@@ -170,7 +170,7 @@ do_build() {
         HOSTLD=ld.lld \
         HOSTAR=llvm-ar \
         -j"${NPROC}" \
-        Image modules
+        Image modules dtbs
 
     # Verificar outputs
     if [ ! -f "${OUT_DIR}/arch/arm64/boot/Image" ]; then
@@ -182,6 +182,8 @@ do_build() {
     echo "✅ Build completado"
     echo "   Image: $(du -h "${OUT_DIR}/arch/arm64/boot/Image" | cut -f1)"
     echo "   Módulos: $(find "${OUT_DIR}" -name "*.ko" 2>/dev/null | wc -l) encontrados"
+    echo "   dtb: $(du -h "${OUT_DIR}/arch/arm64/boot/dts/vendor/qcom/lahaina-v2.1.dtb" 2>/dev/null | cut -f1 || echo 'NO GENERADO')"
+    echo "   dtbo: $(du -h "${OUT_DIR}/arch/arm64/boot/dts/vendor/qcom/vili-sm8350-overlay.dtbo" 2>/dev/null | cut -f1 || echo 'NO GENERADO')"
     echo ""
 }
 
