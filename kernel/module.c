@@ -1366,11 +1366,15 @@ static inline int check_modstruct_version(const struct load_info *info,
 	return check_version(info, "module_layout", mod, crc);
 }
 
-/* First part is kernel version, which we ignore if module has crcs. */
+/* First part is kernel version, which we ignore if module has crcs.
+ * With CONFIG_MODULE_FORCE_LOAD, also skip version prefix for stock vendor
+ * modules that lack __versions section (has_crcs=false). The suffix
+ * (SMP preempt mod_unload modversions aarch64) is identical across all
+ * modules and is what actually matters for compatibility. */
 static inline int same_magic(const char *amagic, const char *bmagic,
 			     bool has_crcs)
 {
-	if (has_crcs) {
+	if (has_crcs || IS_ENABLED(CONFIG_MODULE_FORCE_LOAD)) {
 		amagic += strcspn(amagic, " ");
 		bmagic += strcspn(bmagic, " ");
 	}
@@ -2349,11 +2353,12 @@ static int verify_exported_symbols(struct module *mod)
 		for (s = arr[i].sym; s < arr[i].sym + arr[i].num; s++) {
 			if (find_symbol(kernel_symbol_name(s), &owner, NULL,
 					NULL, true, false)) {
-				pr_err("%s: exports duplicate symbol %s"
+				pr_warn("%s: exports duplicate symbol %s"
 				       " (owned by %s)\n",
 				       mod->name, kernel_symbol_name(s),
 				       module_name(owner));
-				return -ENOEXEC;
+				if (!IS_ENABLED(CONFIG_MODULE_FORCE_LOAD))
+					return -ENOEXEC;
 			}
 		}
 	}

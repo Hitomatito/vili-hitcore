@@ -491,13 +491,6 @@ do_modules() {
     fi;
     for module in $(find . -name '*.ko'); do
       modtarget=$POSTINSTALL$(echo $module | cut -c2-);
-      if [ ! -e $modtarget ]; then
-        case $module in
-          */vendor/*) modcon=vendor;;
-          */product/*) modcon=product;;
-          *) modcon=system;;
-        esac;
-      fi;
       if is_mounted $modtarget; then
         mount -o rw,remount -t auto $modtarget && echo "$modtarget (rw)" >&2;
       fi;
@@ -505,13 +498,28 @@ do_modules() {
       cp -rLf $module $modtarget;
       chown 0:0 $modtarget;
       chmod 644 $modtarget;
-      if [ "$modcon" ]; then
-        /system/bin/chcon "u:object_r:${modcon}_file:s0" $modtarget;
-      fi;
+      # chcon NOT applied — stock SELinux context preserved by cp; applying
+      # vendor_file:s0 may mismatch stock vendor_modules_file:s0 and break
+      # modprobe SELinux policy.
       if is_mounted $modtarget; then
         mount -o ro,remount -t auto $modtarget && echo "$modtarget (ro)" >&2;
       fi;
     done;
+    # Copy modules.dep — our cnss2.ko needs wlfw/dms deps that stock lacks.
+    # modules.alias, modules.load, modules.softdep are NOT copied.
+    cp -f ./vendor/lib/modules/modules.dep /vendor/lib/modules/modules.dep;
+    chmod 644 /vendor/lib/modules/modules.dep;
+    chown 0:0 /vendor/lib/modules/modules.dep;
+    ui_print " " "modules.dep installed (cnss2 QMI deps patched)" >&2;
+    # Install WiFi module loader script + init trigger
+    mkdir -p /vendor/etc/init;
+    cp -f ./vendor/etc/init/wifi-modules.sh /vendor/etc/init/wifi-modules.sh;
+    chmod 755 /vendor/etc/init/wifi-modules.sh;
+    chown 0:0 /vendor/etc/init/wifi-modules.sh;
+    cp -f ./vendor/etc/init/wifi-modules.rc /vendor/etc/init/wifi-modules.rc;
+    chmod 644 /vendor/etc/init/wifi-modules.rc;
+    chown 0:0 /vendor/etc/init/wifi-modules.rc;
+    ui_print " " "wifi-modules.sh + .rc installed to /vendor/etc/init/" >&2;
     if [ ! -d /postinstall/tmp ]; then
       for mount in /system /vendor /product; do
         if is_mounted $mount; then

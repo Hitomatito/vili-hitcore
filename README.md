@@ -118,7 +118,7 @@ vili-hitcore-vXX.zip
 ├── Image              # Kernel con MODVERSIONS=y
 ├── dtb                # lahaina-v2.1.dtb (flasheado a vendor_boot)
 ├── dtbo.img           # dt_table → vili-sm8350-overlay.dtbo (flasheado a dtbo)
-├── anykernel.sh       # boot + vendor_boot (do.systemless=1)
+├── anykernel.sh       # boot + vendor_boot (do.systemless=0)
 ├── META-INF/          # updater
 ├── tools/             # ak3-core.sh, magiskboot, ...
 └── modules/vendor/lib/modules/   # 90 módulos del build

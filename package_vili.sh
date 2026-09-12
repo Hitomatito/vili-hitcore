@@ -78,10 +78,23 @@ EOF
 echo ""
 echo "=== Copiar módulos (order = modules.order) ==="
 
+# Módulos built-in (=y) que NO deben empaquetarse — causan circular
+# dependency o "Unknown symbol" si se copian como .ko al dispositivo.
+# Verificar contra modules.builtin del build generado antes de agregar aquí.
+EXCLUDE_MODULES=(
+    hwid.ko
+    msm_drm.ko
+)
+
 MODULES_FOUND=()
 while IFS= read -r rel; do
     [ -z "$rel" ] && continue
     name="${rel##*/}"
+    # Skip built-in modules
+    if printf '%s\n' "${EXCLUDE_MODULES[@]}" | grep -qx "$name"; then
+        echo "  ⏭️  $name — built-in (=y), omitido"
+        continue
+    fi
     mod="${OUT_DIR}/${rel}"
     if [ ! -f "$mod" ]; then
         # búsqueda de respaldo
@@ -95,20 +108,116 @@ while IFS= read -r rel; do
     MODULES_FOUND+=("$name")
 done < "$MODULES_ORDER"
 
-echo "  ✓ ${#MODULES_FOUND[@]} módulos copiados"
+echo "  ✓ ${#MODULES_FOUND[@]} módulos del kernel"
+
+# ─── Copiar módulos vendor-only compatibles ─────────────────────
+# Estos .ko no se construyen desde nuestro kernel pero son necesarios
+# y son compatibles (CRC match). Se copian desde vendor_modules/
+VENDOR_MODS_DIR="${KERNEL_DIR}/vendor_modules"
+if [ -d "$VENDOR_MODS_DIR" ]; then
+    echo ""
+    echo "=== Copiar módulos vendor-only compatibles ==="
+    for vko in "$VENDOR_MODS_DIR"/*.ko; do
+        [ -f "$vko" ] || continue
+        vname=$(basename "$vko")
+        # skip si ya lo tenemos del build
+        if printf '%s\n' "${MODULES_FOUND[@]}" | grep -qx "$vname"; then
+            echo "  ⏭️  $vname — ya existe del build"
+            continue
+        fi
+        llvm-strip --strip-debug "$vko" -o "${MODS_DIR}/${vname}"
+        MODULES_FOUND+=("$vname")
+        echo "  ✓ $vname (vendor-only)"
+    done
+fi
+
+echo "  ✓ Total: ${#MODULES_FOUND[@]} módulos"
 
 if [ "${#MODULES_FOUND[@]}" -eq 0 ]; then
     echo "❌ Error: ningún módulo copiado"
     exit 1
 fi
 
-# ─── Metadata de módulos (modules.load/dep/softdep/alias) ───────
+# ─── Metadata de módulos (modules.dep/softdep/alias) ──────────
 echo ""
 echo "=== Generar metadata de módulos ==="
 
-# modules.load: orden del build (mismo criterio que la referencia)
-printf '%s\n' "${MODULES_FOUND[@]}" > "${MODS_DIR}/modules.load"
-echo "  ✓ modules.load (${#MODULES_FOUND[@]} módulos)"
+# modules.load is intentionally NOT generated — the stock ROM ships with
+# an empty modules.load and vendor_modprobe.sh reads it at boot.  Our .ko
+# files are deployed to /vendor/lib/modules/ and loaded on demand by
+# request_module() or by init.target.rc after fs_ready.
+VENDOR_LOAD_ORDER=(
+    # Audio (dependencia estricta APR → Q6 → ADSP → platform → machine → codec)
+    apr_dlkm.ko
+    q6_dlkm.ko
+    q6_notifier_dlkm.ko
+    q6_pdr_dlkm.ko
+    adsp_loader_dlkm.ko
+    native_dlkm.ko
+    platform_dlkm.ko
+    machine_dlkm.ko
+    bolero_cdc_dlkm.ko
+    pinctrl_lpi_dlkm.ko
+    pinctrl_wcd_dlkm.ko
+    wcd_core_dlkm.ko
+    wcd9xxx_dlkm.ko
+    wcd937x_dlkm.ko
+    wcd937x_slave_dlkm.ko
+    wcd938x_dlkm.ko
+    wcd938x_slave_dlkm.ko
+    mbhc_dlkm.ko
+    swr_dlkm.ko
+    swr_ctrl_dlkm.ko
+    swr_dmic_dlkm.ko
+    rx_macro_dlkm.ko
+    tx_macro_dlkm.ko
+    va_macro_dlkm.ko
+    wsa_macro_dlkm.ko
+    wsa883x_dlkm.ko
+    snd_event_dlkm.ko
+    hdmi_dlkm.ko
+    stub_dlkm.ko
+    cs35l41_dlkm.ko
+    # Cámara (msm_drm es built-in, se omite por EXCLUDE_MODULES)
+    camera.ko
+    # Hardware (hwid es built-in, se omite por EXCLUDE_MODULES)
+    qti_battery_charger_main.ko
+    leds-qti-flash.ko
+    xiaomi_touch.ko
+    fts_touch_spi.ko
+    fpc1020_tee.ko
+    goodix_ta.ko
+    goodix_tee.ko
+    mi_thermal_interface.ko
+    ir-spi.ko
+    # Conectividad (cnss2 =m — stock .ko replaced by our compiled version)
+    cnss2.ko
+    icnss2.ko
+    wlan.ko
+    # Misc
+    stmvl53l5.ko
+    mmhardware_others.ko
+    mmhardware_sysfs_dlkm.ko
+    qcom_edac.ko
+    rmnet_core.ko
+    rmnet_ctl.ko
+    rmnet_offload.ko
+    rmnet_shs.ko
+    btpower.ko
+    bt_fm_slim.ko
+    slimbus.ko
+    slimbus-ngd.ko
+    rdbg.ko
+    radio-i2c-rtc6226-qca.ko
+    llcc_perfmon.ko
+)
+# NOTE: modules.load is intentionally NOT generated — the stock ROM ships
+# with an empty modules.load, and vendor_modprobe.sh (stock vendor_boot
+# ramdisk) reads it at boot.  Overwriting it with our custom list causes
+# vendor_modprobe.sh to attempt loading modules that conflict with
+# built-in symbols → bootloop.  Our .ko files are deployed to
+# /vendor/lib/modules/ and loaded on demand by request_module() or by
+# init.target.rc after fs_ready.
 
 # modules.dep/softdep/alias vía depmod en árbol temporal
 KREL=$(cat "${OUT_DIR}/include/config/kernel.release" 2>/dev/null || echo 5.4.302-hitcore)
@@ -137,6 +246,14 @@ if command -v depmod &>/dev/null; then
             print out
         }' "$TMPMODS/modules.dep" > "${MODS_DIR}/modules.dep"
         echo "  ✓ modules.dep"
+        # Safety net: remove msm_drm.ko from modules.dep if present
+        # (excluded by EXCLUDE_MODULES but depmod may pick up stale copies)
+        sed -i 's| /vendor/lib/modules/msm_drm\.ko||g' "${MODS_DIR}/modules.dep"
+        # Fix: cnss2.ko has implicit dependencies on QMI service modules that
+        # depmod doesn't detect. Add them manually so vendor_modprobe.sh loads
+        # them before cnss2.
+        sed -i 's|^/vendor/lib/modules/cnss2\.ko:|/vendor/lib/modules/cnss2.ko: /vendor/lib/modules/wlan_firmware_service_v01.ko /vendor/lib/modules/device_management_service_v01.ko|' "${MODS_DIR}/modules.dep"
+        echo "  ✓ modules.dep (QMI deps patched for cnss2)"
     fi
     [ -f "$TMPMODS/modules.softdep" ] && cp "$TMPMODS/modules.softdep" "${MODS_DIR}/modules.softdep" && echo "  ✓ modules.softdep"
     [ -f "$TMPMODS/modules.alias" ] && cp "$TMPMODS/modules.alias" "${MODS_DIR}/modules.alias" && echo "  ✓ modules.alias"
@@ -153,6 +270,21 @@ cp "${AK3_DIR}/anykernel.sh" "${STAGING}/"
 cp -r "${AK3_DIR}/META-INF" "${STAGING}/"
 cp -r "${AK3_DIR}/tools" "${STAGING}/"
 echo "  ✓ anykernel.sh, META-INF, tools"
+
+# ─── Copiar wifi-modules.sh + .rc ────────────────────────────────
+WIFI_SCRIPT="${KERNEL_DIR}/modules/vendor/etc/init/wifi-modules.sh"
+WIFI_RC="${KERNEL_DIR}/modules/vendor/etc/init/wifi-modules.rc"
+if [ -f "$WIFI_SCRIPT" ]; then
+    mkdir -p "${STAGING}/modules/vendor/etc/init"
+    cp "$WIFI_SCRIPT" "${STAGING}/modules/vendor/etc/init/wifi-modules.sh"
+    chmod 755 "${STAGING}/modules/vendor/etc/init/wifi-modules.sh"
+    echo "  ✓ wifi-modules.sh"
+fi
+if [ -f "$WIFI_RC" ]; then
+    mkdir -p "${STAGING}/modules/vendor/etc/init"
+    cp "$WIFI_RC" "${STAGING}/modules/vendor/etc/init/wifi-modules.rc"
+    echo "  ✓ wifi-modules.rc"
+fi
 
 # ─── Crear zip ──────────────────────────────────────────────────
 echo ""
@@ -174,7 +306,7 @@ fi
 
 ZIP_CONTENTS=$(unzip -l "$ZIP_OUTPUT" 2>/dev/null)
 
-for required in "Image" "dtb" "dtbo.img" "anykernel.sh" "META-INF/com/google/android/update-binary" "modules/vendor/lib/modules/modules.load"; do
+for required in "Image" "dtb" "dtbo.img" "anykernel.sh" "META-INF/com/google/android/update-binary"; do
     if echo "$ZIP_CONTENTS" | grep -q "$required"; then
         echo "  ✓ $required"
     else

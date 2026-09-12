@@ -300,60 +300,48 @@ int pld_register_driver(struct pld_driver_ops *ops)
 
 	ret = pld_snoc_register_driver();
 	if (ret) {
-		pr_err("Fail to register snoc driver\n");
-		goto fail_snoc;
+		pr_info("snoc driver not available (expected on PCIe-only platforms)\n");
+	} else {
+		pld_context->pld_driver_state |= PLD_SNOC_REGISTERED;
 	}
-	pld_context->pld_driver_state |= PLD_SNOC_REGISTERED;
 
 	ret = pld_sdio_register_driver();
 	if (ret) {
-		pr_err("Fail to register sdio driver\n");
-		goto fail_sdio;
+		pr_info("sdio driver not available\n");
+	} else {
+		pld_context->pld_driver_state |= PLD_SDIO_REGISTERED;
 	}
-	pld_context->pld_driver_state |= PLD_SDIO_REGISTERED;
 
 	ret = pld_snoc_fw_sim_register_driver();
 	if (ret) {
-		pr_err("Fail to register snoc fw sim driver\n");
-		goto fail_snoc_fw_sim;
+		pr_info("snoc fw sim driver not available\n");
+	} else {
+		pld_context->pld_driver_state |= PLD_SNOC_FW_SIM_REGISTERED;
 	}
-	pld_context->pld_driver_state |= PLD_SNOC_FW_SIM_REGISTERED;
 
 	ret = pld_pcie_fw_sim_register_driver();
 	if (ret) {
-		pr_err("Fail to register pcie fw sim driver\n");
-		goto fail_pcie_fw_sim;
+		pr_info("pcie fw sim driver not available\n");
+	} else {
+		pld_context->pld_driver_state |= PLD_PCIE_FW_SIM_REGISTERED;
 	}
-	pld_context->pld_driver_state |= PLD_PCIE_FW_SIM_REGISTERED;
 
 	ret = pld_usb_register_driver();
 	if (ret) {
-		pr_err("Fail to register usb driver\n");
-		goto fail_usb;
+		pr_info("usb driver not available\n");
+	} else {
+		pld_context->pld_driver_state |= PLD_USB_REGISTERED;
 	}
-	pld_context->pld_driver_state |= PLD_USB_REGISTERED;
 
 	ret = pld_ipci_register_driver();
 	if (ret) {
-		pr_err("Fail to register ipci driver\n");
-		goto fail_ipci;
+		pr_info("ipci driver not available\n");
+	} else {
+		pld_context->pld_driver_state |= PLD_IPCI_REGISTERED;
 	}
-	pld_context->pld_driver_state |= PLD_IPCI_REGISTERED;
 
 	return ret;
 
-fail_ipci:
-	pld_usb_unregister_driver();
-fail_usb:
-	pld_pcie_fw_sim_unregister_driver();
-fail_pcie_fw_sim:
-	pld_snoc_fw_sim_unregister_driver();
-fail_snoc_fw_sim:
-	pld_sdio_unregister_driver();
-fail_sdio:
-	pld_snoc_unregister_driver();
-fail_snoc:
-	pld_pcie_unregister_driver();
 fail_pcie:
 	pld_context->pld_driver_state = 0;
 	pld_context->ops = NULL;
