@@ -78,21 +78,63 @@ EOF
 echo ""
 echo "=== Copiar módulos (order = modules.order) ==="
 
-# Módulos built-in (=y) que NO deben empaquetarse — causan circular
-# dependency o "Unknown symbol" si se copian como .ko al dispositivo.
-# Verificar contra modules.builtin del build generado antes de agregar aquí.
+# Módulos que NO deben empaquetarse — causan problemas si se reemplazan
+# por versiones compiladas desde nuestro fuente:
+# - hwid.ko, msm_drm.ko: built-in (=y), circular dependency si se copian
+# - TODOS los de techpack/audio/: el firmware ADSP stock espera módulos
+#   audio con CRC y拓扑 exactas. Mezclar módulos compilados + stock causa
+#   "unknown pin WSA_SPK1 OUT", ACDB -19/-100, y audio silencioso.
+#   Todos se excluyen; las deps se agregan a modules.dep para auto-carga
+#   de los .ko stock que permanecen en /vendor/lib/modules/.
 EXCLUDE_MODULES=(
     hwid.ko
     msm_drm.ko
+    # --- techpack/audio (32 modules) ---
+    platform_dlkm.ko
+    machine_dlkm.ko
+    native_dlkm.ko
+    q6_dlkm.ko
+    apr_dlkm.ko
+    adsp_loader_dlkm.ko
+    q6_notifier_dlkm.ko
+    q6_pdr_dlkm.ko
+    bolero_cdc_dlkm.ko
+    pinctrl_lpi_dlkm.ko
+    pinctrl_wcd_dlkm.ko
+    snd_event_dlkm.ko
+    swr_ctrl_dlkm.ko
+    swr_dlkm.ko
+    swr_dmic_dlkm.ko
+    rx_macro_dlkm.ko
+    tx_macro_dlkm.ko
+    va_macro_dlkm.ko
+    wsa_macro_dlkm.ko
+    wsa883x_dlkm.ko
+    wcd_core_dlkm.ko
+    wcd9xxx_dlkm.ko
+    wcd937x_dlkm.ko
+    wcd937x_slave_dlkm.ko
+    wcd938x_dlkm.ko
+    wcd938x_slave_dlkm.ko
+    mbhc_dlkm.ko
+    stub_dlkm.ko
+    hdmi_dlkm.ko
+    swr_haptics_dlkm.ko
+    us_prox_iio.ko
+    mmhardware_sysfs_dlkm.ko
 )
 
 MODULES_FOUND=()
 while IFS= read -r rel; do
     [ -z "$rel" ] && continue
     name="${rel##*/}"
-    # Skip built-in modules
+    # Skip excluded modules
     if printf '%s\n' "${EXCLUDE_MODULES[@]}" | grep -qx "$name"; then
-        echo "  ⏭️  $name — built-in (=y), omitido"
+        if [[ "$name" == *"_dlkm.ko" || "$name" == "us_prox_iio.ko" || "$name" == "mmhardware_sysfs_dlkm.ko" ]]; then
+            echo "  ⏭️  $name — audio techpack (stock preserved), omitido"
+        else
+            echo "  ⏭️  $name — built-in (=y), omitido"
+        fi
         continue
     fi
     mod="${OUT_DIR}/${rel}"
@@ -254,6 +296,45 @@ if command -v depmod &>/dev/null; then
         # them before cnss2.
         sed -i 's|^/vendor/lib/modules/cnss2\.ko:|/vendor/lib/modules/cnss2.ko: /vendor/lib/modules/wlan_firmware_service_v01.ko /vendor/lib/modules/device_management_service_v01.ko|' "${MODS_DIR}/modules.dep"
         echo "  ✓ modules.dep (QMI deps patched for cnss2)"
+        # Add dependency entries for stock audio modules that remain on the device.
+        # These .ko are NOT in the zip (excluded to preserve stock ACDB/AFE),
+        # but they must be in modules.dep so the kernel auto-loads them.
+        # Deps extracted from modinfo of the matching build output.
+        cat >> "${MODS_DIR}/modules.dep" <<'STOCK_AUDIO_DEPS'
+/vendor/lib/modules/platform_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/apr_dlkm.ko
+/vendor/lib/modules/machine_dlkm.ko: /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/wsa883x_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/wcd937x_dlkm.ko /vendor/lib/modules/wcd938x_dlkm.ko /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/platform_dlkm.ko
+/vendor/lib/modules/native_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/platform_dlkm.ko
+/vendor/lib/modules/q6_dlkm.ko: /vendor/lib/modules/us_prox_iio.ko /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
+/vendor/lib/modules/apr_dlkm.ko: /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/mmhardware_sysfs_dlkm.ko
+/vendor/lib/modules/adsp_loader_dlkm.ko: /vendor/lib/modules/apr_dlkm.ko
+/vendor/lib/modules/q6_notifier_dlkm.ko: /vendor/lib/modules/q6_pdr_dlkm.ko
+/vendor/lib/modules/q6_pdr_dlkm.ko:
+/vendor/lib/modules/bolero_cdc_dlkm.ko: /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/q6_dlkm.ko
+/vendor/lib/modules/pinctrl_lpi_dlkm.ko: /vendor/lib/modules/snd_event_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko
+/vendor/lib/modules/pinctrl_wcd_dlkm.ko:
+/vendor/lib/modules/snd_event_dlkm.ko:
+/vendor/lib/modules/swr_ctrl_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/swr_dlkm.ko:
+/vendor/lib/modules/swr_dmic_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/wcd938x_dlkm.ko
+/vendor/lib/modules/rx_macro_dlkm.ko: /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko
+/vendor/lib/modules/tx_macro_dlkm.ko: /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko
+/vendor/lib/modules/va_macro_dlkm.ko: /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/q6_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko
+/vendor/lib/modules/wsa_macro_dlkm.ko: /vendor/lib/modules/bolero_cdc_dlkm.ko /vendor/lib/modules/swr_ctrl_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko
+/vendor/lib/modules/wsa883x_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko
+/vendor/lib/modules/wcd_core_dlkm.ko:
+/vendor/lib/modules/wcd9xxx_dlkm.ko: /vendor/lib/modules/q6_dlkm.ko
+/vendor/lib/modules/wcd937x_dlkm.ko: /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/wcd9xxx_dlkm.ko /vendor/lib/modules/mbhc_dlkm.ko /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/wcd937x_slave_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/wcd938x_dlkm.ko: /vendor/lib/modules/wcd9xxx_dlkm.ko /vendor/lib/modules/mbhc_dlkm.ko /vendor/lib/modules/wcd_core_dlkm.ko /vendor/lib/modules/swr_dlkm.ko /vendor/lib/modules/mmhardware_sysfs_dlkm.ko
+/vendor/lib/modules/wcd938x_slave_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/mbhc_dlkm.ko: /vendor/lib/modules/tx_macro_dlkm.ko
+/vendor/lib/modules/stub_dlkm.ko:
+/vendor/lib/modules/hdmi_dlkm.ko:
+/vendor/lib/modules/swr_haptics_dlkm.ko: /vendor/lib/modules/swr_dlkm.ko
+/vendor/lib/modules/us_prox_iio.ko:
+/vendor/lib/modules/mmhardware_sysfs_dlkm.ko:
+STOCK_AUDIO_DEPS
+        echo "  ✓ modules.dep (stock audio deps added)"
     fi
     [ -f "$TMPMODS/modules.softdep" ] && cp "$TMPMODS/modules.softdep" "${MODS_DIR}/modules.softdep" && echo "  ✓ modules.softdep"
     [ -f "$TMPMODS/modules.alias" ] && cp "$TMPMODS/modules.alias" "${MODS_DIR}/modules.alias" && echo "  ✓ modules.alias"

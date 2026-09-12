@@ -1,0 +1,80 @@
+# init.vili-modules.rc — Cargar todos los módulos vendor en orden de dependencia
+# Ejecuta en early-init (ANTES de que arranquen los servicios vendor)
+# vendor_modprobe.sh corre primero con modules.load, pero ese archivo puede estar vacío.
+# Este script es el respaldo que asegura que todos los módulos críticos se carguen.
+
+on early-init
+    # --- Fase 1: Subsistema de audio (requerido ANTES del audio HAL) ---
+    # Cargar en orden estricto de dependencia: APR → Q6 → ADSP loader → platform → machine → codec
+    exec -- /system/bin/log -t vili-modules "Cargando modulos de audio..."
+    insmod /vendor/lib/modules/apr_dlkm.ko
+    insmod /vendor/lib/modules/q6_dlkm.ko
+    insmod /vendor/lib/modules/q6_notifier_dlkm.ko
+    insmod /vendor/lib/modules/q6_pdr_dlkm.ko
+    insmod /vendor/lib/modules/adsp_loader_dlkm.ko
+    insmod /vendor/lib/modules/native_dlkm.ko
+    insmod /vendor/lib/modules/platform_dlkm.ko
+    insmod /vendor/lib/modules/machine_dlkm.ko
+    insmod /vendor/lib/modules/bolero_cdc_dlkm.ko
+    insmod /vendor/lib/modules/pinctrl_lpi_dlkm.ko
+    insmod /vendor/lib/modules/pinctrl_wcd_dlkm.ko
+    insmod /vendor/lib/modules/wcd_core_dlkm.ko
+    insmod /vendor/lib/modules/wcd9xxx_dlkm.ko
+    insmod /vendor/lib/modules/wcd937x_dlkm.ko
+    insmod /vendor/lib/modules/wcd937x_slave_dlkm.ko
+    insmod /vendor/lib/modules/wcd938x_dlkm.ko
+    insmod /vendor/lib/modules/wcd938x_slave_dlkm.ko
+    insmod /vendor/lib/modules/mbhc_dlkm.ko
+    insmod /vendor/lib/modules/swr_dlkm.ko
+    insmod /vendor/lib/modules/swr_ctrl_dlkm.ko
+    insmod /vendor/lib/modules/swr_dmic_dlkm.ko
+    insmod /vendor/lib/modules/rx_macro_dlkm.ko
+    insmod /vendor/lib/modules/tx_macro_dlkm.ko
+    insmod /vendor/lib/modules/va_macro_dlkm.ko
+    insmod /vendor/lib/modules/wsa_macro_dlkm.ko
+    insmod /vendor/lib/modules/wsa883x_dlkm.ko
+    insmod /vendor/lib/modules/snd_event_dlkm.ko
+    insmod /vendor/lib/modules/hdmi_dlkm.ko
+    insmod /vendor/lib/modules/stub_dlkm.ko
+    insmod /vendor/lib/modules/cs35l41_dlkm.ko
+
+    # --- Fase 2: Subsistema de camara ---
+    # msm_drm esta built-in (=y), se omite insmod
+    insmod /vendor/lib/modules/camera.ko
+
+    # --- Fase 3: Perifericos de hardware ---
+    # hwid esta built-in (=y), se omite insmod
+    insmod /vendor/lib/modules/qti_battery_charger_main.ko
+    insmod /vendor/lib/modules/leds-qti-flash.ko
+    insmod /vendor/lib/modules/xiaomi_touch.ko
+    insmod /vendor/lib/modules/fts_touch_spi.ko
+    insmod /vendor/lib/modules/fpc1020_tee.ko
+    insmod /vendor/lib/modules/goodix_ta.ko
+    insmod /vendor/lib/modules/goodix_tee.ko
+    insmod /vendor/lib/modules/mi_thermal_interface.ko
+    insmod /vendor/lib/modules/ir-spi.ko
+
+    # --- Fase 4: Conectividad (ANTES del WiFi/BT HAL) ---
+    # cnss2 must load first — icnss2 and wlan depend on it
+    insmod /vendor/lib/modules/cnss2.ko
+    insmod /vendor/lib/modules/icnss2.ko
+    insmod /vendor/lib/modules/wlan.ko
+
+    # --- Fase 5: Miscelaneos ---
+    insmod /vendor/lib/modules/stmvl53l5.ko
+    insmod /vendor/lib/modules/mmhardware_others.ko
+    insmod /vendor/lib/modules/mmhardware_sysfs_dlkm.ko
+    insmod /vendor/lib/modules/qcom_edac.ko
+    insmod /vendor/lib/modules/rmnet_core.ko
+    insmod /vendor/lib/modules/rmnet_ctl.ko
+    insmod /vendor/lib/modules/rmnet_offload.ko
+    insmod /vendor/lib/modules/rmnet_shs.ko
+    insmod /vendor/lib/modules/btpower.ko
+    insmod /vendor/lib/modules/bt_fm_slim.ko
+    insmod /vendor/lib/modules/slimbus.ko
+    insmod /vendor/lib/modules/slimbus-ngd.ko
+    insmod /vendor/lib/modules/rdbg.ko
+    insmod /vendor/lib/modules/radio-i2c-rtc6226-qca.ko
+    insmod /vendor/lib/modules/llcc_perfmon.ko
+
+    exec -- /system/bin/log -t vili-modules "Carga de modulos completa"
